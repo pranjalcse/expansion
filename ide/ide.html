@@ -476,7 +476,7 @@ nav.querySelector('ul').classList.toggle('show');
   }
 
   if(myString === "submit"){
-    
+    console.log(yourOutput.length);
     const testResults = expectedOutput.map((expected, index) => {
     const status = expected === yourOutput[index] ? "✔" : "✖";
     const statusClass = expected === yourOutput[index] ? "passed" : "failed";
