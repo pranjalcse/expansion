@@ -480,6 +480,8 @@ nav.querySelector('ul').classList.toggle('show');
     const testResults = expectedOutput.map((expected, index) => {
     const status = expected === yourOutput[index] ? "✔" : "✖";
     const statusClass = expected === yourOutput[index] ? "passed" : "failed";
+    console.log(expected);
+    console.log(yourOutput[index]);
     return { name: `Test Case ${index + 1}`, status, statusClass };
 });
 
