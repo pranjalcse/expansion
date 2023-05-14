@@ -719,62 +719,68 @@ submitbutton.addEventListener('click', () => {
     yourOutput.length=0;
     expectedOutput.length=0;
     overlay.style.display = 'flex';
-    var score = 0;
-    const delay = 1000;
-    const promises = [];
-    const maxRetries = 3;  // Maximum retries if an error occurs
-
-    const sendRequest = (payload, retries = 0) => {
-      return fetch('https://emkc.org/api/v1/piston/execute', {
-        method: 'POST',
-        body: JSON.stringify(payload)
-      })
-      .then(response => response.json())
-      .catch(error => {
-        console.error(error);
-        if (retries < maxRetries) {
-          // Wait for 1 second and retry the request
-          return new Promise(resolve => setTimeout(resolve, delay))
-            .then(() => sendRequest(payload, retries + 1));
-        } else {
-          throw error;
-        }
-      });
-    };
-
-    SubmitCases.forEach((submitCase, index) => {
-      const promise = new Promise((resolve, reject) => {
-        setTimeout(() => {
-          const code = editor.getValue();
-          const language = document.getElementById('language-select').value;
-          const payload = {
-            language: language,
-            source: code,
-            stdin: submitCase.input
-          };
-
-          sendRequest(payload)
-          .then(data => {
-            console.log(`Test ${index + 1} button clicked`);
-            inp.push(submitCase.input);
-            yourOutput.push(data.output.trim());
-            expectedOutput.push(submitCase.output);
-            resolve();
-          })
-          .catch(error => {
-            console.error(error);
-            reject();
-          });
-        }, index * delay);
-      });
-      promises.push(promise);
+  var score = 0;
+  // output.textContent = ``;
+  const delay = 1000;
+  const promises = [];
+  SubmitCases.forEach((submitCase, index) => {
+    const promise = new Promise((resolve, reject) => {
+      setTimeout(() => {
+        // get code from editor
+        const code = editor.getValue();
+        // get selected language from dropdown
+        const language = document.getElementById('language-select').value;
+        // create payload for API request
+        const payload = {
+          language: language,
+          source: code,
+          stdin: submitCase.input
+        };
+        // send API request
+        fetch('https://emkc.org/api/v1/piston/execute', {
+          method: 'POST',
+          body: JSON.stringify(payload)
+        })
+        .then(response => response.json())
+        .then(data => {
+          console.log(`Test ${index + 1} button clicked`);
+          inp.push(submitCase.input);
+          yourOutput.push(data.output.trim());
+          expectedOutput.push(submitCase.output);
+          // display output in output area
+          // if (data.output.trim() === submitCase.output) {
+          //   output.textContent = output.textContent + `Test ${index + 1}: Correct\n`;
+          //   score++;
+          // } else {
+          //   output.textContent = output.textContent + `Test ${index + 1}: Incorrect\n`;
+          // }
+          resolve();
+           
+        })
+        .catch(error => {
+          console.error(error);
+          reject();
+        });
+      }, index * delay);
     });
+    promises.push(promise);
+  });
 
-    Promise.all(promises).then(() => {
-      create_tabs("submit");
-    });
-});
-     
+  Promise.all(promises).then(() => {
+    create_tabs("submit");
+    // check the score and update the output
+    // if (score == SubmitCases.length) {
+    //   output.textContent = output.textContent + `PASS`;
+    // } else {
+    //   output.textContent = output.textContent + `FAIL`;
+    // }
+
+  });
+
+
+  });
+
+});      
 // const testCases = ['123', '456', '789', '321', '654']; // Add your test cases here
 // const expectedOutputs = ['6', '15', '24', '6', '15']; // Add the expected outputs here
  // 2 seconds
