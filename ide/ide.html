@@ -731,7 +731,12 @@ submitbutton.addEventListener('click', () => {
         method: 'POST',
         body: JSON.stringify(payload)
       })
-      .then(response => response.json())
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return response.json();
+      })
       .catch(error => {
         console.error(error);
         if (retries < maxRetries) {
@@ -758,10 +763,14 @@ submitbutton.addEventListener('click', () => {
           sendRequest(payload)
           .then(data => {
             console.log(`Test ${index + 1} button clicked`);
-            inp.push(submitCase.input);
-            yourOutput.push(data.output.trim());
-            expectedOutput.push(submitCase.output);
-            resolve();
+            if (data && data.output) {
+              inp.push(submitCase.input);
+              yourOutput.push(data.output.trim());
+              expectedOutput.push(submitCase.output);
+              resolve();
+            } else {
+              reject(new Error('Data or data.output is undefined'));
+            }
           })
           .catch(error => {
             console.error(error);
@@ -774,8 +783,9 @@ submitbutton.addEventListener('click', () => {
 
     Promise.all(promises).then(() => {
       create_tabs("submit");
-    });
+    }).catch((err) => console.error(err));
 });
+
 
 
 });      
