@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Full Screen Test</title>
+</head>
+<body>
+    <h1>Full Screen Test</h1>
+    <p>Press F11 or click the button below to enter full screen mode.</p>
+    <button onclick="enterFullScreen()">Start the test!</button>
+    <script>
+        var test_started=0;
+        function enterFullScreen() {
+            var elem = document.documentElement;
+            if (elem.requestFullscreen) {
+                elem.requestFullscreen();
+            } else if (elem.webkitRequestFullscreen) { /* Safari */
+                elem.webkitRequestFullscreen();
+            } else if (elem.msRequestFullscreen) { /* IE11 */
+                elem.msRequestFullscreen();
+            }
+        }
+
+        document.addEventListener("fullscreenchange", function () {
+            console.log("Full screen mode changed");
+            
+        });
+
+        document.addEventListener("keydown", function(event) {
+            if (event.keyCode === 122) {
+                console.log("F11 key pressed");
+                
+            }
+        });
+
+        var debounceTimer;
+
+function debounce(func, delay) {
+    clearTimeout(debounceTimer);
+    debounceTimer = setTimeout(func, delay);
+}
+
+window.onresize = function(event) {
+    debounce(function() {
+        if(test_started>0){
+            alert("Your test has ended");
+        }
+        test_started++;
+        console.log("Window resized");
+        console.log(test_started);
+    }, 250);
+};
+    </script>
+</body>
+</html>

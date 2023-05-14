@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.js"></script>
+    <meta charset="UTF-8" />	
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Seating Arrangement</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <link rel="stylesheet" href="blog_style.css">
+    <style>
+		@media screen and (max-width: 768px) {
+			.scrollable {
+				overflow-x: scroll;
+			}
+			
+		}
+	</style>
+</head>
+<body>
+  
+    <div class="slider"></div>
+    <header>
+        <div class = "big-wrapper light">
+        <div class="container_header">
+          <div class="logo">
+            <img src="../img/logo3.png" alt="Logo" />
+          </div>
+      
+          <div class="links">
+            <ul>
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../courses/launchpad.html">Launchpad</a></li>
+              <li><a href="../courses/bootcamp.html">Bootcamp</a></li>
+              <li><a href="../courses/aptitude.html">Aptitude</a></li>
+              <li><a href="../blog.html">Blogs</a></li>
+              <li></li>
+            </ul>
+          </div>
+      
+          <div class="overlay"></div>
+      
+          <div class="hamburger-menu">
+            <div class="bar"></div>
+          </div>
+        </div>
+        </div>
+        <hr>
+      </header>
+      <img src="../img/shape.png" alt="" class="shape2" />
+      <main>
+        <div class="container">
+            
+            <div class="articles">
+              <div class="article">
+                <h2>Seating Arrangement</h2>
+                <img src="images/6_large.png" alt="Article 1" />
+                <p>
+                  <h4>Types of Seating Arrangements</h4>
+                    <ul>
+                      <li><b>Linear Arrangement:</b>
+                        In a linear arrangement, the persons are arranged in a line. Usually, a single row of arrangement is formed.</li>
+                      <li><b>Double Row Arrangement:</b>
+                        In this type of arrangement, there are two groups of persons. One group is arranged in one row while the other group is arranged in another row. The persons in these rows usually face each other.</li>
+                        <li><b>Circular Arrangement:</b>
+                          In circular seating arrangement questions, the persons are arranged around a circular table, following certain conditions.</li>  
+                      <li><b>Rectangular Arrangement:</b>
+                        These arrangements are similar to circular arrangements, with the only difference being that the persons are seated around a rectangular table.</li>
+                        </ul>
+                <p>
+                    <b>Condition:</b><br>
+                        A is three places to the right of E who is immediately left of G.<br><br> 
+                    <b>Inference:</b><br>
+                    <div class="scrollable">
+                      <pre><code>
+<span id="equation1"></span>
+                        </code> </pre>
+                        <script>
+                        var equation = document.getElementById('equation1');
+                        equation.innerHTML += katex.renderToString('\\text{1. A is three places to the right of E}')+"<br>";
+                        equation.innerHTML += katex.renderToString('\\text{2. E is immediately to the left of G}')+"<br>";
+                        equation.innerHTML += katex.renderToString('\\text{Seating would look like: EG\\textunderscore{}A}')+"<br>";
+                        </script>
+                      </div>
+                  </p> 
+                
+                  <p>
+                    <b>Condition:</b><br>
+                        B is two places left of H and is immediately right of F.<br><br> 
+                    <b>Inference:</b><br>
+                    <div class="scrollable">
+                      <pre><code>
+<span id="equation2"></span>
+                        </code> </pre>
+                        <script>
+                        var equation = document.getElementById('equation2');
+                        equation.innerHTML += katex.renderToString('\\text{1. B is two places left of H}')+"<br>";
+                        equation.innerHTML += katex.renderToString('\\text{2. B is immediately right of F}')+"<br>";
+                        equation.innerHTML += katex.renderToString('\\text{Seating would look like: FB\\textunderscore{}H}')+"<br>";
+                        </script>
+                      </div>
+                  </p>
+
+                  <p>
+                    <b>Condition:</b><br>
+                        A sits between F and I.<br><br> 
+                    <b>Inference:</b><br>
+                    <div class="scrollable">
+                      <pre><code>
+<span id="equation3"></span>
+                        </code> </pre>
+                        <script>
+                        var equation = document.getElementById('equation3');
+                        equation.innerHTML += katex.renderToString('\\text{I and F are on either sides of A}')+"<br>";
+                        equation.innerHTML += katex.renderToString('\\text{Seating would look like: FAI or IAF}')+"<br>";
+                        </script>
+                      </div>
+                  </p>
+
+                  <p>
+                    <b>Example:</b><br>
+                        Seven friends A, B, C, D, F and G were sitting in a row facing the same direction.
+                        <ol>
+                            <li>E who was three places to the left of C was immediately right of B.</li>
+                            <li>F sits next to A who is three positions to the left of D.</li>
+                            <li>G was three places away from F and was on one of the corners.</li>
+                        </ol> 
+                    <b>Solution:</b><br>
+                    <div class="scrollable">
+                      <pre><code>
+<span id="equation4"></span>
+                        </code> </pre>
+                        <script>
+                        var equation = document.getElementById('equation4');
+                        equation.innerHTML += katex.renderToString('\\text{From statement 1:}')+" "+katex.renderToString('\\text{BE\\textunderscore{}\\textunderscore{}C}')+"<br>";
+                        equation.innerHTML += katex.renderToString('\\text{From statement 2:}')+" "+katex.renderToString('\\text{AF\\textunderscore{}D or FA\\textunderscore{}\\textunderscore{}D}')+"<br>";
+                        
+                        equation.innerHTML += katex.renderToString('\\text{From statement 3 (Using the two possibilities in statement 2):}')+"<br>"+katex.renderToString('\\text{From AF\\textunderscore{}D:}') +"<ul><li>"+katex.renderToString('\\text{G\\textunderscore{}AF\\textunderscore{}D\\textunderscore{}}')+"  <span>&#x2718"+katex.renderToString('\\text{(Can not accomodate B,E and C)}')+"</li>"+
+                             "<li>"+katex.renderToString('\\text{\\textunderscore{}\\textunderscore{}AF\\textunderscore{}DG}')+"  <span>&#10003;</span>"+"</li>"+"</ul>";
+                           
+
+                        equation.innerHTML += katex.renderToString('\\text{From FA\\textunderscore{}\\textunderscore{}D:}')+"<br>"+"<ul>"+"<li>"+katex.renderToString('\\text{FA\\textunderscore{}GD}')+"  <span>&#x2718"+katex.renderToString('\\text{(G is not in the corner)}')+"</li>"+"<li>"+katex.renderToString('\\text{G\\textunderscore{}\\textunderscore{}FA\\textunderscore{}\\textunderscore{}D}')+"  <span>&#x2718"+katex.renderToString('\\text{(There should be only 7 friends)}')+"</li>"+"</ul>";
+
+                        equation.innerHTML +=katex.renderToString('\\text{Only Possible Seating arrangement: BEAFCDG}');
+                       </script>
+                      </div>
+                  </p>
+
+
+                  <p>
+                    <b>Example:</b><br>
+                        Seven friends A, B, C, D, E, F and G were sitting in a row from north to south on seven chairs. There were two people between A and B. C was immediately above F. G was immediately below A. E who was two places away from G was on the third chair from the south.<br><br>
+                         
+                    <b>Solution:</b><br>
+                    <div class="scrollable">
+                      <pre><code>
+<img src = "images/blog pics/seatingArrangement.png" style = "margin-top: 0; min-width: 500px; width: 50% ;height: auto;">
+                        </code> </pre>
+                      </div>
+                  </p>
+                
+
+                  <p>
+                    <b>Example:</b><br>
+                        Seven friends A, B, C, D, E, F and G are facing south.<br>
+                        <ol>
+                            <li>A who is three places left of E is immediately right of G.</li>
+                            <li>F is second from west and three places away from B.</li>
+                            <li>C is not next to B.</li>
+                        </ol>
+                    <b>Solution:</b><br>
+                    <div class="scrollable">
+                      <pre><code>
+<img src = "images/blog pics/img2.png" style = "margin-top: 0; min-width: 500px; width: 50% ;height: auto;">
+                        </code> </pre>
+                      </div>
+                  </p>
+
+                  <p>
+                    <b>Example:</b><br>
+                        Eight friends A, B, C, D, E, F, G and H who were allocated diferent rooms from 1 to 10 arranged in ascending order form north to south with each room facing west. There were two vacant rooms which can not be on either of the ends.
+                    
+                        <ol>
+                            <li>F was between C and G.</li>
+                            <li>B was two places away from H who was in the third room from the south.</li>
+                            <li>There were three rooms between G and E.</li>
+                            <li>D has nobody on his immediate adjacent sides.</li>
+                            <li>A  was in room 4 and has a vacant room to his immediate left.</li>
+                        </ol>
+                    <b>Solution:</b><br>
+                    <div class="scrollable">
+                      <pre><code>
+<img src = "images/blog pics/img6.png" style = "margin-top: 0; min-width: 300px; width: 60% ;height: auto;">
+                        </code> </pre>
+                      </div>
+                  </p>
+                  <hr>
+                  <h4>Circular Table</h4>
+                <p>
+                    If no particular details are given, we will assume:
+                    <ul>
+                        <li> Everyone at the table if facing towards the center of the table.</li>
+                        <li>Everyone is sitting equidistant from each other.</li>
+                        </ul>
+                </p>
+
+
+                <p>
+                    <b>Example:</b><br>
+                        Six persons A, B, C, D, E, and F are sitting on a circular table. A is opposite to B and is immediate right of E. F is to the left of C.<br>
+                    <b>Solution:</b><br>
+                    <div class="scrollable">
+                      <pre><code>
+<img src = "images/blog pics/img3.png" style = "margin-top: 0; min-width: 300px; width: 40% ;height: auto;">
+                        </code> </pre>
+                      </div>
+                  </p>
+                  
+                      <p>
+                        <b>Example:</b><br>
+                            Eight friends A, B, C, D, E, F, G and H are sitting on a table facing each other.
+                            <ul>
+                                <li>F sits between B and D.</li>
+                                <li>G who was facing A was immediate right of E.</li>
+                                <li>H was three places to the right of B.</li>
+                            </ul>
+                            <ol>
+                                <li>Solve it for circular table.</li>
+                                <li>Solve it for square table with two people on each side of the table.</li>
+                            </ol>
+                        <b>Solution:</b><br>
+                        <div class="scrollable">
+                          <pre><code>
+<img src = "images/blog pics/img4.png" style = "margin-top: 0; min-width: 500px; width: 50% ;height: auto;">
+                            </code> </pre>
+                          </div>
+                          <div class="scrollable">
+                            <pre><code>
+  <img src = "images/blog pics/img5.png" style = "margin-top: 0; min-width: 500px; width: 50% ;height: auto;">
+                              </code> </pre>
+                            </div>
+                      </p>
+
+
+
+                  <button class = "btn" onclick="Practice('seatingArrangement')">Practice Now!</button>
+
+
+
+
+
+
+              </div>
+              <div class = "article">
+                <iframe sandbox="allow-popups allow-scripts allow-modals allow-forms allow-same-origin" style="width:150px;height:300px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-in.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=IN&source=ss&ref=as_ss_li_til&ad_type=product_link&tracking_id=victorypoint-21&language=en_IN&marketplace=amazon&region=IN&placement=B09X74RB6D&asins=B09X74RB6D&linkId=fb0147bd823d8537671f4b94aa9674d0&show_border=true&link_opens_in_new_window=true"></iframe>  
+              </div>
+              </div>
+              
+        </div>
+        </div>
+        <hr>
+        <footer>
+          <a href="https://www.linkedin.com/in/techpranjal/" target="_blank" class="fa fa-linkedin"></a>
+          <a href="https://www.youtube.com/channel/UCI8SrpFD9XD0v9oFMIiL97w" target="_blank" class="fa fa-youtube"></a>
+          <a href="https://www.instagram.com/victorypoint_official/" target="_blank" class="fa fa-instagram"></a>
+          <a href="" class="fa fa-facebook"></a>
+          <p><br><b>Call us at: +91 8700070274</b></p>
+        </footer>
+      </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/prism.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

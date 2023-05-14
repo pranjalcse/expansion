@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />	
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Writing, compiling and executing a simple Java program</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism.min.css" />
+	<link rel="stylesheet" href="blog_style.css">
+    <style>
+		
+		
+		@media screen and (max-width: 768px) {
+			.scrollable {
+				overflow-x: scroll;
+			}
+			
+		}
+	</style>
+</head>
+<body>
+
+    <div class="slider"></div>
+    <header>
+      <img src="../img/shape.png" alt="" class="shape2"/>
+        <div class = "big-wrapper light">
+        <div class="container_header">
+          <div class="logo">
+            <img src="../img/logo3.png" alt="Logo" />
+          </div>
+      
+          <div class="links">
+            <ul>
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../courses/launchpad.html">Launchpad</a></li>
+              <li><a href="../courses/bootcamp.html">Bootcamp</a></li>
+              <li><a href="../courses/aptitude.html">Aptitude</a></li>
+              <li><a href="../blog.html">Blogs</a></li>
+              <li></li>
+            </ul>
+          </div>
+      
+          <div class="overlay"></div>
+      
+          <div class="hamburger-menu">
+            <div class="bar"></div>
+          </div>
+        </div>
+        </div>
+        <hr>
+      </header>
+      
+      <main>
+	<div class="container">
+        <div class="articles">
+            <div class = "article">
+              <h2>Writing, Compiling and Executing a Simple Java Program</h2>
+              <img src="images/3_large.png" alt="Article 1" />
+              <p>Welcome to the world of Java programming! In this blog, we'll be talking about writing, compiling, and executing simple Java programs, and how you can do it using both a terminal and an IDE (Integrated Development Environment). Whether you're a complete beginner or just need a refresher, this guide will give you a step-by-step overview of the process.</p>  
+              <h4>Writing a Java Program: The First Step</h4>
+              <p>Before you can start writing a Java program, you need to understand the basic syntax of the language. Java programs are written in plain text files with a.java extension. The main class of the program must have the same name as the file, with the extension .java removed.
+                For example, if you want to create a program called "Example", you would create a file called "Example.java". The basic structure of a Java program includes a class definition, a main method, and statements to be executed. Here's an example:
+                </p>
+                
+                <div class="scrollable">
+                    <pre><code class = "language-java">
+public class Example {
+
+    // Main driver method
+    public static void main(String[] args)
+    {
+
+        // Print statement
+        System.out.println("Welcome to VictoryPoint");
+    }
+}
+</code>
+Output: Welcome to VictoryPoint
+                    </pre>
+                </div>
+                <h4>Explanation:</h4>
+                <p>Let's explore this simple Java program together and understand its components.</p>
+                <ol>
+                  <li>
+                    <b>//</b> - This symbol in the code represents Comments in Java. The purpose of comments in a program or code is to explain the program. When you compile a program, the compiler ignores the comment lines and are not executed. There are two types of comments: single-line and multi-line. <br><br>Let's look at the syntax of single-line and multi-line comments.
+                  <br><br>// I am a single-line comment.                  
+                  <br>/* I am a multi-line comment. */<br><br>
+                  </li>
+                  <li> <b>public class</b> - The data and methods that need to be used in the program are included in the class. Methods define the behavior of the class.</li>
+                  <li> <b>static</b> - Static methods do not require objects to get called. They can be executed using the dot operator with the class name.</li>
+                  <li> <b>void</b>- Does not return any value. It's an empty void.</li>
+                  <li> <b>main()</b> - Name of the method. Entry point method where JVM runs the program.</li>
+                  <li> <b>(String[ ] args)</b> - These are used as command-line arguments and are passed as strings.</li>
+                  <li> <b>System.out.println</b> - This command prints the contents provided within the print statement</li>
+                </ol>
+                  <h4>Writing a Java Program in an IDE</h4>
+                  <p>To write a Java program in an IDE, you can create a new project and a new class. Most IDEs will create the basic structure of the class for you, including the class definition and the main method. You can then add your own statements to be executed.<p>
+                
+                  <h4>Compiling a Java Program: The Second Step</h4>
+                  <p>Once you've written your Java program, you need to compile it. The compiler takes the source code and converts it into bytecode, which can be executed on any platform that has a Java Virtual Machine (JVM) installed.</p>
+                
+                  <h4>Compiling a Java Program in a Terminal</h4>
+                <p>To compile a Java program using a terminal, open a command prompt or terminal, navigate to the directory where your program is saved, and type the following command:
+                
+                <br><br><b>javac Example.java</b><br><br>
+                
+                If your program contains no errors, the compiler will generate a .class file with the same name as your main class. This file contains the bytecode that can be executed on a JVM.</p>
+                
+                <h4>Compiling a Java Program in an IDE</h4>
+                <p>To compile a Java program in an IDE, you can use the built-in compiler. Simply select the option to build or compile your project, and the IDE will generate the .class files for you.</p>
+                
+                <h4>Executing a Java Program: The Final Step</h4>
+                
+                <p>After you've compiled your Java program, it's time to execute it.</p>
+                <ul>
+                <li><b>Executing a Java Program in a Terminal</b><br>
+                To execute a Java program using a terminal, open a command prompt or terminal, navigate to the directory where your .class file is saved, and type the following command:
+                <br><br><b>java Example</b><br><br>
+                
+                This will execute your program, and you should see the output "Welcome to VictoryPoint" displayed in the terminal.<br><br>
+              </li>
+              <li><b>Executing a Java Program in an IDE</b><br>
+                To execute a Java program in an IDE, you can use the built-in run option. Simply select the option to run your program, and the IDE will execute it for you.
+                </li>
+                </ul>
+                <h4>Conclusion:</h4>
+                <p>Start Your Java Programming Journey Today
+                Congratulations, you've successfully written, compiled, and executed your first Java program using both a terminal and an IDE! Writing simple Java programs is a great way to start your programming journey, and with practice, you'll be able to create more complex programs. Whether you prefer using a terminal or an IDE, remember to check your syntax, compile your code, and execute it to see the results.</p>
+            </div>
+            <div class = "article">
+              <iframe sandbox="allow-popups allow-scripts allow-modals allow-forms allow-same-origin" style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-in.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=IN&source=ss&ref=as_ss_li_til&ad_type=product_link&tracking_id=victorypoint-21&language=en_IN&marketplace=amazon&region=IN&placement=B09X74RB6D&asins=B09X74RB6D&linkId=fb0147bd823d8537671f4b94aa9674d0&show_border=true&link_opens_in_new_window=true"></iframe>  
+            </div>
+            
+        </div>
+    </div>
+	</main>
+  <hr>
+  <footer>
+    <a href="https://www.linkedin.com/in/techpranjal/" target="_blank" class="fa fa-linkedin"></a>
+    <a href="https://www.youtube.com/channel/UCI8SrpFD9XD0v9oFMIiL97w" target="_blank" class="fa fa-youtube"></a>
+    <a href="https://www.instagram.com/victorypoint_official/" target="_blank" class="fa fa-instagram"></a>
+    <a href="" class="fa fa-facebook"></a>
+    <p><br><b>Call us at: +91 8700070274</b></p>
+  </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-java.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

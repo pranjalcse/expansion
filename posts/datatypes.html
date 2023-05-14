@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />	
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Writing, compiling and executing a simple Java program</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism.min.css" />
+	<link rel="stylesheet" href="blog_style.css">
+    <style>
+		
+		
+		@media screen and (max-width: 768px) {
+			.scrollable {
+				overflow-x: scroll;
+			}
+			
+		}
+	</style>
+</head>
+<body>
+    <div class="slider"></div>
+    
+    
+    <header>
+      <img src="../img/shape.png" alt="" class="shape2" />
+
+        <div class = "big-wrapper light">
+        <div class="container_header">
+          <div class="logo">
+            <img src="../img/logo3.png" alt="Logo" />
+          </div>
+      
+          <div class="links">
+            <ul>
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../courses/launchpad.html">Launchpad</a></li>
+              <li><a href="../courses/bootcamp.html">Bootcamp</a></li>
+              <li><a href="../courses/aptitude.html">Aptitude</a></li>
+              <li><a href="../blog.html">Blogs</a></li>
+              <li></li>
+            </ul>
+          </div>
+      
+          <div class="overlay"></div>
+      
+          <div class="hamburger-menu">
+            <div class="bar"></div>
+          </div>
+        </div>
+        </div>
+        <hr>
+      </header>
+      
+      <main>
+        <div class="container">
+          <section>
+            
+            <div class="articles">
+              <div class="article">
+                <h2>Data Types in JAVA</h2>
+                <img src="images/5_large.png" alt="JAVA IDE" />
+                <p>
+                    <b>Data types</b> are an essential building block of any programming language. In Java, data types define the type of data that can be stored in a variable. 
+                </p>
+                <p>Data types also tell us information about:
+                <ul>    
+                    <li>The size of the memory location.</li>
+                    <li>The maximum and minimum value of range that can store in the memory location.</li>
+                    <li>Different types of operations can be done on the memory location.</li>
+                </ul>
+                </p>
+                <h4>Types of Programming Language</h4>
+                <p>
+                    There are two types of programming languages based on the data types.
+                    <ol>
+                        <li><b>Statically Typed Language</b><br>Statically typed languages are those languages in which the type of data values or expression that variable will hold is decided during the compilation time of the program is called statically typed language.<br><br>JAVA language is a statically typed language, which means the type of particular variable is defined during the compilation time.</li>
+                        <li><b>Dynamically Typed Languages</b><br>As the name suggests, dynamic means that we can change the variable type after setting the particular type value to the particular variable. For example, the Python language is a dynamically typed language. <br>
+                            <div class="scrollable">
+                                <pre><code class = "language-java">
+Python Code:
+
+a="VictoryPoint" #variable 'a' is initialized as a string 
+a=3 #variable 'a' is assigned integer value
+                                    
+            </code>
+                                </pre>
+                            </div>
+                            </li>
+                    </ol>
+                </p>
+                
+                <h4>Primitive Data Types in Java</h4>
+                <p>
+                    Java has eight primitive data types, which are:
+                </p>
+                <p>
+                    <ul>
+                        <li>byte</li>
+                        <li>short</li>
+                        <li>int</li>
+                        <li>long</li>
+                        <li>float</li>
+                        <li>double</li>
+                        <li>char</li>
+                        <li>boolean</li>
+                        </ul>
+                        Primitive data types are used to represent basic types of data, such as numbers, characters, and Boolean values. The size of each primitive data type varies, and each type has a default value that is used when a variable is declared but not initialized. Let's take a closer look at each of these data types and some examples of their use.
+                </p>
+                <p>
+                <b>byte:</b><br>A byte is an 8-bit signed integer. It can store values between -128 and 127. It’s default value is 0. Here's an example of declaring a byte variable: 
+                </p>
+                <div class="scrollable">
+                    <pre><code class = "language-java">
+byte myByte = 42;             
+</code>
+                    </pre>
+                </div>
+                <p>
+                    <b>short:</b><br>A short is a 16-bit signed integer. It can store values between -32,768 and 32,767. It’s default value is 0. Here's an example of declaring a short variable:
+</p>
+                    <div class="scrollable">
+                        <pre><code class = "language-java">
+short myShort = 32767;             
+    </code>
+                        </pre>
+                    </div>
+
+                    <p>
+                        <b>int:</b><br>An int is a 32-bit signed integer. It can store values between -2^31 and 2^31 - 1. It’s default value is 0. Here's an example of declaring an int variable:</p>
+                        <div class="scrollable">
+                            <pre><code class = "language-java">
+int myInt = 123456789;            
+        </code>
+                            </pre>
+                        </div>
+                        <p>
+                            <b>long:</b><br>A long is a 64-bit signed integer. It can store values between -2^63 and 2^63 - 1. It’s default value is 0L. Here's an example of declaring a long variable:</p>
+                            <div class="scrollable">
+                                <pre><code class = "language-java">
+long myLong = 1234567890123456789L;            
+            </code>
+                                </pre>
+                            </div>
+        
+                            <p>
+                                <b>float:</b><br>A float is a 32-bit floating-point number. It can store values with a range of approximately 3.4E-45 to 3.4E+38. It’s default value is 0.0f. Here's an example of declaring a float variable:</p>
+                                <div class="scrollable">
+                                    <pre><code class = "language-java">
+float myFloat = 3.14159F;            
+                </code>
+                                    </pre>
+                                </div>
+
+                            <p>
+                                <b>boolean:</b><br>A boolean is a data type that can store either true or false. It’s default value is false. Here's an example of declaring a boolean variable:</p>
+                                <div class="scrollable">
+                                    <pre><code class = "language-java">
+boolean myBoolean = true;          
+                </code>
+                                    </pre>
+                                </div>        
+
+                <h4>Non-Primitive Data Types</h4>
+                <p>In addition to primitive data types, Java also has non-primitive data types, which are used to store more complex data structures like arrays and objects.<br>Here are some examples of non-primitive data types:
+                    </p>
+
+                <p>
+                    <b>Arrays:</b><br>An array is a collection of elements of the same data type. Here's an example of declaring an array of integers:</p>
+                    <div class="scrollable">
+                        <pre><code class = "language-java">
+int[] myArray = {1, 2, 3, 4, 5};        
+    </code>
+                        </pre>
+                    </div> 
+                <p>
+                    <b>Strings:</b><br>A string is a sequence of characters. Here's an example of declaring a string variable:</p>
+                    <div class="scrollable">
+                        <pre><code class = "language-java">
+String myString = "Hello, World!";       
+    </code>
+                        </pre>
+                    </div> 
+  
+                <h4>Type Casting in Java</h4>
+                <p>Type casting is the process of converting one data type to another. In some cases, you may need to convert a variable from one type to another to perform a specific operation or to store it in a different data structure. In Java, there are two types of casting: widening and narrowing.</p>
+                <p><b>Widening Conversion</b><br>Widening conversion, also known as implicit casting, is when a variable of a smaller data type is assigned to a variable of a larger data type. Java automatically converts the value of the smaller data type to the larger data type. Widening conversion is safe because there is no loss of data.<br>Here's an example of widening conversion:</p>
+                
+                <div class="scrollable">
+                    <pre><code class = "language-java">
+int myInt = 42;
+double myDouble = myInt;                  
+</code>
+                    </pre>
+                </div> 
+
+                <p>In this example, we're assigning the integer value 42 to a double variable myDouble. Since double is a larger data type than int, Java automatically converts myInt to a double value. The resulting value of myDouble is 42.0.
+                </p>
+
+                <p><b>Narrowing Conversion</b><br>Narrowing conversion, also known as explicit casting, is when a variable of a larger data type is assigned to a variable of a smaller data type. Since the larger data type has more precision than the smaller data type, narrowing conversion can result in loss of data. To perform narrowing conversion, we need to explicitly cast the variable to the desired data type.<br>Here's an example of narrowing conversion:</p>
+                
+                <div class="scrollable">
+                    <pre><code class = "language-java">
+double myDouble = 42.42;
+int myInt = (int) myDouble;
+</code>
+                    </pre>
+                </div> 
+
+                <p>In this example, we're casting the double value 42.42 to an int variable myInt. Since int is a smaller data type than double, we need to explicitly cast myDouble to int using (int). The resulting value of myInt is 42, and we've lost the decimal part of the original value.</p>
+                <p><b>In conclusion</b>, data types are an important concept in programming, and understanding them is essential for writing efficient and effective code. Primitive data types and non-primitive data types both play a critical role in defining the types of values that a variable can hold, as well as the range of operations that can be performed on them. Type casting also plays an important role in converting values between different data types.
+                    By understanding the different data types available in Java and their limitations, you can ensure that your code is efficient, accurate, and easy to maintain.</p>
+              </div>
+              <div class = "article">
+              <iframe sandbox="allow-popups allow-scripts allow-modals allow-forms allow-same-origin" style="width:150px;height:300px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-in.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=IN&source=ss&ref=as_ss_li_til&ad_type=product_link&tracking_id=victorypoint-21&language=en_IN&marketplace=amazon&region=IN&placement=B09X74RB6D&asins=B09X74RB6D&linkId=fb0147bd823d8537671f4b94aa9674d0&show_border=true&link_opens_in_new_window=true"></iframe>  
+            </div>
+              </div>
+          
+              </section>
+        </div>
+        </div>
+        
+      </main>
+      <hr>
+      <footer>
+        
+        <a href="https://www.linkedin.com/in/techpranjal/" target="_blank" class="fa fa-linkedin"></a>
+        <a href="https://www.youtube.com/channel/UCI8SrpFD9XD0v9oFMIiL97w" target="_blank" class="fa fa-youtube"></a>
+        <a href="https://www.instagram.com/victorypoint_official/" target="_blank" class="fa fa-instagram"></a>
+        <a href="" class="fa fa-facebook"></a>
+        <p><br><b>Call us at: +91 8700070274</b></p>
+      </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-java.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

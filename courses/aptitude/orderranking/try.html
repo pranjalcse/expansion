@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Practice Questions</title>
+	<style>
+		.correct { color: green; }
+		.incorrect { color: red; }
+	</style>
+</head>
+<body>
+	<h1>Practice Questions</h1>
+	
+	<!-- Question 1 -->
+	<p><strong>1. What is the capital of France?</strong></p>
+	<label>
+		<input type="radio" name="q1" value="paris">
+		<span>Paris</span>
+	</label><br>
+	<label>
+		<input type="radio" name="q1" value="london">
+		<span>London</span>
+	</label><br>
+	<label>
+		<input type="radio" name="q1" value="berlin">
+		<span>Berlin</span>
+	</label><br>
+	<label>
+		<input type="radio" name="q1" value="tokyo">
+		<span>Tokyo</span>
+	</label><br>
+	<label id="q1-feedback"></label>
+	<hr>
+	
+	<!-- Question 2 -->
+	<p><strong>2. What is the largest planet in our solar system?</strong></p>
+	<label>
+		<input type="radio" name="q2" value="jupiter">
+		<span>Jupiter</span>
+	</label><br>
+	<label>
+		<input type="radio" name="q2" value="venus">
+		<span>Venus</span>
+	</label><br>
+	<label>
+		<input type="radio" name="q2" value="earth">
+		<span>Earth</span>
+	</label><br>
+	<label>
+		<input type="radio" name="q2" value="mars">
+		<span>Mars</span>
+	</label><br>
+	<label id="q2-feedback"></label>
+	<hr>
+	
+	<script>
+		var questions = document.querySelectorAll('input[type="radio"]');
+		for (var i = 0; i < questions.length; i++) {
+			questions[i].addEventListener('click', function() {
+				var question = this.name;
+				var answer = this.value;
+				if (question && answer) {
+					if (checkAnswer(question, answer)) {
+						this.parentElement.classList.add('correct');
+						this.parentElement.querySelector('label').classList.add('correct');
+						document.getElementById(question+'-feedback').innerHTML = "Correct!";
+						document.getElementById(question+'-feedback').classList.add('correct');
+						document.getElementById(question+'-feedback').classList.remove('incorrect');
+					} else {
+						this.parentElement.classList.add('incorrect');
+						this.parentElement.querySelector('label').classList.add('incorrect');
+						document.getElementById(question+'-feedback').innerHTML = "Incorrect!";
+						document.getElementById(question+'-feedback').classList.add('incorrect');
+						document.getElementById(question+'-feedback').classList.remove('correct');
+					}
+				}
+			});
+		}
+
+		function checkAnswer(question, answer) {
+			switch(question) {
+				case "q1":
+					return answer === "paris";
+				case "q2":
+					return answer === "venus";
+				default:
+					return false;
+			}
+		}
+	</script>
+	
+</body>
+</html>

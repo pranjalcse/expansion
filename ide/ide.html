@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>VP</title>
+    <style>
+
+#container {
+        display: flex;
+    }
+#Question {
+    width: 50%;
+    padding-right: 20px;
+    box-sizing: border-box;
+}
+#IDE {
+    width: 50%;
+    /* padding-left: 20px; */
+    box-sizing: border-box;
+}
+#execution-area{
+  margin-top: 3%;
+  /* display: flex; */
+}
+#input-area{
+  /* width: 70%; */
+    /* padding-right: 20px; */
+    box-sizing: border-box;
+}
+#input{
+  width: 100%;
+  /* height: 100px; */
+}
+#Execution-buttons{
+  position: fixed;
+        bottom: 0;
+        right: 0;
+  /* width: 30%; */
+    /* padding-right: 20px; */
+    box-sizing: border-box;
+
+}
+header {
+      background-color: #333;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-radius: 10px 10px 10px 10px;
+    }
+
+    header.scrolled {
+      top: 0px;
+    }
+    .navbar{
+      width:70%;
+      text-align: center;
+      margin-left: auto;
+      margin-right: auto;
+      font-size:small;
+    }
+
+    .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 100%;
+      /* width: 60%; */
+      margin: 0 auto;
+      padding: 0px 10px;
+    }
+
+    .logo {
+      color: #fff;
+      /* font-size: 5px; */
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+    }
+
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      white-space: nowrap;
+      margin: 0px 20px;
+    }
+
+    .dropdown {
+      position: relative;
+    }
+
+    .dropdown-menu {
+      display: none;
+      position: absolute;
+      background-color: #333;
+      list-style: none;
+      padding: 10px;
+      /* margin-top: 10px; */
+      border-radius: 5px;
+    }
+
+    .dropdown-menu li a {
+      display: block;
+      margin: 15px 5px;
+    }
+
+    .dropdown:hover .dropdown-menu {
+      display: block;
+    }
+
+    .user-profile img {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      border: 2px solid #fff;
+    }
+
+    /* Hamburger menu styles */
+    .hamburger {
+      display: none;
+      cursor: pointer;
+      font-size: 24px;
+      color: #fff;
+    }
+
+    /* Responsive styles */
+    @media screen and (max-width: 768px) {
+      nav ul {
+        display: none;
+      }
+      nav ul.show {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        background-color: #333;
+        border-radius: 0 0 5px 5px;
+        top: 100%;
+        left: 0;
+        right: 0;
+      }
+
+      .hamburger {
+        display: block;
+      }
+      .navbar{
+        width:100%;
+      }
+
+      .dropdown-menu {
+        position: static;
+        background-color: transparent;
+        padding: 0;
+        border-radius: 0;
+      }
+
+      .dropdown-menu li {
+        padding: 10px 0;
+        border-top: 1px solid #fff;
+        margin: 0px 0px;
+      }
+
+      .dropdown-menu li:first-child {
+        border-top: none;
+      }
+    }
+
+    #editor {
+        height: 275px;
+        font-size: 16px;
+        font-family: 'Courier New', Courier, monospace;
+    }
+    .question-box {
+background-color: #f0f0f0;
+border: 1px solid #d0d0d0;
+border-radius: 4px;
+padding: 20px;
+margin: 20px 0;
+}
+
+.question-box h2 {
+margin: 0 0 10px;
+}
+
+.overlay {
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .loader {
+        border: 5px solid #f3f3f3; /* Light grey */
+        border-top: 5px solid #3498db; /* Blue */
+        border-radius: 10%;
+        width: 120px;
+        height: 120px;
+        animation: spin 2s linear infinite;
+      }
+
+      @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+
+      /* for the custom test case box */
+      #text-box-container {
+  display: none;
+  width: 100%;
+  /* background-color: white; */
+  /* border: 1px solid black; */
+}
+
+#input {
+  width: 100%;
+  height: 30%;
+  resize: none;
+}
+
+/* for tab */
+.tab {
+			display: inline-block;
+			padding: 10px;
+			margin: 5px;
+			border: 1px solid #ccc;
+			border-radius: 5px 5px 0 0;
+			background-color: #f2f2f2;
+			cursor: pointer;
+		}
+
+		.tab.active {
+			background-color: white;
+			border-bottom: 1px solid white;
+		}
+
+		.content {
+			display: none;
+			padding: 10px;
+			border: 1px solid #ccc;
+			border-top: none;
+			border-radius: 0 5px 5px 5px;
+			background-color: white;
+		}
+
+		.content.active {
+			display: block;
+		}
+
+/* for submitoverlay */
+
+.submitoverlay {
+            background-color: rgba(0, 0, 0, 0.75);
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            display: none;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 80%;
+            margin: 0 auto;
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #4CAF50;
+            color: #fff;
+            font-weight: bold;
+            font-size: 18px;
+            text-transform: uppercase;
+        }
+
+        td {
+            font-size: 16px;
+            color: #333;
+            border-top: 1px solid #f2f2f2;
+            border-bottom: 1px solid #f2f2f2;
+        }
+
+        .passed {
+            background-color: #C8E6C9;
+        }
+
+        .failed {
+            background-color: #FFCDD2;
+        }
+
+    </style>
+</head>
+<body>
+
+  <!-- for submit overlay -->
+
+  <div class="submitoverlay" id="submitoverlay">
+    <table>
+        <thead>
+           
+        </thead>
+        <tbody id="test-results">
+            <!-- Test case results will be inserted here -->
+        </tbody>
+    </table>
+</div>
+
+  <header class="navbar">
+    <div class="container">
+      <div class="logo"><img src="./Assets/images/vp white logo.png" width="100"></div>
+      <nav>
+        <ul>
+          <li><a href="https://victorypoint.co.in/">Home</a></li>
+          <li class="dropdown">
+            <a href="#">Tracks</a>
+            <ul class="dropdown-menu">
+              <li><a href="https://victorypoint.co.in/courses/bootcamp.html">Bootcamp</a></li>
+              <li><a href="https://victorypoint.co.in/courses/launchpad.html">Launchpad</a></li>
+              <!-- Add more track items here -->
+            </ul>
+          </li>
+          <li><a href="https://victorypoint.co.in/blog.html">Blogs</a></li>
+          <li><a href="#">Company Specific Corner</a></li>
+        </ul>
+      </nav>
+      <div class="hamburger">&#9776;</div>
+      <div class="user-profile">
+        <img src="./Assets/images/user.jpeg" alt="User profile picture">
+      </div>
+    </div>
+  </header>
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const header = document.querySelector('header');
+      const hamburger = document.querySelector('.hamburger');
+      const nav = document.querySelector('nav');
+      const container = document.querySelector('.container');
+      const logo = document.querySelector('.logo');
+      function checkWindowSize() {
+if (container.clientWidth + logo.clientWidth >= header.clientWidth) {
+  header.classList.add('responsive');
+} else {
+  header.classList.remove('responsive');
+}
+}
+
+window.onresize = checkWindowSize;
+checkWindowSize();
+
+window.onscroll = function () {
+if (window.pageYOffset > 50) {
+  header.classList.add('scrolled');
+} else {
+  header.classList.remove('scrolled');
+}
+};
+
+hamburger.addEventListener('click', function () {
+nav.querySelector('ul').classList.toggle('show');
+});
+});
+</script>
+
+
+    <h3 id="Question-name"></h3>
+    <div id="container">
+        <div class="overlay" id="overlay">
+      <div class="loader"></div>
+    </div>
+    
+
+      <div id = "Question">
+        <div class="question-box">
+          <h4>Problem</h4>
+          <p id = "questiontext"></p>
+          <h4>Constraints</h4>
+          <p id = "constraints"></p>
+          <h4>Input Format</h4>
+          <p id = "inputFormat"></p>
+          <h4>Output Format</h4>
+          <p id = "outputFormat"></p>
+          <h4>Sample Input</h4>
+          <p id = "sampleinput"></p>
+          <h4>Sample Output</h4>
+          <p id = "sampleoutput"></p>
+          <h4>Explanation</h4>
+          <p id = "explanation"></p> 
+        </div>
+      </div>
+      <div id = "IDE">
+        <select id="language-select">
+        <option value="java">Java</option>
+        <option value="cpp">C++</option>
+        <option value="python">Python</option>
+        </select>
+        <button id="download-btn">Download Code</button>
+        <div id="editor"></div>
+        <div id = "execution-area">
+          
+            <button id="text-box-button">Custom Input</button>
+            <div id="text-box-container">
+            <textarea id="input"></textarea>
+            </div>
+            <div id="tabbed-list">
+              <div class="tabs"></div>
+              <div class="contents"></div>
+            </div>
+          <div id="Execution-buttons">
+            <button id="run-button">Run</button>
+            <button id="test-button">Test</button>
+            <button id="submitbutton">Submit</button>
+          </div>
+        
+      </div>
+      
+      <!-- <pre id="output"></pre> -->
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/ace.js"></script>
+    <script>
+      
+      //Download button
+      document.getElementById('download-btn').addEventListener('click', downloadCode);
+      function downloadCode(){
+        const input = document.getElementById('input').value;
+        const blob = new Blob([input], {type: 'text/plain;charset=utf-8'});
+        const a = document.createElement('a');
+        a.href = URL.createObjectURL(blob);
+        a.download = 'code.txt';
+        a.style.display = 'none';
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+      }
+
+
+      // fetching the correct json file
+
+      const topic = getQueryParam("topic");
+      const questionName = getQueryParam("question");
+      function getQueryParam(paramName) {
+        const urlSearchParams = new URLSearchParams(window.location.search);
+        return urlSearchParams.get(paramName);
+      }
+
+      let inp= [];
+      let yourOutput = [];
+      let expectedOutput = [];
+      function create_tabs(myString){
+  overlay.style.display = 'none';
+  let tabs = document.querySelector('#tabbed-list .tabs');
+  let contents = document.querySelector('#tabbed-list .contents');
+  while (tabs.firstChild) {
+    tabs.removeChild(tabs.firstChild);
+  }
+  while (contents.firstChild) {
+    contents.removeChild(contents.firstChild);
+  }
+
+  if(myString === "submit"){
+    
+    const testResults = expectedOutput.map((expected, index) => {
+    const status = expected === yourOutput[index] ? "✔" : "✖";
+    const statusClass = expected === yourOutput[index] ? "passed" : "failed";
+    return { name: `Test Case ${index + 1}`, status, statusClass };
+});
+
+const resultsTableBody = document.getElementById("test-results");
+resultsTableBody.innerHTML = "";
+
+for (let i = 0; i < testResults.length; i += 3) {
+    const row = document.createElement("tr");
+
+    for (let j = i; j < i + 3 && j < testResults.length; j++) {
+        const testCase = testResults[j];
+        
+        const nameCell = document.createElement("td");
+        nameCell.innerHTML = `<span class="${testCase.statusClass}">${testCase.status}</span> ${testCase.name}`;
+        row.appendChild(nameCell);
+    }
+
+    resultsTableBody.appendChild(row);
+}
+
+
+        // Close overlay when user clicks anywhere on the screen
+       
+		const submitoverlay = document.getElementById("submitoverlay");
+    submitoverlay.addEventListener("click", () => {
+        submitoverlay.style.display = "none";
+    });
+    document.getElementById("submitoverlay").style.display = "flex";
+  }    
+  else if(myString==="test"){
+          fetch('./Questions/'+topic+'/'+questionName+'.json')
+    .then(response => {
+        if (!response.ok) {
+            throw new Error("HTTP error " + response.status);
+        }
+        return response.json();
+    })
+    .then(json => {
+        let testCasesDisplay = json.testCasesDisplay;
+
+        for (let i = 0; i < testCasesDisplay.length; i++) {
+            // Push the 'input' value into the array
+            inp.push(testCasesDisplay[i].input);
+        }
+        create_tabs("run");
+      })
+    }
+  else{
+      
+    for (let i = 0; i < inp.length; i++) {
+      let tab = document.createElement('div');
+      tab.classList.add('tab');
+      if (i === 0) {
+        tab.classList.add('active');
+      }
+      if(expectedOutput.length!=0){
+          if(expectedOutput[i] === yourOutput[i]){
+            tab.innerText = 'TestCase '+(i+1)+" ✔";
+          }
+          else{
+              tab.innerText = 'TestCase '+(i+1)+" ✖";
+          }
+      }
+      else{
+          tab.innerText = "Custom Test Case";
+      }
+      tab.addEventListener('click', function() {
+        // Remove active class from all tabs and contents
+        let activeTab = tabs.querySelector('.tab.active');
+        activeTab.classList.remove('active');
+        let activeContent = contents.querySelector('.content.active');
+        activeContent.classList.remove('active');
+
+        // Add active class to clicked tab and its corresponding content
+        tab.classList.add('active');
+        let content = contents.children[i];
+        content.classList.add('active');
+      });
+      tabs.appendChild(tab);
+    }
+
+    // Add contents
+    for (let i = 0; i < inp.length; i++) {
+      let content = document.createElement('div');
+      content.classList.add('content');
+      if (i === 0) {
+        content.classList.add('active');
+      }
+      let contentinp = document.createElement('p');
+      contentinp.innerHTML = 'Input: ' + inp[i];
+      let contentyout = document.createElement('p');
+      contentyout.innerHTML = 'Your Output: ' + yourOutput[i];
+      let contenteout;
+      if(expectedOutput.length!=0){
+        contenteout = document.createElement('p');
+        contenteout.innerHTML = 'Expected Output: ' + expectedOutput[i];
+      }
+      content.appendChild(contentinp);
+      content.appendChild(contentyout);
+      if(expectedOutput.length!=0){
+        content.appendChild(contenteout);
+      }
+      contents.appendChild(content);
+    }
+  }
+}
+
+        const overlay = document.getElementById('overlay');
+        overlay.style.display = 'none';
+    fetch('./Questions/'+topic+'/'+questionName+'.json')
+            .then(response => response.json())
+            .then(data => {
+                console.log('JSON data:', data);
+                document.getElementById('Question-name').innerHTML = data.name;
+                document.getElementById('questiontext').innerHTML = data.questionText;
+                document.getElementById('constraints').innerHTML = data.constraints;
+                document.getElementById('inputFormat').innerHTML = data.inputFormat;
+                document.getElementById('outputFormat').innerHTML = data.outputFormat;
+                document.getElementById('sampleinput').innerHTML = data.sampleinput;
+                document.getElementById('sampleoutput').innerHTML = data.sampleoutput;
+                document.getElementById('explanation').innerHTML = data.explanation;
+            })
+            .catch(error => console.error('Error fetching JSON file:', error));
+  
+    // create editor
+    const editor = ace.edit('editor');
+    editor.setTheme('ace/theme/monokai');
+    editor.session.setMode('ace/mode/java');
+
+    // create output area
+    const output = document.getElementById('output');
+    
+    // create run button event listener
+    const runButton = document.getElementById('run-button');
+    runButton.disabled = true;
+    runButton.style.opacity = '0.5';
+    runButton.addEventListener('click', () => {
+        inp.length=0;
+        yourOutput.length=0;
+        expectedOutput.length=0;
+        overlay.style.display = 'flex';
+        // get code from editor
+        const code = editor.getValue();
+        // get selected language from dropdown
+        const language = document.getElementById('language-select').value;
+        // get input from textarea
+        const input = document.getElementById('input').value;
+        // create payload for API request
+        const payload = {
+        language: language,
+        source: code,
+        stdin: input
+        };
+        // send API request
+        fetch('https://emkc.org/api/v1/piston/execute', {
+        method: 'POST',
+        body: JSON.stringify(payload)
+        })
+        .then(response => response.json())
+        .then(data => {
+            // display output in output area
+            // output.textContent = `Input:\n${input}\nOutput:\n${data.output}`;
+            inp.push(input);
+            yourOutput.push(data.output);
+            create_tabs("run");
+        })
+        .catch(error => console.error(error));
+
+    });
+
+    let question;
+    const questionBox = document.querySelector('.question-box');
+    fetch('./Questions/'+topic+'/'+questionName+'.json')
+  .then(response => response.json())
+  .then(data => {
+    // question = data.question;
+    // questionBox.querySelector('p').textContent = question;
+    const testCases = data.testCases;
+
+    const testButton = document.getElementById('test-button');
+    testButton.addEventListener('click', () => {
+      inp.length=0;
+      yourOutput.length=0;
+      expectedOutput.length=0;
+  // output.textContent = ``;
+  const delay = 2000;
+  testCases.forEach((testCase, index) => {
+    overlay.style.display = 'flex';
+    setTimeout(() => {
+      // get code from editor
+      const code = editor.getValue();
+      // get selected language from dropdown
+      const language = document.getElementById('language-select').value;
+      // create payload for API request
+      const payload = {
+        language: language,
+        source: code,
+        stdin: testCase.input
+      };
+
+      // send API request
+      fetch('https://emkc.org/api/v1/piston/execute', {
+        method: 'POST',
+        body: JSON.stringify(payload)
+      })
+      .then(response => response.json())
+      .then(data => {
+        console.log(`Test ${index + 1} button clicked`); 
+        // inp.push(testCase.input);
+        yourOutput.push(data.output.trim());
+        expectedOutput.push(testCases[index].output);
+        // display output in output area
+        // if (data.output.trim() === testCases[index].output) {
+        //   output.textContent = output.textContent+ `Test ${index + 1}: Input-> ${testCase.input} Expected Output->${testCases[index].output} : Correct\n`;
+        // } else {
+        //   output.textContent = output.textContent+ `Test ${index + 1}: Input-> ${testCase.input} Expected Output->${testCases[index].output} : Incorrect\n`;
+        // }
+        if(index == testCases.length-1){
+          create_tabs("test");
+        }
+        // output.textContent = `Input:\n${testCase}\nOutput:\n${data.output}`;
+      })
+      .catch(error => console.error(error))
+      .finally(() => {
+
+      });
+
+    }, index * delay);
+  });
+});
+
+
+//submit button
+const SubmitCases = data.submitCases;
+submitbutton.addEventListener('click', () => {
+    inp.length=0;
+    yourOutput.length=0;
+    expectedOutput.length=0;
+    overlay.style.display = 'flex';
+  var score = 0;
+  // output.textContent = ``;
+  const delay = 1000;
+  const promises = [];
+  SubmitCases.forEach((submitCase, index) => {
+    const promise = new Promise((resolve, reject) => {
+      setTimeout(() => {
+        // get code from editor
+        const code = editor.getValue();
+        // get selected language from dropdown
+        const language = document.getElementById('language-select').value;
+        // create payload for API request
+        const payload = {
+          language: language,
+          source: code,
+          stdin: submitCase.input
+        };
+        // send API request
+        fetch('https://emkc.org/api/v1/piston/execute', {
+          method: 'POST',
+          body: JSON.stringify(payload)
+        })
+        .then(response => response.json())
+        .then(data => {
+          console.log(`Test ${index + 1} button clicked`);
+          inp.push(submitCase.input);
+          yourOutput.push(data.output.trim());
+          expectedOutput.push(submitCase.output);
+          // display output in output area
+          // if (data.output.trim() === submitCase.output) {
+          //   output.textContent = output.textContent + `Test ${index + 1}: Correct\n`;
+          //   score++;
+          // } else {
+          //   output.textContent = output.textContent + `Test ${index + 1}: Incorrect\n`;
+          // }
+          resolve();
+           
+        })
+        .catch(error => {
+          console.error(error);
+          reject();
+        });
+      }, index * delay);
+    });
+    promises.push(promise);
+  });
+
+  Promise.all(promises).then(() => {
+    create_tabs("submit");
+    // check the score and update the output
+    // if (score == SubmitCases.length) {
+    //   output.textContent = output.textContent + `PASS`;
+    // } else {
+    //   output.textContent = output.textContent + `FAIL`;
+    // }
+
+  });
+
+
+  });
+
+});      
+// const testCases = ['123', '456', '789', '321', '654']; // Add your test cases here
+// const expectedOutputs = ['6', '15', '24', '6', '15']; // Add the expected outputs here
+ // 2 seconds
+
+//for the custom input box
+
+const textBoxButton = document.getElementById('text-box-button');
+const textBoxContainer = document.getElementById('text-box-container');
+
+textBoxButton.addEventListener('click', () => {
+  if (textBoxContainer.style.display === 'block') {
+    // close the text box
+    textBoxContainer.style.display = 'none';
+    runButton.disabled = true;
+    runButton.style.opacity = '0.5';
+    // textBoxButton.textContent = 'Open Text Box';
+  } else {
+    // open the text box
+    textBoxContainer.style.display = 'block';
+    runButton.disabled = false;
+    runButton.style.opacity = '1.0';
+    // textBoxButton.textContent = 'Close Text Box';
+  }
+});
+
+
+    // set language mode based on dropdown selection
+    document.getElementById('language-select').addEventListener('change', () => {
+        const language = document.getElementById('language-select').value;
+        if (language === 'java') {
+        editor.session.setMode('ace/mode/java');
+        } else if (language === 'cpp') {
+        editor.session.setMode('ace/mode/c_cpp');
+        } else if (language === 'python') {
+        editor.session.setMode('ace/mode/python');
+        }
+    });
+    
+
+    
+    </script>
+</body>
+</html>

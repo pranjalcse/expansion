@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>MCQ Quiz</title>
+</head>
+<body>
+  <h1>MCQ Quiz</h1>
+  <form>
+    <p>question 1</p>
+    <label>
+      <input type="radio" name="q1" value="a">
+      A
+    </label><br>
+    <label>
+      <input type="radio" name="q1" value="b">
+      B
+    </label><br>
+    <label>
+      <input type="radio" name="q1" value="c">
+      C
+    </label><br>
+    <label>
+    <input type="radio" name="q1" value="c">
+    D
+    </label><br>
+
+
+    <button type="button" onclick="submitQuiz()">Submit</button>
+  </form>
+
+  <script>
+ function submitQuiz() {
+      const formId = '1FAIpQLSftlAn6XH09xw2pQgRSiLuOqB7xfC2r2Nb7HmIlh1lz7oL9CQ';
+      const formUrl = `https://docs.google.com/forms/d/e/${formId}/formResponse`;
+      const formData = new FormData();
+
+      // Get user's answers
+      const q1Answer = document.querySelector('input[name="q1"]:checked').value;
+        console.log(q1Answer);
+      // Replace with your form field IDs and values
+      formData.append('entry.1875736122_sentinel', q1Answer);
+
+      fetch(formUrl, {
+        method: 'POST',
+        mode: 'no-cors',
+        body: formData
+      })
+      .then(response => console.log('Form submitted successfully!'))
+      .catch(error => console.error('Error submitting form:', error));
+    }
+  </script>
+</body>
+</html>
