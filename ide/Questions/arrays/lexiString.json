@@ -1,0 +1,64 @@
+{
+    "tag":"codevita",
+    "name": "Lexi String",
+    "question": "Little Jill jumbled up the order of letters in our dictionary. Now Jack uses his list to find the smallest lexicographical string that can be made out of this new order. Can you help him?",
+    "inputFormat": "<ul><li>First line contains number of test cases T</li></ul>For each test case:<ul><li>You are given a string P that denotes the new order of letters in the English dictionary</li><li>A string S</li>",
+    "outputFormat": "For each test case print the smallest lexicographic string made from the given string separated by space",
+    "sampleinput": "2<br>polikujmnhytgbvfredcxswqaz<br>abcd<br>qwryupcsfoghjkldezvxbintma<br>ativedoc",
+    "sampleoutput": "bdca codevita",
+    "explanation": "bdca is the lexicographically smallest possible string according to the new order of characters.",
+    "testCases": [
+      {
+        "input": "2 abcdefghijklmnopqrstuvwxyz azby lzmihcybjgvatfqpkxsunewdro hello",
+        "output": "azby llheo"
+      },
+      {
+        "input": "3 znprtbcmweyxslkaiujhfdvqgo yellow fponxzcmlsrtdhujaiywbkvegq dfdsgsg kwdltvmpqfznuohgrjeyxiasbc ndstj",
+        "output": "weyllo fssddgg dtnjs"
+      },
+      {
+        "input": "1 gnavoyqkbhcfjrmdszwtixlep ant",
+        "output": "nat"
+      }
+    ],
+    "testCasesDisplay": [
+      {
+        "input": "<br>2<br>abcdefghijklmnopqrstuvwxyz azby<br>lzmihcybjgvatfqpkxsunewdro hello",
+        "output": "azby llheo"
+      },
+      {
+        "input": "<br>3<br>znprtbcmweyxslkaiujhfdvqgo yellow<br>fponxzcmlsrtdhujaiywbkvegq dfdsgsg<br>kwdltvmpqfznuohgrjeyxiasbc ndstj",
+        "output": "weyllo fssddgg dtnjs"
+      },
+      {
+        "input": "<br>1<br>gnavoyqkbhcfjrmdszwtixlep ant",
+        "output": "nat"
+      }
+    ],
+    "submitCases": [
+      {
+        "input": "2 abcdefghijklmnopqrstuvwxyz azby lzmihcybjgvatfqpkxsunewdro hello",
+        "output": "azby llheo"
+      },
+      {
+        "input": "3 znprtbcmweyxslkaiujhfdvqgo yellow fponxzcmlsrtdhujaiywbkvegq dfdsgsg kwdltvmpqfznuohgrjeyxiasbc ndstj",
+        "output": "weyllo fssddgg dtnjs"
+      },
+      {
+        "input": "1 gnavoyqkbhcfjrmdszwtixlep ant",
+        "output": "nat"
+      },
+      {
+        "input": "3 srjqneuovhytfzlpkxigdcbamw p drfmqizlejyhavokuxgsnbtwcp dream vpaumixeydnfczwqbrhjlgtsko night",
+        "output": "p drmea inhgt"
+      },
+      {
+        "input": "2 ohqtbzdlnuiapjyrmxkvcgfwse day wgtqmnfouasxvdhcipryzbkjle fly",
+        "output": "day fyl"
+      },
+      {
+        "input":"1 gnavoyqkbhcfjrmdszwtixlep parrot",
+        "output":"aorrtp"
+      }
+    ]
+  }
