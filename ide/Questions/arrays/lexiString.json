@@ -1,7 +1,8 @@
 {
     "tag":"codevita",
     "name": "Lexi String",
-    "question": "Little Jill jumbled up the order of letters in our dictionary. Now Jack uses his list to find the smallest lexicographical string that can be made out of this new order. Can you help him?",
+    "questionText": "Little Jill jumbled up the order of letters in our dictionary. Now Jack uses his list to find the smallest lexicographical string that can be made out of this new order. Can you help him?",
+    "constraints":"<ul><li>1 <= S.length() <= 100</li></ul>",
     "inputFormat": "<ul><li>First line contains number of test cases T</li></ul>For each test case:<ul><li>You are given a string P that denotes the new order of letters in the English dictionary</li><li>A string S</li>",
     "outputFormat": "For each test case print the smallest lexicographic string made from the given string separated by space",
     "sampleinput": "2<br>polikujmnhytgbvfredcxswqaz<br>abcd<br>qwryupcsfoghjkldezvxbintma<br>ativedoc",
