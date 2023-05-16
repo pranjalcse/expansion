@@ -1,0 +1,65 @@
+{
+    "name": "Find First and Last Position of Element in Sorted Array",
+    "questionText": "Given an array of integers <i>nums</i> sorted in non-decreasing order, find the starting and ending position of a given target value.<br><br>If target is not found in the array, print -1 -1.<br><br>You must write an algorithm with <i>O(log n)</i> runtime complexity.",
+    "constraints":"<ul><li>0 <= nums.length <= 10<sup>5</sup></li><li>-10<sup>9</sup> <= nums[i] <= 10<sup>9</sup></li></ul>",
+    "inputFormat": "<ul><li>A single integer N (size of the array)</li><li>N space separated integers(elements of the array)</li><li>A single integer(target)</li></ul>",
+    "outputFormat": "Two space separated integers",
+    "sampleinput": "6<br>5 7 7 8 8 10<br>8",
+    "sampleoutput": "3 4",
+    "explanation": "First occurence of 8 is on index 3 while last occurence is on index 4",
+    "testCases": [
+      {
+        "input": "6 5 7 7 8 8 10 6",
+        "output": "-1 -1"
+      },
+      {
+        "input": "0 8",
+        "output": "-1 -1"
+      },
+      {
+        "input": "5 5 5 5 5 5 5",
+        "output": "0 4"
+      }
+    ],
+    "testCasesDisplay": [
+      {
+        "input": "<br>6<br>5 7 7 8 8 10<br>6",
+        "output": "-1 -1"
+      },
+      {
+        "input": "<br>0<br>8",
+        "output": "-1 -1"
+      },
+      {
+        "input": "<br>5<br>5 5 5 5 5<br>5",
+        "output": "0 4"
+      }
+    ],
+    "submitCases": [
+      
+      {
+        "input": "3 54 54 54 54",
+        "output": "0 2"
+      },
+      {
+        "input": "12 12 11 11 10 10 9 8 7 6 5 4 3 10",
+        "output": "3 4"
+      },
+      {
+        "input": "1 1 1",
+        "output": "0 0"
+      },
+      {
+        "input": "6 670 670 672 673 673 674 670",
+        "output": "0 1"
+      },
+      {
+        "input": "8 1 2 3 4 5 6 7 8 4",
+        "output": "3 3"
+      },
+      {
+        "input": "4 2 2 4 4 3",
+        "output": "-1 -1"
+      }
+    ]
+  }
