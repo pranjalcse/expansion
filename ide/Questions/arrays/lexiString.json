@@ -7,7 +7,7 @@
     "outputFormat": "For each test case print the smallest lexicographic string made from the given string separated by space",
     "sampleinput": "2<br>polikujmnhytgbvfredcxswqaz<br>abcd<br>qwryupcsfoghjkldezvxbintma<br>ativedoc",
     "sampleoutput": "bdca codevita",
-    "explanation": "bdca and codevita is the lexicographically smallest possible string according to the new order of characters.",
+    "explanation": "bdca and codevita are the lexicographically smallest possible strings according to the new order of characters.",
     "testCases": [
       {
         "input": "2 abcdefghijklmnopqrstuvwxyz azby lzmihcybjgvatfqpkxsunewdro hello",
