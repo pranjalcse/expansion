@@ -476,12 +476,10 @@ nav.querySelector('ul').classList.toggle('show');
   }
 
   if(myString === "submit"){
-    console.log(yourOutput.length);
+    
     const testResults = expectedOutput.map((expected, index) => {
     const status = expected === yourOutput[index] ? "✔" : "✖";
     const statusClass = expected === yourOutput[index] ? "passed" : "failed";
-    console.log(expected);
-    console.log(yourOutput[index]);
     return { name: `Test Case ${index + 1}`, status, statusClass };
 });
 
@@ -657,6 +655,8 @@ for (let i = 0; i < testResults.length; i += 3) {
     fetch('./Questions/'+topic+'/'+questionName+'.json')
   .then(response => response.json())
   .then(data => {
+
+
     // question = data.question;
     // questionBox.querySelector('p').textContent = question;
     const testCases = data.testCases;
@@ -713,64 +713,46 @@ for (let i = 0; i < testResults.length; i += 3) {
   });
 });
 
-
+let batchNumber=0;
+let submitCaseNumber=0;
 //submit button
 const SubmitCases = data.submitCases;
-const processCases = () => {
-  inp.length=0;
-  yourOutput.length=0;
-  expectedOutput.length=0;
-  overlay.style.display = 'flex';
+submitbutton.addEventListener('click', () => {
+    inp.length=0;
+    yourOutput.length=0;
+    expectedOutput.length=0;
+    overlay.style.display = 'flex';
   var score = 0;
-  const delay = 1000;
+  // output.textContent = ``;
+  const delay = 2000;
   const promises = [];
-  const maxRetries = 3;  // Maximum retries if an error occurs
-
-  const sendRequest = (payload, retries = 0) => {
-    return fetch('https://emkc.org/api/v1/piston/execute', {
-      method: 'POST',
-      body: JSON.stringify(payload)
-    })
-    .then(response => {
-      if (!response.ok) {
-        throw new Error('Network response was not ok');
-      }
-      return response.json();
-    })
-    .catch(error => {
-      console.error(error);
-      if (retries < maxRetries) {
-        // Wait for 1 second and retry the request
-        return new Promise(resolve => setTimeout(resolve, delay))
-          .then(() => sendRequest(payload, retries + 1));
-      } else {
-        throw error;
-      }
-    });
-  };
-
   SubmitCases.forEach((submitCase, index) => {
+
     const promise = new Promise((resolve, reject) => {
       setTimeout(() => {
+        // get code from editor
         const code = editor.getValue();
+        // get selected language from dropdown
         const language = document.getElementById('language-select').value;
+        // create payload for API request
         const payload = {
           language: language,
           source: code,
           stdin: submitCase.input
         };
-
-        sendRequest(payload)
+        // send API request
+        fetch('https://emkc.org/api/v1/piston/execute', {
+          method: 'POST',
+          body: JSON.stringify(payload)
+        })
+        .then(response => response.json())
         .then(data => {
           console.log(`Test ${index + 1} button clicked`);
-          if (data && data.output) {
-            inp.push(submitCase.input);
-            yourOutput.push(data.output.trim());
-            expectedOutput.push(submitCase.output);
-            resolve();
-          } else {
-            reject(new Error('Data or data.output is undefined'));
-          }
+          inp.push(submitCase.input);
+          yourOutput.push(data.output.trim());
+          expectedOutput.push(submitCase.output);
+          resolve();
+           
         })
         .catch(error => {
           console.error(error);
@@ -781,21 +763,10 @@ const processCases = () => {
     promises.push(promise);
   });
 
-  Promise.all(promises)
-    .then(() => {
-      create_tabs("submit");
-    })
-    .catch((err) => {
-      console.error(err);
-      // re-run the whole process in case of error
-      processCases();
-    });
-};
-
-submitbutton.addEventListener('click', processCases);
-
-
-
+  Promise.all(promises).then(() => {
+    create_tabs("submit");
+  });
+  });
 
 });      
 // const testCases = ['123', '456', '789', '321', '654']; // Add your test cases here
