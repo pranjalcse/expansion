@@ -1,0 +1,65 @@
+{
+    "tag":"CodeVita",
+    "name": "Philaland",
+    "questionText": " The problem solvers have found a new Island for coding and named it as Philaland. These smart people were given a task to make the purchase of items at the Island easier by distributing various coins with different values.<br>Manish has come up with a solution that if we make coins category starting from $1 till the maximum price of the item present on Island, then we can purchase any item easily. He added following example to prove his point. Let's suppose the maximum price of an item is 5$ then we can make coins of {$1, $2, $3, $4, $5) to purchase any item ranging from $1 to $5. Now Manisha, being a keen observer suggested that we could actually minimize the number of coins required and gave following distribution ($1, $2, $3). According to him, any item can be purchased one time ranging from $1 to $5. Everyone was impressed with both of them. Your task is to help Manisha come up with the minimum number of denominations for any arbitrary max price in Philaland.",
+    "constraints":"<ul><li>1 <= Cost of item <= 50000</li></ul>",
+    "inputFormat": "First line contains an integer T denoting the number of test cases. Next T lines contains an integer N denoting the maximum price of the item present on Philaland",
+    "outputFormat": "For each test case print a single integer denoting the minimum number of denominations of coins required. Separate the answer for each test case with a space",
+    "sampleinput": "1<br>10",
+    "sampleoutput": "4",
+    "explanation": "The minimum number of denominations required is 4: $1, $2, $3, $4",
+    "testCases": [
+      {
+        "input": "2 15 20",
+        "output": "4 5"
+      },
+      {
+        "input": "3 10 5 100",
+        "output": "4 3 7"
+      },
+      {
+        "input": "2 7 25",
+        "output": "3 5"
+      }
+    ],
+    "testCasesDisplay": [
+      {
+        "input": "<br>2<br>15 20",
+        "output": "4 5"
+      },
+      {
+        "input": "<br>3<br>10 5 100",
+        "output": "4 3 7"
+      },
+      {
+        "input": "<br>3<br>2 7 25",
+        "output": "3 5"
+      }
+    ],
+    "submitCases": [
+      {
+        "input": "2 15 20",
+        "output": "4 5"
+      },
+      {
+        "input": "3 10 5 100",
+        "output": "4 3 7"
+      },
+      {
+        "input": "2 7 25",
+        "output": "3 5"
+      },
+      {
+        "input": "3 75 100 500",
+        "output": "7 7 9"
+      },
+      {
+        "input": "2 9 12",
+        "output": "3 3"
+      },
+      {
+        "input": "4 18 27 21 33",
+        "output": "4 5 4 6"
+      }
+    ]
+  }
