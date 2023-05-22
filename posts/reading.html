@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.js"></script>
+    <meta charset="UTF-8" />	
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Reading from console</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <link rel="stylesheet" href="blog_style.css">
+    <style>
+		@media screen and (max-width: 768px) {
+			.scrollable {
+				overflow-x: scroll;
+			}
+			
+		}
+	</style>
+</head>
+<body>
+  
+    <div class="slider"></div>
+    <header>
+        <div class = "big-wrapper light">
+        <div class="container_header">
+          <div class="logo">
+            <img src="../img/logo3.png" alt="Logo" />
+          </div>
+      
+          <div class="links">
+            <ul>
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../courses/launchpad.html">Launchpad</a></li>
+              <li><a href="../courses/bootcamp.html">Bootcamp</a></li>
+              <li><a href="../courses/aptitude.html">Aptitude</a></li>
+              <li><a href="../blog.html">Blogs</a></li>
+              <li></li>
+            </ul>
+          </div>
+      
+          <div class="overlay"></div>
+      
+          <div class="hamburger-menu">
+            <div class="bar"></div>
+          </div>
+        </div>
+        </div>
+        <hr>
+      </header>
+      <img src="../img/shape.png" alt="" class="shape2" />
+      <main>
+        <div class="container">
+            
+            <div class="articles">
+              <div class="article">
+                <h2>Reading from Console</h2>
+                <img src="images/7_large.png" alt="Article 1" />
+                <p>
+                  When we write programs in Java, we often need to read input values from the user through the console. This is known as reading from the console or <b>standard input</b>. In this blog, we will learn how to read input from the console in Java and some interesting ways to implement it.
+                </p>
+                
+                <h4>Reading from Console in Java</h4>
+                <p>Java offers developers a powerful built-in class called Scanner, which simplifies the task of reading input from the console. As a member of the java.util package, the Scanner class enables input retrieval from diverse sources, including the console. However, it is essential to import the java.util package before utilizing the Scanner class.</p>
+                <div class="scrollable">
+                    <pre><code>
+<span id="equation1"></span>
+                      </code> </pre>
+                      <script>
+                      var equation = document.getElementById('equation1');
+                      equation.innerHTML += katex.renderToString('\\text{import java.util.Scanner;}') + "<br>";
+                      equation.innerHTML += katex.renderToString('\\text{OR}')+ "<br>";
+                      equation.innerHTML += katex.renderToString('\\text{import java.util.*}');
+                      </script>
+                    </div>
+                    <p>To read input from the console, we first create an <b>object of the Scanner class</b> and then use its various methods to read the input.</p>
+
+                <p>
+                    Here are examples of reading input from the console for various data types in Java: 
+                  <div class="scrollable">
+                    <pre><code>
+<span id="equation2"></span>
+                      </code> </pre>
+                      <script>
+                      var equation = document.getElementById('equation2');
+                      equation.innerHTML += katex.renderToString('\\text{Scanner sc = new Scanner(System.in) //Creating object of Scanner class}')+"<br>";
+                      equation.innerHTML += katex.renderToString('\\text{byte b = sc.nextByte(); //Reading input for byte data type}')+"<br>";
+                      equation.innerHTML += katex.renderToString('\\text{short s = sc.nextShort(); //Reading input for short data type}')+"<br>";
+                      equation.innerHTML += katex.renderToString('\\text{int i = sc.nextInt(); //Reading input for int data type}')+"<br>";
+                      equation.innerHTML += katex.renderToString('\\text{long l = sc.nextLong(); //Reading input for long data type}')+"<br>";
+                      equation.innerHTML += katex.renderToString('\\text{float f = sc.nextFloat(); //Reading input for float data type}')+"<br>";
+                      equation.innerHTML += katex.renderToString('\\text{double d = sc.nextDouble(); //Reading input for double data type}')+"<br>";
+                      equation.innerHTML += katex.renderToString('\\text{boolean bool = sc.nextBoolean(); //Reading input for boolean data type}')+"<br>";
+                      </script>
+                    </div>
+                </p>
+                <h4>Reading input for String data type</h4>
+                <p>In Java, there are two methods to read input for the String data type - next() and nextLine(). Both methods are part of the Scanner class, which is used to read input from the console.</p>
+                <p>The next() method reads input from the console until it encounters whitespace (space, tab, or newline character). It then returns the input as a String.</p>
+                <div class="scrollable">
+                    <pre><code>
+<span id="equation3"></span>
+                      </code> </pre>
+                      <script>
+                      var equation = document.getElementById('equation3');
+                      equation.innerHTML += katex.renderToString('\\text{Scanner sc = new Scanner(System.in)}')+"<br>";
+                      equation.innerHTML += katex.renderToString('\\text{String name = sc.next();}');
+                      </script>
+                    </div>
+                <p>In the above code, the next() method is used to read input for the name variable. If the user enters "John Doe", the name variable will store the string "John".</p>   
+                <p>The nextLine() method reads input from the console until it encounters a newline character. It then returns the input as a String, including any whitespace characters.</p>
+                <div class="scrollable">
+                    <pre><code>
+<span id="equation4"></span>
+                      </code> </pre>
+                      <script>
+                      var equation = document.getElementById('equation4');
+                      equation.innerHTML += katex.renderToString('\\text{Scanner sc = new Scanner(System.in)}')+"<br>";
+                      equation.innerHTML += katex.renderToString('\\text{String name = sc.nextLine();}');
+                      </script>
+                    </div>
+                <p>In the above code, the nextLine() method is used to read input for the name variable. If the user enters "John Doe", the name variable will store the string "John Doe".</p>
+                <h4>Reading input for char data type</h4>
+                <div class="scrollable">
+                    <pre><code>
+<span id="equation5"></span>
+                      </code> </pre>
+                      <script>
+                      var equation = document.getElementById('equation5');
+                      equation.innerHTML += katex.renderToString('\\text{Scanner sc = new Scanner(System.in)}')+"<br>";
+                      equation.innerHTML += katex.renderToString('\\text{char c = sc.next().charAt(0);}');
+                      </script>
+                    </div>
+                    <p><b>Note</b> that for reading char value, we first read the input as a string using next() method of the Scanner class and then extract the first character using the charAt() method.</p>
+                
+                    <h4>Common Pitfalls with Scanner Class: Using nextLine() after nextInt(), nextDouble(), and more</h4>
+                    
+                    <p>In Java, there are several methods available to read input from the console, including methods to read different data types such as int, double, and String. However, using these methods consecutively can cause unexpected behavior if not used correctly. When you use methods like nextInt(), nextDouble(), or any other next<datatype>() method to read input, they only read the input up to the end of the current line. This means that if there are any characters or spaces left in the input buffer after the number or data type has been read, the nextLine() method will consume those characters and return an empty line, rather than waiting for further input.<br>For example, let's say you have the following code:</p>
+                    <div class="scrollable">
+                        <pre><code>
+<span id="equation6"></span>
+                        </code> </pre>
+                        <script>
+                        var equation = document.getElementById('equation6');
+                        equation.innerHTML += katex.renderToString('\\text{Scanner sc = new Scanner(System.in)}')+"<br>";
+                        equation.innerHTML += katex.renderToString('\\text{int num = sc.nextInt();}')+"<br>";
+                        equation.innerHTML += katex.renderToString('\\text{String str = sc.nextLine();}')+"<br><br>";
+                        equation.innerHTML += katex.renderToString('\\text{User Input:}')+"<br>";
+                        equation.innerHTML += katex.renderToString('\\text{5}')+"<br>";
+                        equation.innerHTML += katex.renderToString('\\text{Hello}');
+                        </script>
+                    </div>
+                    <p>The program will correctly read the integer using nextInt(). However, when it gets to the nextLine() method, it will immediately consume the newline character that was left in the input buffer from the user hitting Enter. This will result in str being assigned an empty string, rather than "Hello". To fix this, you can call the nextLine() method immediately after the next<datatype>() method to consume the remaining newline character and ensure that the next input is correctly read.</p>
+                        <div class="scrollable">
+                            <pre><code>
+<span id="equation7"></span>
+                            </code> </pre>
+                            <script>
+                            var equation = document.getElementById('equation7');
+                            equation.innerHTML += katex.renderToString('\\text{Scanner sc = new Scanner(System.in);}')+"<br>";
+                            equation.innerHTML += katex.renderToString('\\text{int num = sc.nextInt();}')+"<br>";
+                            equation.innerHTML += katex.renderToString('\\text{sc.nextLine(); // consume the newline character}')+"<br>";
+                            equation.innerHTML += katex.renderToString('\\text{String str = scanner.nextLine();}');
+                            </script>
+                        </div>
+                    
+                    <p>This will ensure that the nextLine() method waits for the user to enter input on a new line, rather than consuming the newline character left in the input buffer from the previous input.<br>In conclusion, reading from console is an essential part of many Java programs, as it allows users to interact with the program and provide input. The Scanner class provides many methods for reading different data types from console, and it is important to use them correctly to avoid unexpected behavior.<br>We have discussed how to read input for different data types using the next(), nextLine(), nextInt(), nextDouble(), and other methods, along with their differences and quirks. We have also explored how using nextLine() immediately after reading an integer or floating-point value can cause confusion due to the newline character left in the input buffer. By following the guidelines and examples provided in this blog, you should now be able to read input from console with ease and confidence, and be able to create programs that can accept input from users in a variety of formats.</p>
+            
+              </div>
+              <div class = "article">
+                <iframe sandbox="allow-popups allow-scripts allow-modals allow-forms allow-same-origin" style="width:150px;height:300px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-in.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=IN&source=ss&ref=as_ss_li_til&ad_type=product_link&tracking_id=victorypoint-21&language=en_IN&marketplace=amazon&region=IN&placement=B09X74RB6D&asins=B09X74RB6D&linkId=fb0147bd823d8537671f4b94aa9674d0&show_border=true&link_opens_in_new_window=true"></iframe>  
+              </div>
+              </div>
+              
+        </div>
+        </div>
+        <hr>
+        <footer>
+          <a href="https://www.linkedin.com/in/techpranjal/" target="_blank" class="fa fa-linkedin"></a>
+          <a href="https://www.youtube.com/channel/UCI8SrpFD9XD0v9oFMIiL97w" target="_blank" class="fa fa-youtube"></a>
+          <a href="https://www.instagram.com/victorypoint_official/" target="_blank" class="fa fa-instagram"></a>
+          <a href="" class="fa fa-facebook"></a>
+          <p><br><b>Call us at: +91 8700070274</b></p>
+        </footer>
+      </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/prism.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
