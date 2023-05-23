@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.js"></script>
+    <meta charset="UTF-8" />	
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Printing to Console</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <link rel="stylesheet" href="blog_style.css">
+    <style>
+		@media screen and (max-width: 768px) {
+			.scrollable {
+				overflow-x: scroll;
+			}
+			
+		}
+	</style>
+</head>
+<body>
+  
+    <div class="slider"></div>
+    <header>
+        <div class = "big-wrapper light">
+        <div class="container_header">
+          <div class="logo">
+            <img src="../img/logo3.png" alt="Logo" />
+          </div>
+      
+          <div class="links">
+            <ul>
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../courses/launchpad.html">Launchpad</a></li>
+              <li><a href="../courses/bootcamp.html">Bootcamp</a></li>
+              <li><a href="../courses/aptitude.html">Aptitude</a></li>
+              <li><a href="../blog.html">Blogs</a></li>
+              <li></li>
+            </ul>
+          </div>
+      
+          <div class="overlay"></div>
+      
+          <div class="hamburger-menu">
+            <div class="bar"></div>
+          </div>
+        </div>
+        </div>
+        <hr>
+      </header>
+      <img src="../img/shape.png" alt="" class="shape2" />
+      <main>
+        <div class="container">
+            
+            <div class="articles">
+              <div class="article">
+                <h2>Printing to Console</h2>
+                <img src="images/8_large.png" alt="Article 1" />
+                <p>
+                    In the world of Java programming, effective output of data is essential. Java provides several output functions, which give the programmer flexibility and control over how information is displayed to the user. In this article, we'll dissect three commonly used output functions in Java: <b>print, println and printf.</b>
+                </p>
+                <h4>Java print statement</h4>
+                <p>The print statement in Java is a method of the java.io.PrintStream class. This method is most commonly accessed via System.out, which is an instance of PrintStream that points to the standard output stream (usually your console).<br>The print method does not append a newline at the end of the output. This means that if you use print multiple times in succession, all of the output will be displayed on the same line. Here's a simple example:</p>
+            
+                <div class="scrollable">
+                    <pre><code class = "language-java">
+public class Example {
+
+    public static void main(String[] args)
+    {
+        System.out.print("Hello, ");
+        System.out.print("World!");
+    }
+}
+</code>
+Output: Hello, World!
+                    </pre>
+                </div>
+                <h4>Java println statement</h4>
+                    <p>The println method is very similar to print, but with one critical difference: after outputting its arguments, it automatically appends a newline. This means that successive calls to println will produce output on separate lines. Here's an example to illustrate the difference:</p>
+
+                <div class="scrollable">
+                    <pre><code class = "language-java">
+public class Example {
+
+    public static void main(String[] args)
+    {
+        System.out.println("Hello, ");
+        System.out.println("World!");
+    }
+}
+</code>
+Output: Hello, <br>World!
+                    </pre>
+                </div>
+
+
+
+
+
+
+
+
+                <h4>Printing variable values</h4>
+                <p>Appending variable values to sentences in the print and println statements is a common practice in Java. This operation, often referred to as string concatenation, allows us to combine static text with dynamic values in our output.<br>In Java, the plus (+) operator is used to append (or concatenate) variables to strings. When used between two strings, it joins them together. When used between a string and a non-string (such as an integer, float, or boolean), it converts the non-string value to a string and then concatenates the two strings.</p>
+                <p>Here's a simple example using <b>print:</b></p>
+                <div class="scrollable">
+                    <pre><code class = "language-java">
+public class Example {
+
+    public static void main(String[] args)
+    {
+        String name = "Alice";
+        int age = 25;
+        System.out.print("Hello, my name is " + name + " and I am " + age + " years old.");
+    }
+}
+</code>
+Output: Hello, my name is Alice and I am 25 years old.
+                    </pre>
+                </div>
+                <p>In the println statement, the operation is the same; the only difference is that println appends a newline at the end:</p>
+                <div class="scrollable">
+                    <pre><code class = "language-java">
+public class Main {
+    public static void main(String[] args) {
+        String city = "New York";
+        double temperature = 22.5;
+        System.out.println("Weather News");
+        System.out.println("The current temperature in " + city + " is " + temperature + " degrees Celsius.");
+    }
+}                    
+</code>
+Output:Weather Update<br>The current temperature in New York is 22.5 degrees Celsius.
+
+                    </pre>
+                </div>
+                <p>In both of these examples, the variables (name, age, city, temperature) are appended to static text to create a complete sentence. Java automatically converts the integer and double to strings before concatenation.</p>
+                
+                
+                
+                <h4>Java printf statement</h4>
+                <p>The printf method is a bit more complex, and also more powerful. The printf method allows you to format your output using special format specifiers. You can control how numbers are displayed, add padding, and more.<br>The printf method takes two types of arguments: a format string, and a list of values. The format string contains regular text along with format specifiers, which start with the % character. Here's an example:</p>
+                <div class="scrollable">
+                    <pre><code class = "language-java">
+public class Main {
+    public static void main(String[] args) {
+        String name = "Alice";
+        int age = 25;
+        System.out.printf("Hello, my name is %s and I am %d years old.", name, age);
+    }
+}                       
+</code>
+Output:Hello, my name is Alice and I am 25 years old.
+
+                    </pre>
+                </div>
+            
+            <p>In the format string above, %s is a placeholder for a string, and %d is a placeholder for a decimal (integer) number. When printf is called, it substitutes each format specifier with the corresponding value from the list of arguments.</p>
+            <p>Formatting floating-point numbers is another strong capability of the printf function in Java. It lets you control not just the total width of the output, but also how many digits should appear after the decimal point.<br>The format specifier for floating-point numbers is %f. If you want to limit the number of digits after the decimal point, you can add a dot (.) and a number after the % in the format specifier. This number specifies the precision, or how many digits to display after the decimal point.<br>Here's an example where we limit the output to 2 decimal places:</p>            
+            <div class="scrollable">
+                <pre><code class = "language-java">
+public class Main {
+    public static void main(String[] args) {
+        double pi = 3.1415926535;
+        System.out.printf("Value of PI up to 2 decimal places: %.2f", pi);
+    }
+}  
+</code>
+Output:Value of PI up to 2 decimal places: 3.14
+
+                </pre>
+            </div>
+            <p>In this example, %.2f is the format specifier. The .2 tells printf to limit the number of digits after the decimal point to 2.<br>Remember, the number you specify is the minimum number of digits that will appear. If the number has fewer digits than the specified precision, printf will add zeroes to reach the correct number of digits. For example:</p>
+            <div class="scrollable">
+                <pre><code class = "language-java">
+public class Main {
+    public static void main(String[] args) {
+        double number = 5.5;
+        System.out.printf("Number up to 4 decimal places: %.4f", number);
+    }
+}            
+</code>
+Output:Number up to 4 decimal places: 5.5000
+                </pre>
+            </div>
+            <p>In this case, printf added two zeroes to the end of the number to reach a total of 4 digits after the decimal point. This feature can be useful when you need to ensure that your output is always a consistent width.</p>
+        <p>In conclusion, <b>print, println, and printf</b> are powerful tools in your Java programming arsenal. Understanding the nuances of these output statements can help make your code more readable and effective. Happy coding!</p>    
+        
+        </div>
+              <div class = "article">
+                <iframe sandbox="allow-popups allow-scripts allow-modals allow-forms allow-same-origin" style="width:150px;height:300px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-in.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=IN&source=ss&ref=as_ss_li_til&ad_type=product_link&tracking_id=victorypoint-21&language=en_IN&marketplace=amazon&region=IN&placement=B09X74RB6D&asins=B09X74RB6D&linkId=fb0147bd823d8537671f4b94aa9674d0&show_border=true&link_opens_in_new_window=true"></iframe>  
+              </div>
+              </div>
+              
+        </div>
+        </div>
+        <hr>
+        <footer>
+          <a href="https://www.linkedin.com/in/techpranjal/" target="_blank" class="fa fa-linkedin"></a>
+          <a href="https://www.youtube.com/channel/UCI8SrpFD9XD0v9oFMIiL97w" target="_blank" class="fa fa-youtube"></a>
+          <a href="https://www.instagram.com/victorypoint_official/" target="_blank" class="fa fa-instagram"></a>
+          <a href="" class="fa fa-facebook"></a>
+          <p><br><b>Call us at: +91 8700070274</b></p>
+        </footer>
+      </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/prism.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
