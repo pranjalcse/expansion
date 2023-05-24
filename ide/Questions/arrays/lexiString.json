@@ -11,7 +11,7 @@
     "testCases": [
       {
         "input": "2 abcdefghijklmnopqrstuvwxyz azby lzmihcybjgvatfqpkxsunewdro hello",
-        "output": "azby llheo"
+        "output": "abyz llheo"
       },
       {
         "input": "3 znprtbcmweyxslkaiujhfdvqgo yellow fponxzcmlsrtdhujaiywbkvegq dfdsgsg kwdltvmpqfznuohgrjeyxiasbc ndstj",
@@ -25,7 +25,7 @@
     "testCasesDisplay": [
       {
         "input": "<br>2<br>abcdefghijklmnopqrstuvwxyz azby<br>lzmihcybjgvatfqpkxsunewdro hello",
-        "output": "azby llheo"
+        "output": "abyz llheo"
       },
       {
         "input": "<br>3<br>znprtbcmweyxslkaiujhfdvqgo yellow<br>fponxzcmlsrtdhujaiywbkvegq dfdsgsg<br>kwdltvmpqfznuohgrjeyxiasbc ndstj",
