@@ -18,7 +18,7 @@
         "output": "weyllo fssddgg dtnjs"
       },
       {
-        "input": "1 gnavoyqkbhcfjrmdszwtixlep ant",
+        "input": "1 gnavoyqkbhcfjrmdszwtixlepu ant",
         "output": "nat"
       }
     ],
@@ -32,21 +32,21 @@
         "output": "weyllo fssddgg dtnjs"
       },
       {
-        "input": "<br>1<br>gnavoyqkbhcfjrmdszwtixlep ant",
+        "input": "<br>1<br>gnavoyqkbhcfjrmdszwtixlepu ant",
         "output": "nat"
       }
     ],
     "submitCases": [
       {
         "input": "2 abcdefghijklmnopqrstuvwxyz azby lzmihcybjgvatfqpkxsunewdro hello",
-        "output": "azby llheo"
+        "output": "abyz llheo"
       },
       {
         "input": "3 znprtbcmweyxslkaiujhfdvqgo yellow fponxzcmlsrtdhujaiywbkvegq dfdsgsg kwdltvmpqfznuohgrjeyxiasbc ndstj",
         "output": "weyllo fssddgg dtnjs"
       },
       {
-        "input": "1 gnavoyqkbhcfjrmdszwtixlep ant",
+        "input": "1 gnavoyqkbhcfjrmdszwtixlepu ant",
         "output": "nat"
       },
       {
@@ -58,7 +58,7 @@
         "output": "day fyl"
       },
       {
-        "input":"1 gnavoyqkbhcfjrmdszwtixlep parrot",
+        "input":"1 gnavoyqkbhcfjrmdszwtixlepu parrot",
         "output":"aorrtp"
       }
     ]
