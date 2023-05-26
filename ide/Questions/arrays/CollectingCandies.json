@@ -2,7 +2,7 @@
     "tag":"CodeVita",
     "name": "Collecting Candies",
     "questionText": "Krishna loves candies a lot, so whenever he gets them, he stores them so that he can eat them later whenever he wants to. He has recently received N boxes of candies each containing C<sub>i</sub> candies where C<sub>i</sub> represents the total number of candies in the ith box. Krishna wants to store them in a single box. The only constraint is that he can choose any two boxes and store their joint contents in an empty box only. Assume that there are an infinite number of empty boxes available. At a time he can pick up any two boxes for transferring and if both the boxes contain X and Y number of candies respectively, then it takes him exactly X+Y seconds of time. As he is too eager to collect all of them he has approached you to tell him the minimum time in which all the candies can be collected.",
-    "constraints":"<ul><li>1<T<10</li><li>1<N<10000</li><li>1<[Candies in each box]<100009</li></ul>",
+    "constraints":"<ul><li>1<=T<=10</li><li>1<=N<=10000</li><li>1<[Candies in each box]<100009</li></ul>",
     "inputFormat": "<ul><li>The first line of input is the number of test case T</li><li>Each test case is comprised of two inputs</li><li>The first input of a test case is the number of boxes N</li><li>The second input is N integers delimited by whitespace denoting the number of candies in each box</li></ul>",
     "outputFormat": "Print minimum time required, in seconds, for each of the test cases. Print each output separated by a space.",
     "sampleinput": "1<br>4<br>1 2 3 4",
