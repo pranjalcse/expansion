@@ -4,7 +4,7 @@
     "questionText": "A positive integer <em>'d'</em> is said to be a factor of another positive integer <em>N</em> if when N is divided by d, the remainder obtained is zero. For example, for number 12, there are 6 factors 1, 2, 3, 4, 6, 12. Every positive integer k has at least two factors, 1 and the number k itself. Given two positive integers N and k, write a program to print the kth largest factor of N.",
     "constraints":"<ul><li>1<=N<=10<sup>9</sup></li><li>1<k<600</li></ul>",
     "inputFormat": "<ul><li>Two space separated integers, N and k</li></ul>",
-    "outputFormat": "<ul><li>The kth highest factor of N.</li>><li>if kth highest factor does not exist, print 1.</li></ul>",
+    "outputFormat": "<ul><li>The kth highest factor of N.</li><li>if kth highest factor does not exist, print 1.</li></ul>",
     "sampleinput": "12 2",
     "sampleoutput": "6",
     "explanation": "Second highest factor of 12 is 6.",
@@ -51,15 +51,15 @@
         },
         {
             "input": "10000000 18",
-            "output": "18"
+            "output": "62500"
         },
         {
-            "input": "200",
-            "output": "9"
-        },
-        {
-            "input": "10",
+            "input": "200765 43",
             "output": "1"
+        },
+        {
+            "input": "675643 6",
+            "output": "30711"
         }
     ]
   }
