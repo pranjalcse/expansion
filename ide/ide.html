@@ -718,6 +718,8 @@ let submitCaseNumber=0;
 //submit button
 const SubmitCases = data.submitCases;
 submitbutton.addEventListener('click', () => {
+    
+    submitbutton.disabled = true;
     inp.length=0;
     yourOutput.length=0;
     expectedOutput.length=0;
@@ -764,6 +766,7 @@ submitbutton.addEventListener('click', () => {
   });
 
   Promise.all(promises).then(() => {
+setTimeout(enableButton, 5000);
     create_tabs("submit");
   });
   });
@@ -774,7 +777,10 @@ submitbutton.addEventListener('click', () => {
  // 2 seconds
 
 //for the custom input box
-
+function enableButton() {
+  // Enable the button
+  submitbutton.disabled = false;
+}
 const textBoxButton = document.getElementById('text-box-button');
 const textBoxContainer = document.getElementById('text-box-container');
 
