@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />	
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Unary Operators</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism.min.css" />
+	<link rel="stylesheet" href="blog_style.css">
+    <style>
+		
+		
+		@media screen and (max-width: 768px) {
+			.scrollable {
+				overflow-x: scroll;
+			}
+			
+		}
+	</style>
+</head>
+<body>
+
+    <div class="slider"></div>
+    <header>
+      <img src="../img/shape.png" alt="" class="shape2"/>
+        <div class = "big-wrapper light">
+        <div class="container_header">
+          <div class="logo">
+            <img src="../img/logo3.png" alt="Logo" />
+          </div>
+      
+          <div class="links">
+            <ul>
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../courses/launchpad.html">Launchpad</a></li>
+              <li><a href="../courses/bootcamp.html">Bootcamp</a></li>
+              <li><a href="../courses/aptitude.html">Aptitude</a></li>
+              <li><a href="../blog.html">Blogs</a></li>
+              <li></li>
+            </ul>
+          </div>
+      
+          <div class="overlay"></div>
+      
+          <div class="hamburger-menu">
+            <div class="bar"></div>
+          </div>
+        </div>
+        </div>
+        <hr>
+      </header>
+      
+      <main>
+	<div class="container">
+        <div class="articles">
+            <div class = "article">
+              <h2>Unary Operators</h2>
+              <img src="images/11_large.png" alt="Article 1" />
+              <p>Unary operators are operators that work on a single operand, which can be a variable, constant, or expression. Unary operators can be used to perform various operations such as incrementing or decrementing a value, changing the sign of a value, or performing logical negation.</p>  
+              <h4>Types of Unary Operators:</h4>
+              <p>There are six types of unary operators in Java, namely:</p>
+
+              <ol>
+                <li>Unary Plus Operator(+)</li>
+                <li>Unary Minus Operator(-)</li>
+                <li>Increment Operator(++)</li>
+                <li>Decrement Operator(--)</li>
+                <li>Logical Compliment Operator(!)</li>
+                <li>Bitwise Compliment Operator(~)</li>
+              </ol>
+                <h4>Unary plus operator (+)</h4>
+                <p>The unary plus operator is represented by a plus symbol (+) and it simply returns the value of the operand. It is used to explicitly show the positive value of a variable or expression, although this is often redundant since positive values are already assumed in Java.</p>
+                <div class="scrollable">
+                    <pre><code class = "language-java">
+public class Example {
+
+    public static void main(String[] args)
+    {
+        int a = 5;
+        int b = +a; //Unary plus operator
+        System.out.println("Value of b is " + b);
+    }
+}
+</code>
+Output:Value of b is 5
+                    </pre>
+                </div>
+                <h4>Unary minus operator (-)</h4>
+                <p>The unary minus operator is represented by a minus symbol (-) and it returns the negative value of the operand. It is used to negate a number or expression.</p>
+                <div class="scrollable">
+                    <pre><code class = "language-java">
+public class Example {
+
+    public static void main(String[] args)
+    {
+        int a = 5;
+        int b = -a;
+        System.out.println("Value of b is " + b);
+    }
+}
+</code>
+Output:Value of b is -5
+                    </pre>
+                </div>
+                
+                <h4>Increment operator (++)</h4>
+                <p>The increment operator is represented by two plus symbols (++) and it increases the value of the operand by 1. It is used to update a variable with a new value.</p>
+                <div class="scrollable">
+                    <pre><code class = "language-java">
+public class Example {
+
+    public static void main(String[] args)
+    {
+        int a = 5;
+        a++;
+        System.out.println("Value of a is " + a);
+    }
+}
+</code>
+Output:Value of a is 6
+                    </pre>
+                </div>
+
+                <h4>Decrement operator (--)</h4>
+                <p>The decrement operator is represented by two minus symbols (--) and it decreases the value of the operand by 1. It is used to update a variable with a new value.</p>
+                <div class="scrollable">
+                    <pre><code class = "language-java">
+public class Example {
+
+    public static void main(String[] args)
+    {
+        int a = 5;
+        a--;
+        System.out.println("Value of a is " + a);
+    }
+}
+</code>
+Output:Value of a is 4
+                    </pre>
+                </div>
+                <h4>Logical complement operator (!)</h4>
+                <p>The logical complement operator is represented by an exclamation mark (!) and it inverts the boolean value of the operand. It is used to check if a boolean value is false.</p>
+                <div class="scrollable">
+                    <pre><code class = "language-java">
+public class Example {
+
+    public static void main(String[] args)
+    {
+        boolean a = true;
+        boolean b = !a;
+        System.out.println("Value of b is: " + b);
+    }
+}
+</code>
+Output:Value of b is false
+                    </pre>
+                </div>
+                <h4>Bitwise complement operator (~)</h4>
+                <p>The bitwise complement operator is represented by a tilde symbol (~) and it flips the bits of the operand. It is used to perform bitwise operations.</p>
+                <div class="scrollable">
+                    <pre><code class = "language-java">
+public class Example {
+
+    public static void main(String[] args)
+    {
+        int a = 5;
+        int b = ~a;
+        System.out.println("Value of b is: " + b);
+    }
+}
+</code>
+Output: Value of b is: -6
+                    </pre>
+                </div>
+                <p>Note that the output of the bitwise complement operator in the above example is -6 because the bitwise representation of 5 is 00000101 in binary and the bitwise complement of that is 11111010, which is the two's complement representation of -6.</p>
+            
+            
+            <h4>Understanding Increment and Decrement Operators in Java: Prefix vs Postfix</h4>
+            <p>Increment and decrement operators (++ and --) can be used in two ways:</p>
+            <ol>
+                <li>Pre-increment/decrement</li>
+                <li>Post-increment/decrement</li>
+            </ol>
+        <h4>Pre-increment/decrement</h4>
+        <p>The value of the variable is first incremented or decremented, and then the new value is used in the expression.</p>
+              
+
+         <div class="scrollable">
+                    <pre><code class = "language-java">
+public class Example {
+
+    public static void main(String[] args)
+    {
+        int x = 5;
+        int y = ++x; // x will be 6, y will also be 6
+        System.out.println(x+" "+y);
+
+        int c = 5;
+        int d = --d; // d will be 4, c will also be 4
+        System.out.println(x+" "+y);
+
+        int a = 5;
+        System.out.print(++a + " ");  // 6 will be printed
+        System.out.print(a); // 6 will be printed
+    }
+}
+</code>
+Output: <br>6 6<br>4 4<br>6 6
+                    </pre>
+                </div>
+        <h4>Post-increment/decrement</h4>
+        <p>The value of the variable is first used in the expression, and then it is incremented or decremented. </p>
+        <div class="scrollable">
+                    <pre><code class = "language-java">
+public class Example {
+
+    public static void main(String[] args)
+    {
+        int x = 5;
+        int y = x++; // x will be 6, y will be 5
+        System.out.println(x+" "+y);
+        
+        int c = 5;
+        int d = c--; // c will be 4, d will be 5
+        System.out.println(c+" "+d);
+
+        int a = 5;
+        System.out.print(a++ +" ");  // 5 will be printed
+        System.out.print(a);    // 6 will be printed
+    }
+}
+</code>
+Output: <br>6 5<br>4 5<br>5 6
+                    </pre>
+                </div>
+            
+        </div>
+            <div class = "article">
+              <iframe sandbox="allow-popups allow-scripts allow-modals allow-forms allow-same-origin" style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-in.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=IN&source=ss&ref=as_ss_li_til&ad_type=product_link&tracking_id=victorypoint-21&language=en_IN&marketplace=amazon&region=IN&placement=B09X74RB6D&asins=B09X74RB6D&linkId=fb0147bd823d8537671f4b94aa9674d0&show_border=true&link_opens_in_new_window=true"></iframe>  
+            </div>
+            
+        </div>
+    </div>
+	</main>
+  <hr>
+  <footer>
+    <a href="https://www.linkedin.com/in/techpranjal/" target="_blank" class="fa fa-linkedin"></a>
+    <a href="https://www.youtube.com/channel/UCI8SrpFD9XD0v9oFMIiL97w" target="_blank" class="fa fa-youtube"></a>
+    <a href="https://www.instagram.com/victorypoint_official/" target="_blank" class="fa fa-instagram"></a>
+    <a href="" class="fa fa-facebook"></a>
+    <p><br><b>Call us at: +91 8700070274</b></p>
+  </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-java.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
