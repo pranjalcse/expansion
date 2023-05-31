@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />	
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Arithmetic Operators</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism.min.css" />
+	<link rel="stylesheet" href="blog_style.css">
+    <style>
+		
+		
+		@media screen and (max-width: 768px) {
+			.scrollable {
+				overflow-x: scroll;
+			}
+			
+		}
+	</style>
+</head>
+<body>
+
+    <div class="slider"></div>
+    <header>
+      <img src="../img/shape.png" alt="" class="shape2"/>
+        <div class = "big-wrapper light">
+        <div class="container_header">
+          <div class="logo">
+            <img src="../img/logo3.png" alt="Logo" />
+          </div>
+      
+          <div class="links">
+            <ul>
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../courses/launchpad.html">Launchpad</a></li>
+              <li><a href="../courses/bootcamp.html">Bootcamp</a></li>
+              <li><a href="../courses/aptitude.html">Aptitude</a></li>
+              <li><a href="../blog.html">Blogs</a></li>
+              <li></li>
+            </ul>
+          </div>
+      
+          <div class="overlay"></div>
+      
+          <div class="hamburger-menu">
+            <div class="bar"></div>
+          </div>
+        </div>
+        </div>
+        <hr>
+      </header>
+      
+      <main>
+	<div class="container">
+        <div class="articles">
+            <div class = "article">
+              <h2>Arithmetic Operators</h2>
+              <img src="images/10_large.png" alt="Article 1" />
+              <p>Arithmetic operators are like the building blocks of math in Java. They are the basic operators used to perform arithmetic calculations like addition, subtraction, multiplication, division, and modulo operation (remainder). All arithmetic operators are binary operators as they operate on two operands. <b>They are denoted by the familiar symbols: +, -, *, /, and %</b>. Let's dive into the arithmetic operators in Java with some examples.</p>  
+              <h4>Addition (+)</h4>
+              <p>The addition operator is used to add two or more values together. For example:</p>
+                
+                <div class="scrollable">
+                    <pre><code class = "language-java">
+public class Example {
+
+    public static void main(String[] args)
+    {
+        int num1 = 5;
+        int num2 = 10;
+        int sum = num1 + num2;
+        System.out.println("The sum of " + num1 + " and " + num2 + " is " + sum);
+    }
+}
+</code>
+Output: The sum of 5 and 10 is 15
+                    </pre>
+                </div>
+                <h4>Subtraction (-)</h4>
+                <p>The subtraction operator is used to subtract one value from another. For example:</p>
+                <div class="scrollable">
+                    <pre><code class = "language-java">
+public class Example {
+
+    public static void main(String[] args)
+    {
+        int num1 = 15;
+        int num2 = 10;
+        int difference = num1 - num2;
+        System.out.println("The difference between " + num1 + " and " + num2 + " is " + difference);
+    }
+}
+</code>
+Output: The difference between 15 and 10 is 5
+                    </pre>
+                </div>
+                
+                <h4>Multiplication (*)</h4>
+                <p>The multiplication operator is used to multiply two or more values together. For example:</p>
+                <div class="scrollable">
+                    <pre><code class = "language-java">
+public class Example {
+
+    public static void main(String[] args)
+    {
+        int num1 = 5;
+        int num2 = 10;
+        int product = num1 * num2;
+        System.out.println("The product of " + num1 + " and " + num2 + " is " + product);
+    }
+}
+</code>
+Output: The product of 5 and 10 is 50
+                    </pre>
+                </div>
+
+                <h4>Division (/)</h4>
+                <p>The division operator is used to divide one value by another. For example:</p>
+                <div class="scrollable">
+                    <pre><code class = "language-java">
+public class Example {
+
+    public static void main(String[] args)
+    {
+        int num1 = 10;
+        int num2 = 5;
+        int quotient = num1 / num2;
+        System.out.println("The quotient of " + num1 + " divided by " + num2 + " is " + quotient);
+    }
+}
+</code>
+Output: The quotient of 10 divided by 5 is 2
+                    </pre>
+                </div>
+                <h4>Modulus (%)</h4>
+                <p>The modulus operator is used to find the remainder of a division operation. For example:</p>
+                <div class="scrollable">
+                    <pre><code class = "language-java">
+public class Example {
+
+    public static void main(String[] args)
+    {
+        int num1 = 10;
+        int num2 = 3;
+        int remainder = num1 % num2;
+        System.out.println("The remainder of " + num1 + " divided by " + num2 + " is " + remainder);
+    }
+}
+</code>
+Output: The remainder of 10 divided by 3 is 1
+                    </pre>
+                </div>
+<p>When we use the modulo operator (%) with floating point numbers, Java will produce a compile-time error, as the modulo operator can only be used with integer types.<br>For example, the following code will produce a compile-time error:</p>
+                <div class="scrollable">
+                    <pre><code class = "language-java">
+public class Example {
+
+    public static void main(String[] args)
+    {
+        double x = 10.5;
+        double y = 3.2;
+        double result = x % y; // Compile-time error: bad operand types for binary operator '%'
+
+    }
+}
+</code>
+Output: Compile-time error: bad operand types for binary operator '%'
+                    </pre>
+                </div>
+            <h4>Data Type of Result of Arithmetic Operators in Java</h4>
+            <p>In Java, the data type of the result of an arithmetic operation depends on the data types of the operands involved in the operation. When arithmetic operators are used with operands of different data types, Java automatically promotes the operands to a higher data type before performing the operation. This is known as type promotion. In Java, type promotion follows a set of rules that determine the resulting data type after the promotion. These rules are as follows:</p>
+        <ol>
+        <li>If either operand is a double, the other operand is promoted to a double, and the result is a double.</li>
+        <li>If either operand is a float and the other operand is not a double, both operands are promoted to float, and the result is a float.</li>
+        <li>If either operand is a long and the other operand is not a double or a float, both operands are promoted to long, and the result is a long.</li>
+        <li>Otherwise, both operands are promoted to int, and the result is an int.</li>
+        </ol>    
+        <p>Let's look at some examples to better understand type promotion with arithmetic operators:</p>
+        <div class="scrollable">
+                    <pre><code class = "language-java">
+public class Example {
+
+    public static void main(String[] args)
+    {
+        int num1 = 10;
+        float num2 = 3.5f;
+        float result = num1 + num2; // num1 is promoted to float, and the result is a float
+
+        long num1 = 1000000000L;
+        int num2 = 5;
+        long result = num1 * num2; // num2 is promoted to long, and the result is a long
+
+        short a = 10;
+        byte b = 2;
+        int result = a * b; // result will be an int with value 20
+
+        int a = 7;
+        int b = 2;
+        int result = a / b; // result is 3, not 3.5
+
+        int a = 7;
+        int b = 2;
+        double result = a / b; // result will be a double with value 3.0
+    }
+}
+</code>
+                    </pre>
+                </div>
+        <p>In this example, we have two integer variables a and b with values 7 and 2 respectively. We are then performing an arithmetic operation of division using the / operator. Since both operands are integers, Java performs integer division and the result will be the quotient of a divided by b, which is 3.</p>
+        <p>However, we are storing the result in a double variable named result. Java performs an implicit type conversion, also known as type promotion, to convert the integer result to a floating-point value. In this case, the integer 3 is converted to a double value 3.0. If we want to obtain a fractional result, we need to make sure that at least one of the operands is a floating-point type. For example:</p>
+        <div class="scrollable">
+                    <pre><code class = "language-java">
+public class Example {
+
+    public static void main(String[] args)
+    {
+        double x = 7.0;
+        int y = 2;
+        double result = x / y; // result is 3.5
+    }
+}
+</code>
+                    </pre>
+                </div>
+            
+        <p>In this example, we have one operand of type double and one operand of type int. When we divide them, the result is a double, and the fractional part is preserved. Another way to obtain a fractional result is to cast one of the operands to a floating-point type before performing the division:</p>
+        <div class="scrollable">
+                    <pre><code class = "language-java">
+public class Example {
+
+    public static void main(String[] args)
+    {
+        int a = 7;
+        int b = 2;
+        double result = (double) a / b; // result is 3.5
+    }
+}
+</code>
+                    </pre>
+                </div>
+        
+        <p>In this example, we cast the integer a to a double before dividing it by b. This forces the result to be a double, and the fractional part is preserved.</p>
+        
+        </div>
+            <div class = "article">
+              <iframe sandbox="allow-popups allow-scripts allow-modals allow-forms allow-same-origin" style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-in.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=IN&source=ss&ref=as_ss_li_til&ad_type=product_link&tracking_id=victorypoint-21&language=en_IN&marketplace=amazon&region=IN&placement=B09X74RB6D&asins=B09X74RB6D&linkId=fb0147bd823d8537671f4b94aa9674d0&show_border=true&link_opens_in_new_window=true"></iframe>  
+            </div>
+            
+        </div>
+    </div>
+	</main>
+  <hr>
+  <footer>
+    <a href="https://www.linkedin.com/in/techpranjal/" target="_blank" class="fa fa-linkedin"></a>
+    <a href="https://www.youtube.com/channel/UCI8SrpFD9XD0v9oFMIiL97w" target="_blank" class="fa fa-youtube"></a>
+    <a href="https://www.instagram.com/victorypoint_official/" target="_blank" class="fa fa-instagram"></a>
+    <a href="" class="fa fa-facebook"></a>
+    <p><br><b>Call us at: +91 8700070274</b></p>
+  </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-java.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
