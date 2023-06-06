@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-auth.js"></script>
     <meta charset="UTF-8">
     <title>VP</title>
     <style>
@@ -309,9 +311,9 @@ margin: 0 0 10px;
     </style>
 </head>
 <body>
-
+   
   <!-- for submit overlay -->
-
+	
   <div class="submitoverlay" id="submitoverlay">
     <table>
         <thead>
@@ -322,7 +324,7 @@ margin: 0 0 10px;
         </tbody>
     </table>
 </div>
-
+	
   <header class="navbar">
     <div class="container">
       <div class="logo"><img src="./Assets/images/vp white logo.png" width="100"></div>
@@ -343,7 +345,8 @@ margin: 0 0 10px;
       </nav>
       <div class="hamburger">&#9776;</div>
       <div class="user-profile">
-        <img src="./Assets/images/user.jpeg" alt="User profile picture">
+	<div id="firebaseui-auth-container"></div>
+        <img id="loginImage" src="./Assets/images/user.jpeg" alt="User profile picture">
       </div>
     </div>
   </header>
@@ -814,7 +817,43 @@ textBoxButton.addEventListener('click', () => {
     });
     
 
-    
+    // Initialize Firebase
+        // Replace with your Firebase config
+        var firebaseConfig = {
+            apiKey: "AIzaSyDPFIW9h2Ecq--_004D2t4UWbHcKjcpG2A",
+            authDomain: "victorypoint-32d4b.firebaseapp.com",
+            projectId: "victorypoint-32d4b",
+            storageBucket: "victorypoint-32d4b.appspot.com",
+            messagingSenderId: "270178376648",
+            appId: "1:270178376648:web:a552eb5cadc3deb54ffefd",
+            measurementId: "G-NKMD2718ST"
+        };
+        firebase.initializeApp(firebaseConfig);
+        
+        // Get the image
+        var loginImage = document.getElementById('loginImage');
+        
+        // Attach a click event listener to the image
+        loginImage.addEventListener('click', function() {
+            signInWithGoogle();
+        });
+        
+        // Google Sign-In Function
+        function signInWithGoogle() {
+            var provider = new firebase.auth.GoogleAuthProvider();
+        
+            firebase.auth()
+                .signInWithPopup(provider)
+                .then((result) => {
+                    // User is signed in
+                    var user = result.user;
+                    alert("User signed in with Google successfully");
+                    document.getElementById('loginImage').src = user.photoURL;
+                    // Redirect to another page or perform any other action
+                }).catch((error) => {
+                    console.log("Error signing in with Google: ", error.message);
+                });
+        }
     </script>
 </body>
 </html>
