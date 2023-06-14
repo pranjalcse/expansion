@@ -331,12 +331,15 @@
         transform: translateY(-10px);
         box-shadow: 0 4px 8px rgba(243, 243, 243, 4.7);
       }
-
+        
       .article img {
         width: 100%;
         margin-bottom: 20px;
       }
-
+        #inimage{
+            width:50%;
+            margin-bottom: 0px
+        }
       .article h3 {
         margin: 0;
         font-size: 24px;
