@@ -72,6 +72,13 @@ if (Condition) {
 </code>
                     </pre>
                 </div>
+                <h4>Flowchart</h4>
+                <p>The flowchart for if statements visually represents the decision-making process in programming. It helps illustrate the flow of control based on conditions.<br>The condition is checked, and if it evaluates to true, the flow follows the path labeled "True", leading to the execution of the associated code block. If the condition evaluates to false, the flow follows the path labeled "False", bypassing the code block and continuing with the next statement or branching structure.</p>
+                <div class="scrollable">
+                    <pre>
+                        <img id="inimage" src="images/if_flowchart.png" alt="Article 1"/>
+                    </pre>
+                </div>
                 <h4>Example</h4>
                 <div class="scrollable">
                     <pre><code class = "language-java">
@@ -90,12 +97,7 @@ Output:
 It's a hot day!
                     </pre>
                 </div>
-                <p>The flowchart for if statements visually represents the decision-making process in programming. It helps illustrate the flow of control based on conditions.<br>The condition is checked, and if it evaluates to true, the flow follows the path labeled "True", leading to the execution of the associated code block. If the condition evaluates to false, the flow follows the path labeled "False", bypassing the code block and continuing with the next statement or branching structure.</p>
-                <div class="scrollable">
-                    <pre>
-                        <img id="inimage" src="images/if_flowchart.png" alt="Article 1"/>
-                    </pre>
-                </div>
+                
                 
                 <h4>Else Statement</h4>
                 <p>Sometimes, you want your program to execute a different block of code when a condition is false. That's where the else statement comes in.</p>
@@ -108,6 +110,13 @@ if (Condition) {
     // block of code to be executed if condition is false
 }
 </code>
+                    </pre>
+                </div>
+                <h4>Flowchart</h4>
+                <p>The condition is checked, and if it evaluates to true, the flow follows the path labeled "True," leading to the execution of the code block associated with the if statement. However, if the condition evaluates to false, the flow follows the path labeled "False," bypassing the if block and moving to the associated else block.</p>
+                <div class="scrollable">
+                    <pre>
+                        <img id="inimage" src="images/else_flowchart.png" alt="Article 1"/>
                     </pre>
                 </div>
                 <h4>Example</h4>
@@ -131,12 +140,7 @@ It's not that hot today.
                     </pre>
                 </div>
                 
-                <p>The condition is checked, and if it evaluates to true, the flow follows the path labeled "True," leading to the execution of the code block associated with the if statement. However, if the condition evaluates to false, the flow follows the path labeled "False," bypassing the if block and moving to the associated else block.</p>
-                <div class="scrollable">
-                    <pre>
-                        <img id="inimage" src="images/else_flowchart.png" alt="Article 1"/>
-                    </pre>
-                </div>
+                
                 <h4>If-Else-If Ladder</h4>
                 <p>The if-else-if ladder is a sequence of multiple else if statements that allow you to test conditions one by one until a true condition is found. It provides a structured way to handle complex decision-making scenarios.</p>
                 <h4>Syntax</h4>
@@ -156,6 +160,12 @@ else {
     //execute if none of the conditions are true
 }
 </code>
+                    </pre>
+                </div>
+                <h4>Flowchart</h4>
+                <div class="scrollable">
+                    <pre>
+                        <img id="inimage" src="images/ladder_flowchart.png" alt="Article 1"/>
                     </pre>
                 </div>
                 <h4>Example</h4>
@@ -213,12 +223,6 @@ Output:
 Your grade is: C
                     </pre>
                 </div>
-                
-                <div class="scrollable">
-                    <pre>
-                        <img id="inimage" src="images/ladder_flowchart.png" alt="Article 1"/>
-                    </pre>
-                </div>
                 <h4>Switch Case Statement</h4>
                 <p>The switch case statement provides an alternative way to perform multi-conditional branching. When working with switch case statements, there are two important concepts you must grasp to utilize them effectively. Let's explore these concepts in detail:<ul><li><b>break: </b>After executing a code block corresponding to a case, the break statement is used to exit the switch statement. It prevents the execution of subsequent case blocks. If no break statement is encountered, the control falls through to the next case, and subsequent case blocks are executed until a break statement is encountered or the switch statement ends.</li><li><b>default: </b>The default case is optional and serves as the default choice when none of the case values match the expression. It is executed when no other cases are a match. The default case is typically used to handle any unexpected or unspecified scenarios.</li></ul>Let's take an example of a simple calculator.</p>
                 <h4>Syntax</h4>
@@ -236,6 +240,7 @@ switch (expression) {
     ...
     default:
         // code block
+        return;
 }
 </code>
                     </pre>
