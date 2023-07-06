@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />	
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Conditional Statements</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism.min.css" />
+	<link rel="stylesheet" href="blog_style.css">
+    <style>
+		
+		
+		@media screen and (max-width: 768px) {
+			.scrollable {
+				overflow-x: scroll;
+			}
+			
+		}
+	</style>
+</head>
+<body>
+
+    <div class="slider"></div>
+    <header>
+      <img src="../img/shape.png" alt="" class="shape2"/>
+        <div class = "big-wrapper light">
+        <div class="container_header">
+          <div class="logo">
+            <img src="../img/logo3.png" alt="Logo" />
+          </div>
+      
+          <div class="links">
+            <ul>
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../courses/launchpad.html">Launchpad</a></li>
+              <li><a href="../courses/bootcamp.html">Bootcamp</a></li>
+              <li><a href="../courses/aptitude.html">Aptitude</a></li>
+              <li><a href="../blog.html">Blogs</a></li>
+              <li></li>
+            </ul>
+          </div>
+      
+          <div class="overlay"></div>
+      
+          <div class="hamburger-menu">
+            <div class="bar"></div>
+          </div>
+        </div>
+        </div>
+        <hr>
+      </header>
+      
+      <main>
+	<div class="container">
+        <div class="articles">
+            <div class = "article">
+              <h2>Mastering the Loops in Java: A Beginner’s Guide</h2>
+              <img src="images/12_large.png" alt="Article 1" />
+              <p>Hello, dear coders! Buckle up for an exciting journey where we explore a critical aspect of coding - the loops. Loops are the heart of any programming language, and today, we're diving into the world of Java loops. Let's unravel the mystery of for, while, and do-while loops, and uncover their potential in writing efficient code. We promise you, by the end of this blog, loops will be your best coding companions.</p>  
+              <h4>For Loop</h4>
+              <p><b>For loops</b> are powerful tools in programming that allow us to iterate over collections or perform a specific task a defined number of times. They provide efficiency and flexibility, enabling us to process data, perform calculations, and control program flow. With an initialization step, termination condition, and increment or decrement step, for loops offer a concise and organized way to achieve repetitive tasks.</p>
+                <h4>Syntax</h4>
+                <div class="scrollable">
+                    <pre><code class = "language-java">
+for(Expression 1; Expression 2; Expression 3){  
+    //code to be executed  
+}                             
+</code>
+                    </pre>
+                </div>
+                <h4>Flowchart</h4>
+                <p>A flowchart of a for loop visually represents the repetitive execution of a block of code for a specified number of iterations</p>
+                <div class="scrollable">
+                    <pre>
+                        <img id="inimage" src="images/if_flowchart.png" alt="Article 1"/>
+                    </pre>
+                </div>
+                <h4>Example</h4>
+                <div class="scrollable">
+                    <pre><code class = "language-java">
+public class Example{
+    public static void main(String args[]){
+        int x = 5;
+        for(int i = 1; i <= 10; i++){
+                    System.out.println(num + " * " + i + "  =  " +num*i);  
+        }
+    }
+}                           
+</code>
+Output: 
+5 * 1 = 5
+5 * 2 = 10
+5 * 3 = 15
+5 * 4 = 20
+5 * 5 = 25
+5 * 6 = 30
+5 * 7 = 35
+5 * 8 = 40
+5 * 9 = 45
+5 * 10 = 50
+                    </pre>
+                </div>
+                <h4>While Loop</h4>
+                <p><b>While loops</b> are fundamental constructs in programming that allow us to repeatedly execute a block of code as long as a given condition remains true. The structure of a while loop consists of the condition itself, which is evaluated before each iteration, and the loop body that is executed as long as the condition holds true. This makes while loops particularly useful when the number of iterations is not known in advance or when we want to continuously perform a task until a certain condition is met. However, it is essential to ensure that the condition eventually becomes false to prevent infinite looping. While loops provide flexibility and versatility in designing algorithms and are valuable tools for creating interactive programs, handling input validation, and implementing complex logic.</p>
+                <h4>Syntax</h4>
+                <div class="scrollable">
+                    <pre><code class = "language-java">
+while (condition) {
+    // code block to be executed
+}   
+</code>
+                    </pre>
+                </div>
+                <h4>Flowchart</h4>
+                <p>Flowchart of a while loop visually represents the iterative execution of a block of code as long as a given condition remains true.</p>
+                <div class="scrollable">
+                    <pre>
+                        <img id="inimage" src="images/else_flowchart.png" alt="Article 1"/>
+                    </pre>
+                </div>
+                <h4>Example</h4>
+                <p>The example demonstrates a while loop that prints the values of the variable 'i' from 0 to 4, incrementing it by 1 with each iteration</p>
+                <div class="scrollable">
+                    <pre><code class = "language-java">
+public class Example{
+    public static void main(String args[]){
+        int i = 0;
+        while(i < 5){
+                System.out.println(i);
+                i++;
+        }        
+    }
+}                            
+</code>
+Output: 
+0
+1
+2
+3
+4
+                    </pre>
+                </div>
+                <h4>Do-While Loop</h4>
+                <p>The <b>do-while loop</b> executes a block of code at least once and then continues to repeat as long as a specified condition remains true, making it useful for scenarios where the action should be performed before checking the condition.</p>
+                <h4>Syntax</h4>
+                <div class="scrollable">
+                    <pre><code class = "language-java">
+do {
+    // code block to be executed
+}
+while (condition);                          
+</code>
+                    </pre>
+                </div>
+                <h4>Flowchart</h4>
+                <div class="scrollable">
+                    <pre>
+                        <img id="inimage2" src="images/ladder_flowchart.png" alt="Article 1"/>
+                    </pre>
+                </div>
+                <h4>Example</h4>
+                <p>The example demonstrates a do-while loop that prints the values of the variable 'j' from 0 to 2, incrementing it by 1 with each iteration.</p>
+                <div class="scrollable">
+                    <pre><code class = "language-java">
+public class Example{
+    public static void main(String args[]){
+        int j = 0;
+        do {
+                println(j);
+                j++;
+            } while (j < 3);
+        }
+} 
+                            
+</code>
+Output:
+0
+1
+2
+                    </pre>
+                </div>
+                <h4>Difference between While and Do-While Loop</h4>
+                <p>The main difference between the while loop and the do-while loop lies in the timing of the condition check.In a while loop, the condition is evaluated before the execution of the loop block. If the condition is false initially, the loop block is never executed. This is known as entry-controlled looping because the loop may not run at all if the condition is false from the start. On the other hand, the do-while loop performs the condition check after the execution of the loop block. This guarantees that the loop block is executed at least once, regardless of the condition's initial value. The condition is checked after each iteration, and if it evaluates to true, the loop continues. This is referred to as exit-controlled looping because the loop runs until the condition becomes false. The choice between a while loop and a do-while loop depends on the specific requirements of the program. If you want to execute the loop block only if the condition is initially true, you can use a while loop. However, if you need to ensure that the loop block executes at least once, regardless of the initial condition, a do-while loop is more appropriate.</p>
+
+                <h4>Example</h4>
+                <p>Here is an example that highlights the difference between a while loop and a do-while loop</p>
+                <div class="scrollable">
+                    <pre><code class = "language-java">
+public class Example {
+
+    public static void main(String[] args)
+    {
+        // While Loop
+        int x = 5;
+        while (x < 5) {
+            System.out.println("Inside the while loop");
+            x++;
+        }
+        System.out.println("Outside the while loop");
+
+        // Do-While Loop
+        int y = 5;
+        do {
+            System.out.println("Inside the do-while loop");
+            y++;
+        } while (y < 5);
+        System.out.println("Outside the do-while loop");
+    }
+}
+</code>
+Output: 
+Outside the while loop
+Inside the do-while loop
+Outside the do-while loop
+                    </pre>
+                </div>
+<p>In this example, the while loop condition x < 5 is initially false, so the code block within the while loop is never executed. As a result, only the "Outside the while loop" statement is printed. On the other hand, the do-while loop executes the code block at least once, regardless of the initial condition. Even though the condition y < 5 is initially false, the code block within the do-while loop is executed once before checking the condition. As a result, "Inside the do-while loop" is printed once, followed by the "Outside the do-while loop" statement. This example effectively demonstrates that the while loop performs an entry-controlled check, while the do-while loop is an exit-controlled loop that ensures the code block executes at least once before evaluating the condition</p>
+                
+<div class="scrollable">
+    <pre><code class = "language-java">
+public class Example {
+
+    public static void main(String[] args)
+    {
+        // While Loop
+        int x = 5;
+        while (x < 5) {
+            System.out.println("Inside the while loop");
+            x++;
+        }
+        System.out.println("Outside the while loop");
+
+        // Do-While Loop
+        int y = 5;
+        do {
+            System.out.println("Inside the do-while loop");
+            y++;
+        } while (y < 5);
+        System.out.println("Outside the do-while loop");
+    }
+}
+</code>
+Output: 
+Outside the while loop
+Inside the do-while loop
+Outside the do-while loop
+    </pre>
+</div>
+<h4>Nested Loops</h4>
+<p>Nested loops are a fascinating concept in programming that allows loops to be nested within each other. This opens up a world of possibilities as we can create intricate patterns, perform complex computations, and iterate over multiple dimensions. Each iteration of the outer loop triggers a complete set of iterations of the inner loop, resulting in a powerful repetition mechanism. Nested loops find applications in various domains, from processing multi-dimensional arrays to generating complex data structures. However, it is important to ensure efficiency and avoid excessive nesting to maintain optimal performance. Harnessing the potential of nested loops can unlock new levels of control and flexibility in your code.</p>
+<div class="scrollable">
+    <pre><code class = "language-java">
+public class Example {
+
+    public static void main(String[] args)
+    {
+        int rows = 2,col = 3;
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j <= col; j++) {
+                System.out.print(j+" ");
+            }
+        System.out.println();
+        }
+    }
+}
+</code>
+Output: 
+0 1 2
+0 1 2
+</pre>
+</div>
+<p>In this code, a nested loop is used to generate a rectangular pattern of numbers. The outer loop controls the number of rows, while the inner loop controls the number of columns. Inside the inner loop, the code prints the value of j followed by a space. This results in printing the numbers from 0 to the given number of columns for each row.</p>
+<p>This code demonstrates how nested loops can be used to generate structured patterns and highlights the flexibility of controlling the iteration for rows and columns separately.</p>
+        </div>
+
+            <div class = "article">
+              <iframe sandbox="allow-popups allow-scripts allow-modals allow-forms allow-same-origin" style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-in.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=IN&source=ss&ref=as_ss_li_til&ad_type=product_link&tracking_id=victorypoint-21&language=en_IN&marketplace=amazon&region=IN&placement=B09X74RB6D&asins=B09X74RB6D&linkId=fb0147bd823d8537671f4b94aa9674d0&show_border=true&link_opens_in_new_window=true"></iframe>  
+            </div>
+            
+        </div>
+    </div>
+	</main>
+  <hr>
+  <footer>
+    <a href="https://www.linkedin.com/in/techpranjal/" target="_blank" class="fa fa-linkedin"></a>
+    <a href="https://www.youtube.com/channel/UCI8SrpFD9XD0v9oFMIiL97w" target="_blank" class="fa fa-youtube"></a>
+    <a href="https://www.instagram.com/victorypoint_official/" target="_blank" class="fa fa-instagram"></a>
+    <a href="" class="fa fa-facebook"></a>
+    <p><br><b>Call us at: +91 8700070274</b></p>
+  </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-java.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
