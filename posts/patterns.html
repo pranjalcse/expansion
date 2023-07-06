@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />	
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Pattern Printing</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism.min.css" />
+	<link rel="stylesheet" href="blog_style.css">
+    <style>
+		
+		
+		@media screen and (max-width: 768px) {
+			.scrollable {
+				overflow-x: scroll;
+			}
+			
+		}
+	</style>
+</head>
+<body>
+
+    <div class="slider"></div>
+    <header>
+      <img src="../img/shape.png" alt="" class="shape2"/>
+        <div class = "big-wrapper light">
+        <div class="container_header">
+          <div class="logo">
+            <img src="../img/logo3.png" alt="Logo" />
+          </div>
+      
+          <div class="links">
+            <ul>
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../courses/launchpad.html">Launchpad</a></li>
+              <li><a href="../courses/bootcamp.html">Bootcamp</a></li>
+              <li><a href="../courses/aptitude.html">Aptitude</a></li>
+              <li><a href="../blog.html">Blogs</a></li>
+              <li></li>
+            </ul>
+          </div>
+      
+          <div class="overlay"></div>
+      
+          <div class="hamburger-menu">
+            <div class="bar"></div>
+          </div>
+        </div>
+        </div>
+        <hr>
+      </header>
+      
+      <main>
+	<div class="container">
+        <div class="articles">
+            <div class = "article">
+              <h2>Pattern Printing in Java</h2>
+              <img src="images/13_large.png" alt="Article 1" />
+              <p>Pattern printing in Java is more than just a fascinating coding exercise; it serves as a gateway to enhancing your programming skills and developing a deeper understanding of loops. If you aspire to excel in coding interviews conducted by multinational corporations (MNCs) or simply wish to strengthen your grasp of fundamental concepts, pattern printing is a crucial area to explore. Frequently asked in MNC coding rounds, these questions offer a unique opportunity to showcase your problem-solving abilities while unraveling the inner workings of loops. In this comprehensive blog, we will dive into the captivating world of pattern printing in Java, empowering you to master this skill, unravel the magic of loops, and unleash your coding potential. Get ready to embark on a transformative journey of pattern printing!</p>  
+              <p>To provide structure and clarity, we will divide patterns into two distinct types: 1D patterns and 2D patterns.</p>
+              <h4>1D patterns</h4>
+              <p>To create a 1D pattern in Java, follow these three steps:</p>
+              <ul><li>Determine the pattern and its length.</li><li>Use a loop to iterate over the desired range.</li><li>Print each element of the pattern within the loop.</li></ul>
+              <p>Let's have a look at some examples to help you understand 1D patterns:</p>
+              <p><b>Example 1: Printing "*" in a line</b></p>
+              <div class="scrollable">
+                <pre><code class = "language-java">
+public class Example{
+    public static void main(String[] args) {
+        int length = 5; // Number of asterisks to be printed
+        for(int i = 0; i < length; i++) {
+            System.out.print("*");
+        }
+    }
+}                            
+</code>
+Output:
+*****
+                </pre>
+            </div>
+<p>In this example, we use a loop to iterate desired number of times and print an asterisk on each iteration.</p>
+<p><b>Example 2: Counting in a line</b></p>
+<div class="scrollable">
+    <pre><code class = "language-java">
+public class Example{
+    public static void main(String[] args) {
+        int length = 5; // Number of elements to be printed
+
+        for(int i = 1; i <= length; i++) {
+            System.out.print(i);
+        }
+    }
+}                        
+</code>
+Output:
+12345
+    </pre>
+</div>
+<p>In this example, we use a loop to iterate from 1 to the desired length and print the counting numbers on each iteration.</p>
+<p><b>Example 3: Printing alphabets in a line</b></p>
+<div class="scrollable">
+    <pre><code class = "language-java">
+public class Example{
+    public static void main(String[] args) {
+        int length = 5; // Number of alphabets to be printed
+        char currentChar = 'a'; // Starting alphabet
+
+        for(int i = 0; i < length; i++) {
+            System.out.print(currentChar);
+            currentChar++; // Incrementing to the next alphabet
+        }
+    }
+}                      
+</code>
+Output:
+abcde
+    </pre>
+</div>         
+<p>In this example, we use a loop to iterate the desired number of times and print the corresponding alphabets by incrementing the currentChar variable.</p>
+
+<h4>2D patterns</h4>
+
+<p>To make studying 2d patterns easier, we can further divide it into 3 categories</p>
+<ul><li>Start Patterns</li><li>Number Patterns</li><li>Character Patterns</li></ul>
+
+<h4>Star Patterns</h4>
+
+<p><b>1. Square Pattern:</b>The Square Pattern involves printing a square shape composed of asterisks (*) or any other character.</p>
+
+<div class="scrollable">
+    <pre><code class = "language-java">
+public class Example {
+    public static void main(String[] args) {
+        int size = 5; // Size of the square pattern
+
+        for(int i = 0; i < size; i++) {
+            for(int j = 0; j < size; j++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+    }
+}                       
+</code>
+Output:
+*****
+*****
+*****
+*****
+*****
+    </pre>
+</div>
+
+<p>This code uses nested loops to iterate over the desired size of the square pattern. On each iteration, it prints an asterisk, creating a row of asterisks. The outer loop controls the rows, while the inner loop controls the columns. The result is a square pattern.</p>
+
+<p><b>2. Hollow Square Pattern:</b>The Hollow Square Pattern is similar to the Square Pattern but with empty spaces in the interior. </p>
+
+<div class="scrollable">
+    <pre><code class = "language-java">
+public class HollowSquarePatternExample {
+    public static void main(String[] args) {
+        int size = 5; // Size of the hollow square pattern
+
+        for (int i = 0; i < size; i++) {
+            for (int j = 0; j < size; j++) {
+                if (i == 0 || i == size - 1 || j == 0 || j == size - 1) {
+                    System.out.print("*");
+                } else {
+                    System.out.print(" ");
+                }
+            }
+            System.out.println();
+        }
+    }
+}                   
+</code>
+Output:
+*****
+*   *
+*   *
+*   *
+*****
+    </pre>
+</div>
+
+<p>In this example, we add a conditional statement within the inner loop to check if the current position is on the border of the square. If it is, we print an asterisk; otherwise, we print a space to create the hollow effect. This condition allows us to selectively print asterisks only at the border positions, leaving the interior empty.</p>
+
+<p><b>3. Left-Facing Right-Angled Triangle Pattern:</b>The Left-Facing Right-Angled Triangle Pattern involves printing a triangle shape with the longest side on the left side.</p>
+
+<div class="scrollable">
+    <pre><code class = "language-java">
+public class LeftTrianglePatternExample {
+    public static void main(String[] args) {
+        int size = 5; // Size of the left-facing right-angled triangle pattern
+
+        for (int i = 0; i < size; i++) {
+            for (int j = 0; j <= i; j++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+    }
+}                
+</code>
+Output:
+*
+**
+***
+****
+*****
+    </pre>
+</div>
+
+<p>Using nested loops, we control the number of asterisks printed in each row. The outer loop determines the number of rows, and the inner loop determines the number of asterisks in each row. As the outer loop variable (i) increases, the number of asterisks printed in each row also increases, creating a left-facing right-angled triangle shape.</p>
+
+<p><b>Right-Facing Right-Angled Triangle Pattern:</b>The Right-Facing Right-Angled Triangle Pattern is similar to the left-facing triangle but with the longest side on the right side.</p>
+
+<div class="scrollable">
+    <pre><code class = "language-java">
+public class RightTrianglePatternExample {
+    public static void main(String[] args) {
+        int size = 5; // Size of the right-facing right-angled triangle pattern
+
+        for (int i = 0; i < size; i++) {
+            for (int j = size - i; j > 1; j--) {
+                System.out.print(" ");
+            }
+            for (int k = 0; k <= i; k++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+    }
+}           
+</code>
+Output:
+    *
+   **
+  ***
+ ****
+*****
+    </pre>
+</div>
+
+<p>In this code, we use two nested loops. The outer loop controls the rows of the triangle, while the inner loops control the spaces and asterisks in each row.</p>
+<p>The first inner loop (for (int j = size - i; j > 1; j--)) is responsible for printing the spaces before the asterisks. It starts with size - i, which determines the number of spaces to be printed. As i increases (outer loop variable), the number of spaces decreases.</p>
+<p>The second inner loop (for (int k = 0; k <= i; k++)) prints the asterisks. It iterates from 0 to i (inclusive) to determine the number of asterisks in each row. As i increases, the number of asterisks printed in each row also increases.</p>
+<p>By combining these loops and print statements, we achieve the right-facing right-angled triangle pattern, where the longest side is on the right side.</p>
+
+<h4>Number patterns</h4>
+<p><b>1. Square Pattern:</b></p>
+
+<div class="scrollable">
+    <pre><code class = "language-java">
+public class Example {
+    public static void main(String[] args) {
+        int size = 5; // Size of the square pattern
+
+        for (int i = 0; i < size; i++) {
+            for (int j = 0; j < size; j++) {
+                System.out.print((j + 1));
+            }
+            System.out.println();
+        }
+    }
+}      
+</code>
+Output:
+12345
+12345
+12345
+12345
+12345
+    </pre>
+</div>
+
+<p>In the square number pattern each row and column consists of numbers increasing sequentially. In this example, we use nested loops to print a square pattern. The outer loop controls the number of rows, and the inner loop controls the number of elements in each row. By adding (j + 1) within the System.out.print statement, we ensure that the numbers printed start from 1 and increment by 1 in each column.</p>
+
+<p><b>2. Hollow Square Pattern:</b></p>
+
+<div class="scrollable">
+    <pre><code class = "language-java">
+public class Example {
+    public static void main(String[] args) {
+        int size = 5; // Size of the hollow square pattern
+
+        for (int i = 0; i < size; i++) {
+            for (int j = 0; j < size; j++) {
+                if (i == 0 || i == size - 1 || j == 0 || j == size - 1) {
+                    System.out.print((j + 1));
+                } else {
+                    System.out.print(" ");
+                }
+            }
+            System.out.println();
+        }
+    }
+}    
+</code>
+Output:
+12345
+1   5
+1   5
+1   5
+12345
+    </pre>
+</div>
+<p>The hollow square number pattern is similar to the square pattern, but with empty spaces in the interior. In this code, we add a conditional statement within the inner loop to check if the current position is on the border of the square. If it is, we print the number (j + 1); otherwise, we print a spaces to create the hollow effect.</p>
+
+<p><b>3. Left-Facing Right-Angled Triangle Pattern:</b></p>
+
+<div class="scrollable">
+    <pre><code class = "language-java">
+public class Example {
+    public static void main(String[] args) {
+        int size = 5; // Size of the left-facing right-angled triangle pattern
+
+        for (int i = 0; i < size; i++) {
+            for (int j = 0; j <= i; j++) {
+                System.out.print((j + 1));
+            }
+            System.out.println();
+        }
+    }
+}
+</code>
+Output:
+1
+12
+123
+1234
+12345
+    </pre>
+</div>
+<p>The left-facing right-angled triangle number pattern forms a triangle shape where each row contains numbers starting from 1 and increasing by 1. The outer loop controls the number of rows, and the inner loop controls the number of elements in each row. By adding (j + 1) within the System.out.print statement, we ensure that the numbers printed start from 1 and increment by 1 in each row.</p>
+
+<p><b>4. Right-Facing Right-Angled Triangle Pattern</b></p>
+<div class="scrollable">
+    <pre><code class = "language-java">
+public class Example {
+    public static void main(String[] args) {
+        int size = 5; // Size of the right-facing right-angled triangle pattern
+
+        for (int i = 0; i < size; i++) {
+            for (int j = size - i; j > 0; j--) {
+                System.out.print(" ");
+            }
+            for (int k = 0; k <= i; k++) {
+                System.out.print((k + 1));
+            }
+            System.out.println();
+        }
+    }
+}
+</code>
+Output:
+    1
+   12
+  123
+ 1234
+12345
+    </pre>
+</div>
+<p>The right-facing right-angled triangle number pattern forms a triangular shape where each row contains numbers starting from 1 and increasing by 1. The outer loop controls the number of rows, while the inner loops control the spaces and the number of elements in each row. The first inner loop prints spaces before the numbers to create the right-facing effect, and the second inner loop prints the numbers (k + 1) in each row.</p>
+
+<h4>Character patterns</h4>
+
+<p><b>1. Square Pattern:</b></p>
+
+<div class="scrollable">
+    <pre><code class = "language-java">
+public class CharacterSquarePatternExample {
+    public static void main(String[] args) {
+        int size = 3; // Size of the square pattern
+        char currentChar = 'A'; // Starting character
+
+        for (int i = 0; i < size; i++) {
+            for (int j = 0; j < size; j++) {
+                System.out.print(currentChar);
+                currentChar++; // Incrementing to the next character
+            }
+            System.out.println();
+        }
+    }
+}
+</code>
+Output:
+ABC
+DEF
+GHI
+    </pre>
+</div>
+<p>The square character pattern creates a square shape using characters. Each row or column represents a sequence of characters. In this example, we use nested loops to print a square pattern. The outer loop controls the number of rows, and the inner loop controls the number of characters in each row. By using the currentChar variable and incrementing it in each iteration, we print consecutive characters in each position.</p>
+
+<p><b>2. Hollow Square Pattern:</b></p>
+
+<div class="scrollable">
+    <pre><code class = "language-java">
+public class CharacterHollowSquarePatternExample {
+    public static void main(String[] args) {
+        int size = 5; // Size of the hollow square pattern
+        char currentChar = 'A'; // Starting character
+
+        for (int i = 0; i < size; i++) {
+            for (int j = 0; j < size; j++) {
+                if (i == 0 || i == size - 1 || j == 0 || j == size - 1) {
+                    System.out.print(currentChar);
+                } else {
+                    System.out.print(" ");
+                }
+            }
+            System.out.println();
+        }
+    }
+}
+</code>
+Output:
+ABC
+D E
+FGH
+    </pre>
+</div>
+<p>The hollow square character pattern is similar to the square pattern, but with empty spaces in the interior. In this code, we add a conditional statement within the inner loop to check if the current position is on the border of the square. If it is, we print the character currentChar; otherwise, we print two a to create the hollow effect.</p>
+
+<p><b>3. Left-Facing Right-Angled Triangle Pattern:</b></p>
+<div class="scrollable">
+    <pre><code class = "language-java">
+public class Example {
+    public static void main(String[] args) {
+        int size = 3; // Size of the left-facing right-angled triangle pattern
+        char currentChar = 'A'; // Starting character
+        for (int i = 0; i < size; i++) {
+            for (int j = 0; j <= i; j++) {
+                System.out.print(currentChar);
+                currentChar++; // Incrementing to the next character
+            }
+            System.out.println();
+        }
+    }
+}
+</code>
+Output:
+A
+BC
+DEF
+    </pre>
+</div>
+<p>The left-facing right-angled triangle character pattern forms a triangle shape where each row contains characters starting from a specified character and increasing by one. The outer loop controls the number of rows, and the inner loop controls the number of characters in each row. By using the currentChar variable and incrementing it in each iteration, we print consecutive characters in each row.</p>
+
+<p><b>4. Right-Facing Right-Angled Triangle:</b></p>
+
+<div class="scrollable">
+    <pre><code class = "language-java">
+public class CharacterRightTrianglePatternExample {
+    public static void main(String[] args) {
+        int size = 3; // Size of the right-facing right-angled triangle pattern
+        char currentChar = 'A'; // Starting character
+
+        for (int i = 0; i < size; i++) {
+            for (int j = size - i; j > 0; j--) {
+                System.out.print("  ");
+            }
+            for (int k = 0; k <= i; k++) {
+                System.out.print(currentChar + " ");
+                currentChar++; // Incrementing to the next character
+            }
+            System.out.println();
+        }
+    }
+}
+</code>
+Output:
+  A
+ BC
+DEF
+    </pre>
+</div>
+<p>The right-facing right-angled triangle character pattern forms a triangular shape where each row contains characters starting from a specified character and increasing by one. The outer loop controls the number of rows, while the inner loops control the spaces and the number of characters in each row. The first inner loop prints spaces before the characters to create the right-facing effect, and the second inner loop prints the characters currentChar in each row.</p>
+
+<h4>Complex patterns</h4>
+<p>In the case of complex patterns, it can be beneficial to break them down into several simpler smaller patterns. By understanding and recreating these smaller patterns, we can gradually build towards the complex pattern we desire. Breaking down the complex pattern into simpler components allows us to tackle each component individually, making it easier to comprehend and implement. Once we have created and understood the smaller patterns, we can then combine them strategically to reconstruct the complex pattern. This approach not only simplifies the overall problem but also helps in better organizing our code and improving code readability.</p>
+
+<ul>
+<li>Understand the pattern: Analyze the arrangement and rules.</li>
+<li>Plan your approach: Decide on the looping structure and logic.</li>
+<li>Break it down: Simplify complex patterns into smaller components.</li>
+<li>Use nested loops: Control rows and columns or elements.</li>
+<li>Manage spacing: Add gaps or alignment where necessary.</li>
+<li>Track element values: Increment or modify values accurately.</li>
+<li>Test and iterate: Check output, make adjustments if needed.</li>
+<li>Maintain code readability: Use clear variable names and comments.</li>
+</ul>
+
+<p>Following these guidelines ensures successful pattern printing. Practice and experimentation are key to improving your skills.</p>
+        </div>
+
+            <div class = "article">
+              <iframe sandbox="allow-popups allow-scripts allow-modals allow-forms allow-same-origin" style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-in.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=IN&source=ss&ref=as_ss_li_til&ad_type=product_link&tracking_id=victorypoint-21&language=en_IN&marketplace=amazon&region=IN&placement=B09X74RB6D&asins=B09X74RB6D&linkId=fb0147bd823d8537671f4b94aa9674d0&show_border=true&link_opens_in_new_window=true"></iframe>  
+            </div>
+            
+        </div>
+    </div>
+	</main>
+  <hr>
+  <footer>
+    <a href="https://www.linkedin.com/in/techpranjal/" target="_blank" class="fa fa-linkedin"></a>
+    <a href="https://www.youtube.com/channel/UCI8SrpFD9XD0v9oFMIiL97w" target="_blank" class="fa fa-youtube"></a>
+    <a href="https://www.instagram.com/victorypoint_official/" target="_blank" class="fa fa-instagram"></a>
+    <a href="" class="fa fa-facebook"></a>
+    <p><br><b>Call us at: +91 8700070274</b></p>
+  </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-java.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
