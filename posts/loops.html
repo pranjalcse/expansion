@@ -218,38 +218,7 @@ Inside the do-while loop
 Outside the do-while loop
                     </pre>
                 </div>
-<p>In this example, the while loop condition x < 5 is initially false, so the code block within the while loop is never executed. As a result, only the "Outside the while loop" statement is printed. On the other hand, the do-while loop executes the code block at least once, regardless of the initial condition. Even though the condition y < 5 is initially false, the code block within the do-while loop is executed once before checking the condition. As a result, "Inside the do-while loop" is printed once, followed by the "Outside the do-while loop" statement. This example effectively demonstrates that the while loop performs an entry-controlled check, while the do-while loop is an exit-controlled loop that ensures the code block executes at least once before evaluating the condition</p>
-                
-<div class="scrollable">
-    <pre><code class = "language-java">
-public class Example {
-
-    public static void main(String[] args)
-    {
-        // While Loop
-        int x = 5;
-        while (x < 5) {
-            System.out.println("Inside the while loop");
-            x++;
-        }
-        System.out.println("Outside the while loop");
-
-        // Do-While Loop
-        int y = 5;
-        do {
-            System.out.println("Inside the do-while loop");
-            y++;
-        } while (y < 5);
-        System.out.println("Outside the do-while loop");
-    }
-}
-</code>
-Output: 
-Outside the while loop
-Inside the do-while loop
-Outside the do-while loop
-    </pre>
-</div>
+<p>In this example, the while loop condition x < 5 is initially false, so the code block within the while loop is never executed. As a result, only the "Outside the while loop" statement is printed. On the other hand, the do-while loop executes the code block at least once, regardless of the initial condition. Even though the condition y < 5 is initially false, the code block within the do-while loop is executed once before checking the condition. As a result, "Inside the do-while loop" is printed once, followed by the "Outside the do-while loop" statement. This example effectively demonstrates that the while loop performs an entry-controlled check, while the do-while loop is an exit-controlled loop that ensures the code block executes at least once before evaluating the condition.</p>
 <h4>Nested Loops</h4>
 <p>Nested loops are a fascinating concept in programming that allows loops to be nested within each other. This opens up a world of possibilities as we can create intricate patterns, perform complex computations, and iterate over multiple dimensions. Each iteration of the outer loop triggers a complete set of iterations of the inner loop, resulting in a powerful repetition mechanism. Nested loops find applications in various domains, from processing multi-dimensional arrays to generating complex data structures. However, it is important to ensure efficiency and avoid excessive nesting to maintain optimal performance. Harnessing the potential of nested loops can unlock new levels of control and flexibility in your code.</p>
 <div class="scrollable">
