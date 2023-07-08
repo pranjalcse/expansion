@@ -72,7 +72,7 @@
 public class Example{
     public static void main(String[] args) {
         int length = 5; // Number of asterisks to be printed
-        for(int i = 0; i < length; i++) {
+        for(int i = 1; i <= length; i++) {
             System.out.print("*");
         }
     }
@@ -109,7 +109,7 @@ public class Example{
         int length = 5; // Number of alphabets to be printed
         char currentChar = 'a'; // Starting alphabet
 
-        for(int i = 0; i < length; i++) {
+        for(int i = 1; i <= length; i++) {
             System.out.print(currentChar);
             currentChar++; // Incrementing to the next alphabet
         }
@@ -137,8 +137,8 @@ public class Example {
     public static void main(String[] args) {
         int size = 5; // Size of the square pattern
 
-        for(int i = 0; i < size; i++) {
-            for(int j = 0; j < size; j++) {
+        for(int i = 1; i <= size; i++) {
+            for(int j = 1; j <= size; j++) {
                 System.out.print("*");
             }
             System.out.println();
@@ -165,9 +165,9 @@ public class HollowSquarePatternExample {
     public static void main(String[] args) {
         int size = 5; // Size of the hollow square pattern
 
-        for (int i = 0; i < size; i++) {
-            for (int j = 0; j < size; j++) {
-                if (i == 0 || i == size - 1 || j == 0 || j == size - 1) {
+        for (int i = 1; i <= size; i++) {
+            for (int j = 1; j <= size; j++) {
+                if (i == 1 || i == size || j == 1 || j == size) {
                     System.out.print("*");
                 } else {
                     System.out.print(" ");
@@ -197,8 +197,8 @@ public class LeftTrianglePatternExample {
     public static void main(String[] args) {
         int size = 5; // Size of the left-facing right-angled triangle pattern
 
-        for (int i = 0; i < size; i++) {
-            for (int j = 0; j <= i; j++) {
+        for (int i = 1; i <= size; i++) {
+            for (int j = 1; j <= i; j++) {
                 System.out.print("*");
             }
             System.out.println();
@@ -225,11 +225,11 @@ public class RightTrianglePatternExample {
     public static void main(String[] args) {
         int size = 5; // Size of the right-facing right-angled triangle pattern
 
-        for (int i = 0; i < size; i++) {
-            for (int j = size - i; j > 1; j--) {
+        for (int i = 1; i <= size; i++) {
+            for (int j = size - i; j > 0; j--) {
                 System.out.print(" ");
             }
-            for (int k = 0; k <= i; k++) {
+            for (int k = 1; k <= i; k++) {
                 System.out.print("*");
             }
             System.out.println();
@@ -260,9 +260,9 @@ public class Example {
     public static void main(String[] args) {
         int size = 5; // Size of the square pattern
 
-        for (int i = 0; i < size; i++) {
-            for (int j = 0; j < size; j++) {
-                System.out.print((j + 1));
+        for (int i = 1; i <= size; i++) {
+            for (int j = 1; j <= size; j++) {
+                System.out.print((j));
             }
             System.out.println();
         }
@@ -288,10 +288,10 @@ public class Example {
     public static void main(String[] args) {
         int size = 5; // Size of the hollow square pattern
 
-        for (int i = 0; i < size; i++) {
-            for (int j = 0; j < size; j++) {
-                if (i == 0 || i == size - 1 || j == 0 || j == size - 1) {
-                    System.out.print((j + 1));
+        for (int i = 1; i <= size; i++) {
+            for (int j = 1; j <= size; j++) {
+                if (i == 1 || i == size || j == 1 || j == size) {
+                    System.out.print((j));
                 } else {
                     System.out.print(" ");
                 }
@@ -319,9 +319,9 @@ public class Example {
     public static void main(String[] args) {
         int size = 5; // Size of the left-facing right-angled triangle pattern
 
-        for (int i = 0; i < size; i++) {
-            for (int j = 0; j <= i; j++) {
-                System.out.print((j + 1));
+        for (int i = 1; i <= size; i++) {
+            for (int j = 1; j <= i; j++) {
+                System.out.print((j));
             }
             System.out.println();
         }
@@ -345,12 +345,12 @@ public class Example {
     public static void main(String[] args) {
         int size = 5; // Size of the right-facing right-angled triangle pattern
 
-        for (int i = 0; i < size; i++) {
+        for (int i = 1; i <= size; i++) {
             for (int j = size - i; j > 0; j--) {
                 System.out.print(" ");
             }
-            for (int k = 0; k <= i; k++) {
-                System.out.print((k + 1));
+            for (int k = 1; k <= i; k++) {
+                System.out.print((k));
             }
             System.out.println();
         }
@@ -378,10 +378,9 @@ public class CharacterSquarePatternExample {
         int size = 3; // Size of the square pattern
         char currentChar = 'A'; // Starting character
 
-        for (int i = 0; i < size; i++) {
-            for (int j = 0; j < size; j++) {
-                System.out.print(currentChar);
-                currentChar++; // Incrementing to the next character
+        for (int i = 1; i <= size; i++) {
+            for (int j = 1; j <= size; j++) {
+                System.out.print(currentChar++);
             }
             System.out.println();
         }
@@ -405,10 +404,10 @@ public class CharacterHollowSquarePatternExample {
         int size = 5; // Size of the hollow square pattern
         char currentChar = 'A'; // Starting character
 
-        for (int i = 0; i < size; i++) {
-            for (int j = 0; j < size; j++) {
-                if (i == 0 || i == size - 1 || j == 0 || j == size - 1) {
-                    System.out.print(currentChar);
+        for (int i = 1; i <= size; i++) {
+            for (int j = 1; j <= size; j++) {
+                if (i == 1 || i == size || j == 1 || j == size) {
+                    System.out.print(currentChar++);
                 } else {
                     System.out.print(" ");
                 }
@@ -433,8 +432,8 @@ public class Example {
     public static void main(String[] args) {
         int size = 3; // Size of the left-facing right-angled triangle pattern
         char currentChar = 'A'; // Starting character
-        for (int i = 0; i < size; i++) {
-            for (int j = 0; j <= i; j++) {
+        for (int i = 1; i <= size; i++) {
+            for (int j = 1; j <= i; j++) {
                 System.out.print(currentChar);
                 currentChar++; // Incrementing to the next character
             }
@@ -460,12 +459,12 @@ public class CharacterRightTrianglePatternExample {
         int size = 3; // Size of the right-facing right-angled triangle pattern
         char currentChar = 'A'; // Starting character
 
-        for (int i = 0; i < size; i++) {
+        for (int i = 1; i <= size; i++) {
             for (int j = size - i; j > 0; j--) {
                 System.out.print("  ");
             }
-            for (int k = 0; k <= i; k++) {
-                System.out.print(currentChar + " ");
+            for (int k = 1; k <= i; k++) {
+                System.out.print(currentChar);
                 currentChar++; // Incrementing to the next character
             }
             System.out.println();
