@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />	
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>1D Arrays</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism.min.css" />
+	<link rel="stylesheet" href="blog_style.css">
+    <style>
+		
+		
+		@media screen and (max-width: 768px) {
+			.scrollable {
+				overflow-x: scroll;
+			}
+			
+		}
+	</style>
+</head>
+<body>
+
+    <div class="slider"></div>
+    <header>
+      <img src="../img/shape.png" alt="" class="shape2"/>
+        <div class = "big-wrapper light">
+        <div class="container_header">
+          <div class="logo">
+            <img src="../img/logo3.png" alt="Logo" />
+          </div>
+      
+          <div class="links">
+            <ul>
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../courses/launchpad.html">Launchpad</a></li>
+              <li><a href="../courses/bootcamp.html">Bootcamp</a></li>
+              <li><a href="../courses/aptitude.html">Aptitude</a></li>
+              <li><a href="../blog.html">Blogs</a></li>
+              <li></li>
+            </ul>
+          </div>
+      
+          <div class="overlay"></div>
+      
+          <div class="hamburger-menu">
+            <div class="bar"></div>
+          </div>
+        </div>
+        </div>
+        <hr>
+      </header>
+      
+      <main>
+	<div class="container">
+        <div class="articles">
+            <div class = "article">
+              <h2>Mastering 1D Arrays in Java: A Comprehensive Guide</h2>
+              <img src="images/12_large.png" alt="Article 1" />
+              <p>A must-have skill to tackle problem-solving in companies like Google, Microsoft, and other tech behemoths is understanding and implementing data structures, and arrays sit prominently among these. Today, we're about to embark on a detailed journey into the realm of 1D arrays in Java.</p>  
+              <h4>An Introduction to 1D Arrays in Java</h4>
+              <p>In the simplest terms, a 1D array (one-dimensional array) is a type of linear data structure that can store a fixed-size sequential collection of elements of the same type. Whether it's a series of integers, strings, or even objects, arrays have got you covered. One crucial aspect of arrays is their ability to allow random access to elements. This means that we can access any data element directly, using its numerical index.</p>
+              <h3>The Syntax of 1D Arrays</h3>
+              <h4>Declaration</h4>  
+              <p>Arrays in Java are objects. They need to be declared before they can be used. Here's how to declare an array in Java:</p>
+              <div class="scrollable">
+                    <pre><code class = "language-java">
+dataType[] arrayName; // or
+dataType arrayName[];
+</code>
+                    </pre>
+                </div>
+                <p>An array of integers, for example, can be declared as follows:</p>
+                <div class="scrollable">
+                    <pre><code class = "language-java">
+int[] myArray; // or
+int myArray[];
+</code>
+                    </pre>
+                </div>
+                
+                
+                <h4>Initialization</h4>
+                <p>After declaring an array, you need to allocate memory for it. This can be done as follows:</p>
+                <div class="scrollable">
+                    <pre><code class = "language-java">
+myArray = new int[10]; 
+</code>
+                    </pre>
+                </div>
+                <p>Here, an integer array of size 10 has been created, with each element initialized to the default value of 0.</p>
+                <h4>Instantiation with Values</h4>
+                <p>Alternatively, you can instantiate an array with values at the time of declaration:</p>
+                <div class="scrollable">
+                    <pre><code class = "language-java">
+int[] myArray = {10, 20, 30, 40, 50}; 
+</code>
+                    </pre>
+                </div>
+                <p>In this case, the size of the array is automatically determined by the number of values provided.</p>
+                <h4>Accessing Array Elements</h4>
+                <p>The individual elements in an array can be accessed using their index. Remember, array indexing starts from 0 in Java.</p>
+                <div class="scrollable">
+                    <pre><code class = "language-java">
+int firstElement = myArray[0]; // This will retrieve the first element.
+</code>
+                    </pre>
+                </div>
+                <h4>Inserting Values into an Array</h4>
+                <p>Unlike dynamic data structures like ArrayLists in Java, arrays have a fixed size once created. This means you can't add or remove elements from an existing array like you would with an ArrayList. However, you can certainly change the values stored at each index in the array.</p>
+                <div class="scrollable">
+                    <pre><code class = "language-java">
+int[] myArray = new int[5]; // Declaring and initializing the array.
+myArray[0] = 10; // Inserting values into the array.
+myArray[1] = 20;
+myArray[2] = 30;
+myArray[3] = 40;
+myArray[4] = 50;
+
+// Printing the array elements
+for (int i=0;i < myArray.length;i++) {
+    System.out.print(myArray[i] + " ");
+}                        
+</code>
+Output: 
+10 20 30 40 50
+                    </pre>
+                </div>
+<h4>Taking User Input for Array Values</h4>
+<p>To take user input in Java, we use the Scanner class, which is a part of java.util package. Here's how you can create an array by taking input from the user:</p>
+                <div class="scrollable">
+                    <pre><code class = "language-java">
+import java.util.Scanner;
+
+Scanner scanner = new Scanner(System.in);
+
+System.out.println("Enter the size of the array:");
+int size = scanner.nextInt(); // Taking array size as input.
+
+int[] myArray = new int[size]; // Creating array of input size.
+
+System.out.println("Enter elements of the array:");
+
+for (int i = 0; i < size; i++) {
+    myArray[i] = scanner.nextInt(); // Taking array elements as input.
+}
+
+scanner.close();
+
+// Printing the array elements
+System.out.print("Array elements: ");
+for (int i=0;i < myArray.length;i++) {
+    System.out.print(myArray[i] + " ");
+}
+                        
+</code>
+                    </pre>
+                </div>
+                <h3>Working with 1D Arrays in Java</h3>
+                <h4>Looping Over Arrays and Summing Elements</h4>
+                <p>Iterating over an array can be done using any looping construct, such as for, while, or for-each loop. The conventional method is using a for loop. Let's calculate the sum of all elements in the array as we traverse:</p>
+                
+                <div class="scrollable">
+                    <pre><code class = "language-java">
+int[] myArray = {10, 20, 30, 40, 50};
+int sum = 0;
+
+for (int i = 0; i < myArray.length; i++) {
+    sum += myArray[i];
+}
+
+System.out.println("Sum of array elements: " + sum);                 
+</code>
+Output:
+Sum of array elements: 150
+                    </pre>
+                </div>
+                <h4>The Enhanced for Loop</h4>
+                <p>An enhanced for loop, also known as the for-each loop, is another way to traverse an array:</p>
+                <div class="scrollable">
+                    <pre><code class = "language-java">
+for (int element : myArray) {
+    System.out.println(element);
+}        
+</code>
+Output: 
+Result: 15
+                    </pre>
+                </div>
+                <h4>Array Manipulation: Sorting</h4>
+
+<p>Java offers a rich set of libraries to perform operations on arrays. For instance, to sort an array, you can use the Arrays.sort() method. Here's how you can do it:</p>
+                <div class="scrollable">
+                    <pre><code class = "language-java">
+import java.util.Arrays;
+
+int[] myArray = {50, 40, 30, 20, 10};
+Arrays.sort(myArray);
+
+System.out.print("Sorted array: ");
+for (int element : myArray) {
+    System.out.print(element + " ");
+}
+                        
+</code>
+Output: 
+10 20 30 40 50
+                    </pre>
+                </div>
+            <h4>In Conclusion</h4>
+            <p>From powering up your algorithmic skills to streamlining large amounts of data, mastery over Java arrays can significantly elevate your programming proficiency. As you progress on your journey to becoming a seasoned coder, whether for your academic pursuits or to land a job at tech giants like Google or Microsoft, 1D arrays form an indispensable part of your toolkit. Keep practicing and experimenting with 1D arrays, and soon you'll find yourself navigating through more complex data structures with relative ease. The world of programming awaits!</p>
+            
+        </div>
+            <div class = "article">
+              <iframe sandbox="allow-popups allow-scripts allow-modals allow-forms allow-same-origin" style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-in.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=IN&source=ss&ref=as_ss_li_til&ad_type=product_link&tracking_id=victorypoint-21&language=en_IN&marketplace=amazon&region=IN&placement=B09X74RB6D&asins=B09X74RB6D&linkId=fb0147bd823d8537671f4b94aa9674d0&show_border=true&link_opens_in_new_window=true"></iframe>  
+            </div>
+            
+        </div>
+    </div>
+	</main>
+  <hr>
+  <footer>
+    <a href="https://www.linkedin.com/in/techpranjal/" target="_blank" class="fa fa-linkedin"></a>
+    <a href="https://www.youtube.com/channel/UCI8SrpFD9XD0v9oFMIiL97w" target="_blank" class="fa fa-youtube"></a>
+    <a href="https://www.instagram.com/victorypoint_official/" target="_blank" class="fa fa-instagram"></a>
+    <a href="" class="fa fa-facebook"></a>
+    <p><br><b>Call us at: +91 8700070274</b></p>
+  </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-java.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
