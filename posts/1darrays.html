@@ -63,7 +63,7 @@
               <p>A must-have skill to tackle problem-solving in companies like Google, Microsoft, and other tech behemoths is understanding and implementing data structures, and arrays sit prominently among these. Today, we're about to embark on a detailed journey into the realm of 1D arrays in Java.</p>  
               <h4>An Introduction to 1D Arrays in Java</h4>
               <p>In the simplest terms, a 1D array (one-dimensional array) is a type of linear data structure that can store a fixed-size sequential collection of elements of the same type. Whether it's a series of integers, strings, or even objects, arrays have got you covered. One crucial aspect of arrays is their ability to allow random access to elements. This means that we can access any data element directly, using its numerical index.</p>
-              <h3>The Syntax of 1D Arrays</h3>
+              <h4>The Syntax of 1D Arrays</h4>
               <h4>Declaration</h4>  
               <p>Arrays in Java are objects. They need to be declared before they can be used. Here's how to declare an array in Java:</p>
               <div class="scrollable">
@@ -136,32 +136,35 @@ Output:
                 <div class="scrollable">
                     <pre><code class = "language-java">
 import java.util.Scanner;
-
-Scanner scanner = new Scanner(System.in);
-
-System.out.println("Enter the size of the array:");
-int size = scanner.nextInt(); // Taking array size as input.
-
-int[] myArray = new int[size]; // Creating array of input size.
-
-System.out.println("Enter elements of the array:");
-
-for (int i = 0; i < size; i++) {
-    myArray[i] = scanner.nextInt(); // Taking array elements as input.
-}
-
-scanner.close();
-
-// Printing the array elements
-System.out.print("Array elements: ");
-for (int i=0;i < myArray.length;i++) {
-    System.out.print(myArray[i] + " ");
+public class Example{
+	public static void main(String args[]){			    
+		Scanner scanner = new Scanner(System.in);
+		
+		System.out.println("Enter the size of the array:");
+		int size = scanner.nextInt(); // Taking array size as input.
+		
+		int[] myArray = new int[size]; // Creating array of input size.
+		
+		System.out.println("Enter elements of the array:");
+		
+		for (int i = 0; i < size; i++) {
+		    myArray[i] = scanner.nextInt(); // Taking array elements as input.
+		}
+		
+		scanner.close();
+		
+		// Printing the array elements
+		System.out.print("Array elements: ");
+		for (int i=0;i < myArray.length;i++) {
+		    System.out.print(myArray[i] + " ");
+		}
+	}
 }
                         
 </code>
                     </pre>
                 </div>
-                <h3>Working with 1D Arrays in Java</h3>
+                <h4>Working with 1D Arrays in Java</h4>
                 <h4>Looping Over Arrays and Summing Elements</h4>
                 <p>Iterating over an array can be done using any looping construct, such as for, while, or for-each loop. The conventional method is using a for loop. Let's calculate the sum of all elements in the array as we traverse:</p>
                 
