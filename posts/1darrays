@@ -102,13 +102,15 @@ int[] myArray = {10, 20, 30, 40, 50};
                 </div>
                 <p>In this case, the size of the array is automatically determined by the number of values provided.</p>
                 <h4>Accessing Array Elements</h4>
-                <p>The individual elements in an array can be accessed using their index. Remember, array indexing starts from 0 in Java.</p>
+                <p>The individual elements in an array can be accessed using their index. Remember, array indexing starts from 0 in Java and ends at the array's length minus one. This means that for an array of size 'n', the first element is at index '0' and the last element is at index 'n-1'.</p>
                 <div class="scrollable">
                     <pre><code class = "language-java">
 int firstElement = myArray[0]; // This will retrieve the first element.
+int lastElement = myArray[myArray.length - 1]; // This will retrieve the last element.
 </code>
                     </pre>
                 </div>
+                <p>This indexing system is essential to remember when working with arrays to avoid ArrayIndexOutOfBoundsException, which occurs if you try to access an index that is outside the array's size (either negative or greater than or equal to the size of the array).</p>
                 <h4>Inserting Values into an Array</h4>
                 <p>Unlike dynamic data structures like ArrayLists in Java, arrays have a fixed size once created. This means you can't add or remove elements from an existing array like you would with an ArrayList. However, you can certainly change the values stored at each index in the array.</p>
                 <div class="scrollable">
