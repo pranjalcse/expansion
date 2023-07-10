@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />	
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Strings</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism.min.css" />
+	<link rel="stylesheet" href="blog_style.css">
+    <style>
+		
+		
+		@media screen and (max-width: 768px) {
+			.scrollable {
+				overflow-x: scroll;
+			}
+			
+		}
+	</style>
+</head>
+<body>
+
+    <div class="slider"></div>
+    <header>
+      <img src="../img/shape.png" alt="" class="shape2"/>
+        <div class = "big-wrapper light">
+        <div class="container_header">
+          <div class="logo">
+            <img src="../img/logo3.png" alt="Logo" />
+          </div>
+      
+          <div class="links">
+            <ul>
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../courses/launchpad.html">Launchpad</a></li>
+              <li><a href="../courses/bootcamp.html">Bootcamp</a></li>
+              <li><a href="../courses/aptitude.html">Aptitude</a></li>
+              <li><a href="../blog.html">Blogs</a></li>
+              <li></li>
+            </ul>
+          </div>
+      
+          <div class="overlay"></div>
+      
+          <div class="hamburger-menu">
+            <div class="bar"></div>
+          </div>
+        </div>
+        </div>
+        <hr>
+      </header>
+      
+      <main>
+	<div class="container">
+        <div class="articles">
+            <div class = "article">
+              <h2>Understanding Strings in Java</h2>
+              <img src="images/15_large.png" alt="Article 1" />
+              <p>Hello budding coders! Today, we're delving into the magical world of Strings in Java - an essential topic for every Java programmer out there. Whether you're a novice coder or a pro looking to solidify your Java understanding, this guide will illuminate the ins and outs of String handling in Java. Get ready for an exciting ride!</p>  
+              <h4>Introduction to Strings in Java</h4>
+              <p>A String in Java is a sequence of characters. Unlike primitive data types, the String is an object where each character is a Unicode character. The important aspect is that, once a String object is created, it is immutable, meaning it cannot be changed.</p>
+              <h4>The Importance of 2D Arrays</h4>  
+              <div class="scrollable">
+                <pre><code class = "language-java">
+String example = "Hello, world!";
+</code>
+                </pre>
+            </div>
+              <p>In this code snippet, 'example' is a String variable that holds the value 'Hello, world!'.</p>
+              <h4>Essential String Functions in Java</h4>
+              <p>Java provides several methods within the String class for various operations. Let's dissect them one by one.</p>
+              <p>1. charAt(int index)</p>
+              <p>The charAt(int index) method is used to return the character at the specified index.</p>
+              <div class="scrollable">
+                <pre><code class = "language-java">
+String example = "Hello";
+char result = example.charAt(1);
+System.out.println(result);
+</code>
+Output:
+e
+                </pre>
+            </div>
+            <h4>2. length()</h4>
+            <p>'length()' is a simple yet crucial method that returns the number of characters in a given string.</p>
+            <div class="scrollable">
+              <pre><code class = "language-java">
+String example = "Hello";
+System.out.println(example.length());
+</code>
+Output:
+5
+              </pre>
+          </div>
+<h4>3. substring(int beginIndex)</h4>
+<p>substring(int beginIndex) returns a part of the string from the beginning index to the end.</p>
+<div class="scrollable">
+  <pre><code class = "language-java">
+String example = "Hello";
+System.out.println(example.substring(2));
+</code>
+Output:
+llo
+  </pre>
+</div>
+<h4>4. substring(int beginIndex, int endIndex)</h4>
+<p>This is a variation of 'substring' method which returns the part of the string between the specified indexes.</p>
+<div class="scrollable">
+  <pre><code class = "language-java">
+String example = "Hello";
+System.out.println(example.substring(1, 4)); // outputs 'ell'
+</code>
+Output:
+llo
+  </pre>
+</div>
+
+<h4>5. contains(CharSequence sequence)</h4>
+<p>The 'contains' method is used to check if the sequence of char values is present in the string. It returns true if the sequence is present, else false.</p>
+<div class="scrollable">
+  <pre><code class = "language-java">
+String example = "Hello";
+System.out.println(example.contains("ell"));
+</code>
+Output:
+true
+  </pre>
+</div>
+<h4>6. equals(Object another)</h4>
+<p>This method checks if the current string and the specified string are exactly equal, considering the case.</p>
+<div class="scrollable">
+  <pre><code class = "language-java">
+String example1 = "Hello";
+String example2 = "hello";
+System.out.println(example1.equals(example2));
+</code>
+Output:
+false
+  </pre>
+</div>
+
+<h4>7. isEmpty()</h4>
+<p>The isEmpty() method checks if the string is empty.</p>
+<div class="scrollable">
+  <pre><code class = "language-java">
+String example = "";
+System.out.println(example.isEmpty());
+</code>
+Output:
+true
+  </pre>
+</div>
+<h4>8. concat(String str)</h4>
+<p>concat(String str) appends the specified string at the end.</p>
+<div class="scrollable">
+  <pre><code class = "language-java">
+String example = "Hello";
+System.out.println(example.concat(" World"));
+</code>
+Output:
+Hello World
+  </pre>
+</div>
+<h4>9. replace(char oldChar, char newChar)</h4>
+<p>The replace() method replaces all the occurrences of a specified character with another.</p>
+<div class="scrollable">
+  <pre><code class = "language-java">
+String example = "Hello";
+System.out.println(example.replace('l', 'w')); 
+</code>
+Output:
+Hewwo
+  </pre>
+</div>
+<h4>10. split(String regex)</h4>
+<p>split(String regex) splits the string around matches of the given regular expression.</p>
+<div class="scrollable">
+  <pre><code class = "language-java">
+String example = "Hello World";
+String[] words = example.split(" ");
+for(String word: words) {
+  System.out.println(word);
+}
+</code>
+Output:
+Hello
+World
+  </pre>
+</div>
+<h4>11. toLowerCase()</h4>
+<p>This method converts all the characters in the string to lower case.</p>
+<div class="scrollable">
+  <pre><code class = "language-java">
+String example = "HELLO";
+System.out.println(example.toLowerCase());
+</code>
+Output:
+hello
+  </pre>
+</div>
+<h4>12. toUpperCase()</h4>
+<p>toUpperCase() converts all the characters in the string to upper case.</p>
+<div class="scrollable">
+  <pre><code class = "language-java">
+String example = "hello";
+System.out.println(example.toUpperCase());
+</code>
+Output:
+HELLO
+  </pre>
+</div>
+<h4>13. trim()</h4>
+<p>The trim() function removes leading and trailing spaces from the string.</p>
+<div class="scrollable">
+  <pre><code class = "language-java">
+String example = " Hello ";
+System.out.println(example.trim());
+</code>
+Output:
+Hello
+  </pre>
+</div>
+<h4>Conclusion</h4>
+<p>That's it, folks! We've just covered a comprehensive list of string methods in Java. These functions are the key to mastering string manipulation in Java. Keep practicing and using these methods in your projects for better understanding. Stay tuned for more guides on Java programming. Happy coding!</p>
+        </div>
+            <div class = "article">
+              <iframe sandbox="allow-popups allow-scripts allow-modals allow-forms allow-same-origin" style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-in.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=IN&source=ss&ref=as_ss_li_til&ad_type=product_link&tracking_id=victorypoint-21&language=en_IN&marketplace=amazon&region=IN&placement=B09X74RB6D&asins=B09X74RB6D&linkId=fb0147bd823d8537671f4b94aa9674d0&show_border=true&link_opens_in_new_window=true"></iframe>  
+            </div>
+            
+        </div>
+    </div>
+	</main>
+  <hr>
+  <footer>
+    <a href="https://www.linkedin.com/in/techpranjal/" target="_blank" class="fa fa-linkedin"></a>
+    <a href="https://www.youtube.com/channel/UCI8SrpFD9XD0v9oFMIiL97w" target="_blank" class="fa fa-youtube"></a>
+    <a href="https://www.instagram.com/victorypoint_official/" target="_blank" class="fa fa-instagram"></a>
+    <a href="" class="fa fa-facebook"></a>
+    <p><br><b>Call us at: +91 8700070274</b></p>
+  </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-java.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
