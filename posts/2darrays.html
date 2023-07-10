@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />	
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>1D Arrays</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism.min.css" />
+	<link rel="stylesheet" href="blog_style.css">
+    <style>
+		
+		
+		@media screen and (max-width: 768px) {
+			.scrollable {
+				overflow-x: scroll;
+			}
+			
+		}
+	</style>
+</head>
+<body>
+
+    <div class="slider"></div>
+    <header>
+      <img src="../img/shape.png" alt="" class="shape2"/>
+        <div class = "big-wrapper light">
+        <div class="container_header">
+          <div class="logo">
+            <img src="../img/logo3.png" alt="Logo" />
+          </div>
+      
+          <div class="links">
+            <ul>
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../courses/launchpad.html">Launchpad</a></li>
+              <li><a href="../courses/bootcamp.html">Bootcamp</a></li>
+              <li><a href="../courses/aptitude.html">Aptitude</a></li>
+              <li><a href="../blog.html">Blogs</a></li>
+              <li></li>
+            </ul>
+          </div>
+      
+          <div class="overlay"></div>
+      
+          <div class="hamburger-menu">
+            <div class="bar"></div>
+          </div>
+        </div>
+        </div>
+        <hr>
+      </header>
+      
+      <main>
+	<div class="container">
+        <div class="articles">
+            <div class = "article">
+              <h2>Unraveling Two-Dimensional Arrays in Java</h2>
+              <img src="images/15_large.png" alt="Article 1" />
+              <p>Hello and welcome to our latest blog post! Today, we delve into a fundamental cornerstone of Java programming: two-dimensional arrays. Whether you're just starting your journey into Java or you're a seasoned developer seeking to brush up on the basics, understanding 2D arrays is an indispensable part of your Java programming toolkit.</p>  
+              <h4>What are 2D Arrays in Java?</h4>
+              <p>In Java, an array is a basic data structure used to store elements of the same type. A two-dimensional (2D) array, also known as a matrix, is essentially an array of arrays. Think of it as a table consisting of rows and columns, where each cell signifies an element of the array, identifiable by its row and column indices.</p>
+              <h4>The Importance of 2D Arrays</h4>  
+              <p>2D arrays are not just beneficial but essential in numerous programming scenarios:</p>
+              <ul>
+                <li><b>Matrix Operations:</b> 2D arrays are the go-to data structure for performing operations such as addition, subtraction, and multiplication of matrices.</li>
+                <li><b>Game Development:</b> In grid-based games like chess or tic-tac-toe, the game board can be conveniently represented as a 2D array.</li>
+                <li><b>Data Analysis:</b> 2D arrays can emulate a table-like structure, which is handy for data storage and manipulation in various data analysis tasks.</li>
+                <li><b>Dynamic programming questions:</b> multidimensional arrays are used to store solution of sub problems.</li>
+              </ul>
+              <h4>Declaring and Initializing 2D Arrays in Java</h4>
+              <p>In Java, a 2D array is declared by defining the type of its elements followed by two sets of square brackets. Here's how you declare and initialize a 2D array in Java:</p>
+              <div class="scrollable">
+                    <pre><code class = "language-java">
+int[][] myArray = new int[3][3]; // Declares and initializes a 2D array with 3 rows and 3 columns
+</code>
+                    </pre>
+                </div>
+                <h4>Populating and Printing a 2D Array</h4>
+                <p>To further clarify, let's populate our 2D array with the numbers 1 through 9 and print it:</p>
+                <div class="scrollable">
+                    <pre><code class = "language-java">
+class Example{
+  public static void main(String args[]){
+    int value = 1;
+    int[][] myArray = new int[3][3];
+    for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 3; j++) {
+            myArray[i][j] = value++; // Assigns values from 1 to 25 to the elements in the array
+        }
+    }
+    
+    for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 3; j++) {
+            System.out.print(myArray[i][j] + " "); // Prints the array elements
+        }
+        System.out.println(); // Creates a new line for each row
+    }
+  }
+}         
+</code>
+Output:
+1 2 3
+4 5 6 
+7 8 9
+                    </pre>
+                </div>
+                <h4>Accepting User Input into a 2D Array</h4>
+                <p>The Scanner class in Java provides a convenient method for accepting user input. Here's how we can use it to populate a 2D array:</p>
+                <div class="scrollable">
+                    <pre><code class = "language-java">
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Enter the number of rows: ");
+        int rows = scanner.nextInt();
+
+        System.out.println("Enter the number of columns: ");
+        int columns = scanner.nextInt();
+
+        int[][] myArray = new int[rows][columns];
+
+        System.out.println("Enter the elements of the array: ");
+
+        for(int i=0; i<rows; i++) {
+            for(int j=0; j < columns; j++) {
+                myArray[i][j] = scanner.nextInt();  // Adding user input to the array
+            }
+        }
+
+        scanner.close();
+
+        // Printing the 2D array
+        for(int i=0; i < rows; i++) {
+            for(int j=0; j < columns; j++) {
+                System.out.print(myArray[i][j] + " ");
+            }
+            System.out.println();
+        }
+    }
+}
+                      
+</code>
+                    </pre>
+                </div> 
+                <h4>Understanding Jagged Arrays in Java</h4>
+                <p>Java also supports 'jagged' arrays, or arrays with varying row lengths. These can be extremely useful in a variety of applications. Imagine a 2D array with 3 rows, where the first row contains 3 columns, the second row has 4 columns, and the third row has 5 columns. Here's how you can declare and initialize such a jagged array:</p>
+                <div class="scrollable">
+                    <pre><code class = "language-java">
+int[][] myArray = new int[3][];  // Declaring a 2D array with 3 rows
+
+myArray[0] = new int[3];  // First row has 3 columns
+myArray[1] = new int[4];  // Second row has 4 columns
+myArray[2] = new int[5];  // Third row has 5 columns
+                      
+</code>
+                    </pre>
+                </div>
+                <h4>Taking user input in Jagged Arrays</h4>
+                <p>Here's how we can take user input in a Jagged Array.</p>
+                <div class="scrollable">
+                  <pre><code class = "language-java">
+import java.util.Scanner;
+
+public class TwoDimensionalArray {
+    public static void main(String[] args) {
+        int[][] myArray = new int[3][];  // Declaring a 2D array with 3 rows
+        myArray[0] = new int[3];  // First row has 3 columns
+        myArray[1] = new int[4];  // Second row has 4 columns
+        myArray[2] = new int[5];  // Third row has 5 columns
+
+        System.out.println("Enter values for the array:");
+
+        // Taking user input for each element of the array
+        Scanner scanner = new Scanner(System.in);
+        for (int i = 0; i < myArray.length; i++) {
+            for (int j = 0; j < myArray[i].length; j++) {
+                myArray[i][j] = scanner.nextInt();
+            }
+        }
+    }
+}     
+</code>
+                  </pre>
+              </div>
+                <h4>Conclusion</h4>
+
+                <p>Getting to grips with 2D arrays is a significant step in refining your Java programming skills. They provide a solid foundation for understanding more complex data structures and are pervasive in various programming areas. <br>Although these concepts may initially seem challenging, remember that practice is key. With consistent practice, you'll soon be effortlessly navigating the rows and columns of 2D arrays, well on your way to becoming a Java programming expert. Keep coding, and happy learning!</p>
+                
+        </div>
+            <div class = "article">
+              <iframe sandbox="allow-popups allow-scripts allow-modals allow-forms allow-same-origin" style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-in.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=IN&source=ss&ref=as_ss_li_til&ad_type=product_link&tracking_id=victorypoint-21&language=en_IN&marketplace=amazon&region=IN&placement=B09X74RB6D&asins=B09X74RB6D&linkId=fb0147bd823d8537671f4b94aa9674d0&show_border=true&link_opens_in_new_window=true"></iframe>  
+            </div>
+            
+        </div>
+    </div>
+	</main>
+  <hr>
+  <footer>
+    <a href="https://www.linkedin.com/in/techpranjal/" target="_blank" class="fa fa-linkedin"></a>
+    <a href="https://www.youtube.com/channel/UCI8SrpFD9XD0v9oFMIiL97w" target="_blank" class="fa fa-youtube"></a>
+    <a href="https://www.instagram.com/victorypoint_official/" target="_blank" class="fa fa-instagram"></a>
+    <a href="" class="fa fa-facebook"></a>
+    <p><br><b>Call us at: +91 8700070274</b></p>
+  </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-java.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
