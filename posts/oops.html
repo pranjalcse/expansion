@@ -185,7 +185,7 @@ public class Car extends Vehicle {
 <p>In the above example, the Car class extends the Vehicle class using the extends keyword. The brand attribute is marked as protected, which allows subclasses to access it. The Car class also introduces its own attribute maxSpeed and methods setMaxSpeed() and displayInfo().</p>
 <h4>Types of Inheritance</h4>
 <p>Java supports several types of inheritance. Let's explore them one by one:</p>
-<p>1. Hierarchical Inheritance</p>
+<p><b>1. Hierarchical Inheritance</b></p>
 <p>Hierarchical inheritance involves multiple subclasses inheriting from a single superclass. Here's an example:</p>
 <div class="scrollable">
   <pre><code class = "language-java">
@@ -221,7 +221,7 @@ public class Main {
   </pre>
 </div>
 <p>In the above example, both the Dog and Cat classes inherit from the Animal class. They inherit the eat() method from the Animal class and introduce their own unique methods.</p>
-<p>2. Multilevel Inheritance</p>
+<p><b>2. Multilevel Inheritance</b></p>
 <p>Multilevel inheritance involves chaining inheritance, where a subclass becomes the superclass for another subclass. Here's an example:</p>
 
 <div class="scrollable">
@@ -262,7 +262,7 @@ Sports car accelerating.
 
 <p>In the above example, the Car class inherits from the Vehicle class, and the SportsCar class inherits from the Car class. Each class inherits the methods from its superclass and can introduce its own methods.</p>
 
-<p>3. Multiple Inheritance using Interfaces</p>
+<p><b>3. Multiple Inheritance using Interfaces</b></p>
 <p>Java doesn't support multiple inheritance of classes but allows multiple inheritance using interfaces. Interfaces define contracts that classes can implement. Let's see an example:</p>
 
 <div class="scrollable">
@@ -365,10 +365,7 @@ SportsCar constructor
 <p>In the above example, we have a Vehicle class, a Car class that extends Vehicle, and a SportsCar class that extends Car. When we create an instance of SportsCar, the constructors are called in the order of the inheritance hierarchy.</p>
 <h4>Polymorphism</h4>
 <p>Polymorphism allows objects of different types to be treated as objects of a common type. It enhances flexibility and extensibility in our code. Let's explore different aspects of polymorphism:</p>
-<br>
 <p><b>Method Overriding</b></p>
-<br>
-
 <p>Method overriding occurs when a subclass provides its specific implementation of a method defined in its superclass. Let's see an example:
 <div class="scrollable">
   <pre><code class = "language-java">
@@ -407,9 +404,9 @@ Cat is meowing.
   </pre>
 </div>
 <p>In the above example, both the Dog and Cat classes override the makeSound() method defined in the Animal class, providing their specific implementation. We create objects of the subclasses but assign them to variables of the superclass type. The appropriate overridden method is called based on the actual object type.</p>
-<br>
+
 <p><b>Dynamic Method Dispatch</b></p>
-<br>
+
 <p>Dynamic method dispatch is the mechanism by which the appropriate method implementation is determined at runtime based on the actual object type. Let's see an example:</p>
 
 <div class="scrollable">
@@ -451,9 +448,9 @@ Cat is meowing.
   </pre>
 </div>
 <p>In the above example, both the Dog and Cat classes override the makeSound() method defined in the Animal class, providing their specific implementation. We create objects of the subclasses but assign them to variables of the superclass type. The appropriate overridden method is called based on the actual object type.</p>
-<br>
+
 <p><b>Method Overloading</b></p>
-<br>
+
 <p>Method overloading occurs when multiple methods share the same name but have different parameter lists. Let's see an example:</p>
 <div class="scrollable">
     <pre><code class = "language-java">
@@ -484,9 +481,9 @@ Sum2: 7.2
 </pre>
   </div>
 <p>In the above example, the MathUtils class has two add() methods: one that takes two int parameters and another that takes two double parameters. We can invoke the appropriate method based on the argument types.</p>
-<br>
+
 <p><b>Polymorphism with Interfaces</b></p>
-<br>
+
 <p>Interfaces define contracts that classes can implement. They allow objects to be treated uniformly, enabling polymorphic behavior. Let's see an example:</p>
 <div class="scrollable">
     <pre><code class = "language-java">
@@ -526,9 +523,8 @@ Cat is meowing.
 
 <h4>Abstraction</h4>
 <p>Abstraction simplifies complex systems by providing essential functionality without exposing implementation details. Let's explore different aspects of abstraction:</p>
-<br>
+
 <p><b>Abstract Classes</b></p>
-<br>
 <p>Abstract classes are classes that cannot be instantiated and serve as blueprints for creating subclasses. They can contain both abstract and concrete methods. Let's see an example:</p>
 <div class="scrollable">
     <pre><code class = "language-java">
@@ -575,9 +571,9 @@ Area: 15.0
 </pre>
   </div>
 <p>In the above example, the Shape class is defined as an abstract class. It contains an abstract method getArea() and a concrete method displayColor(). The Rectangle class extends the Shape class and provides its specific implementation for the getArea() method.</p>
-<br>
+
 <p><b>Abstract Methods</b></p>
-<br>
+
 <p>Abstract methods are methods declared in abstract classes and must be implemented by concrete subclasses. Let's see an example:</p>
 <div class="scrollable">
     <pre><code class = "language-java">
@@ -603,9 +599,9 @@ Dog is barking.
 </pre>
   </div>
 <p>In the above example, the Animal class contains an abstract method makeSound(). The Dog class extends the Animal class and provides its implementation for the makeSound() method.</p>
-<br>
+
 <p><b>Interfaces</b></p>
-<br>
+
 <p>Interfaces define contracts that classes can implement. They can contain constant declarations and method signatures. Let's see an example:</p>
 <div class="scrollable">
     <pre><code class = "language-java">
@@ -644,9 +640,9 @@ Drawing a rectangle.
 <p>In the above example, the Drawable interface defines the draw() method. The Circle and Rectangle classes implement the Drawable interface and provide their specific implementations for the draw() method.</p>
 <h4>Advanced OOP Concepts</h4>
 <p>In addition to the core OOP principles, there are several advanced concepts that build upon them:</p>
-<br>
+
 <p><b>Inner Classes</b></p>
-<br>
+
 <p>Inner classes are classes defined within other classes. They can be nested classes, local classes, or anonymous classes. Let's see an example:</p>
 <div class="scrollable">
     <pre><code class = "language-java">
@@ -674,9 +670,9 @@ Outer Data: 10
 
 <p>In the above example, the Inner class is defined inside the Outer class. We create an instance of the Outer class and then create an instance of the Inner class using the new keyword.</p>
 
-<br>
+
 <p><b>Enumerations</b></p>
-<br>
+
 <p>Enumerations are special types that represent a fixed set of constants. They provide type safety and convenience. Let's see an example:</p>
 <div class="scrollable">
     <pre><code class = "language-java">
@@ -724,9 +720,9 @@ Today is Monday.
 </pre>
   </div>
 <p>In the above example, we define a DayOfWeek enumeration with the days of the week as constants. We assign MONDAY to the today variable and use a switch statement to perform actions based on the day.</p>
-<br>
+
 <p><b>Packages</b></p>
-<br>
+
 <p>Packages are used to organize classes into logical groups. They help avoid naming conflicts and provide better code organization. Let's see an example:</p>    
 <div class="scrollable">
     <pre><code class = "language-java">
@@ -750,9 +746,9 @@ Doing something...
   </div>
 <p>In the above example, we define a MyClass within the com.example.myapp package. In the Main class, we create an instance of MyClass by providing the fully qualified package name.</p>
 
-<br>
+
 <p><b>Type Casting</b></p>
-<br>
+
 <p>Type casting allows you to convert an object from one type to another. It can be useful for object manipulation and achieving polymorphic behavior. Let's see an example:</p>
 <div class="scrollable">
     <pre><code class = "language-java">
@@ -786,9 +782,9 @@ Car driving.
 </pre>
   </div>
 <p>In the above example, we create a Car object and assign it to a variable of the Vehicle type (upcasting). We can access the start() method defined in the Vehicle class. However, by using type checking (instanceof) and type casting, we can access the drive() method specific to the Car class.</p>
-<br>
+
 <p><b>Object Class</b></p>
-<br>
+
 <p>The Object class is the root of the Java class hierarchy. All classes in Java are subclasses of the Object class. It provides methods that can be overridden by subclasses. Let's see an example:</p>
 <div class="scrollable">
     <pre><code class = "language-java">
@@ -825,18 +821,18 @@ true
 <p>In the above example, we override the equals() method inherited from the Object class. We perform attribute comparison to determine equality between two objects of the MyClass type.</p>
 <h4>Best Practices</h4>
 <p>To write efficient and maintainable code, it's essential to follow established best practices. Here are some key practices to keep in mind:</p>
-<br>
+
 <p><b>Naming Conventions</b></p>
-<br>
+
 <p>Consistent and meaningful naming conventions help improve code readability. Here are some common naming conventions:</p>
 <ul>
     <li>Class names should start with an uppercase letter and use camel case (e.g., MyClass).</li>
     <li>Method names should start with a lowercase letter and use camel case (e.g., doSomething()).</li>
     <li>Variable names should start with a lowercase letter and use camel case (e.g., myVariable).</li>
 </ul>
-<br>
+
 <p><b>Writing Clean Code</b></p>
-<br>
+
 <p>Writing clean code is important for code maintainability. Here are some guidelines:</p>
 <ul>
     <li>Use proper indentation and formatting to enhance code readability.
@@ -846,9 +842,9 @@ true
     <li>Organize your code into meaningful sections and separate concerns.
     </li>
 </ul>
-<br>
+
 <p><b>Effective Use of Access Modifiers</b></p>
-<br>
+
 <p>Choose the appropriate access modifiers to encapsulate class members and provide proper encapsulation. Here are the access modifiers in Java:</p>
 <ul>
     <li>public: Accessible from anywhere.</li>
@@ -856,9 +852,9 @@ true
     <li>protected: Accessible within the same class, subclasses, and same package.</li>
     <li>Default (no modifier): Accessible within the same package.</li>
 </ul>
-<br>
+
 <p><b>SOLID Design Principles</b></p>
-<br>
+
 <p>The SOLID principles are guidelines for writing maintainable and extensible code. They include:</p>
 <ul>
     <li>Single Responsibility Principle (SRP): A class should have only one reason to change.</li>
@@ -867,9 +863,9 @@ true
     <li>Interface Segregation Principle (ISP): Clients should not be forced to depend on interfaces they do not use.</li>
     <li>Dependency Inversion Principle (DIP): High-level modules should not depend on low-level modules; both should depend on abstractions.</li>
 </ul>
-<br>
+
 <p><b>Design Patterns</b></p>
-<br>
+
 <p>Design patterns provide proven solutions to common software design problems. Some popular design patterns include:</p>
 <ul>
 <li>Factory Pattern: Provides an interface for creating objects but allows subclasses to decide which class to instantiate.</li>
