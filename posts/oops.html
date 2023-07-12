@@ -1,0 +1,902 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />	
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>OOPs</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism.min.css" />
+	<link rel="stylesheet" href="blog_style.css">
+    <style>
+		
+		
+		@media screen and (max-width: 768px) {
+			.scrollable {
+				overflow-x: scroll;
+			}
+			
+		}
+	</style>
+</head>
+<body>
+
+    <div class="slider"></div>
+    <header>
+      <img src="../img/shape.png" alt="" class="shape2"/>
+        <div class = "big-wrapper light">
+        <div class="container_header">
+          <div class="logo">
+            <img src="../img/logo3.png" alt="Logo" />
+          </div>
+      
+          <div class="links">
+            <ul>
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../courses/launchpad.html">Launchpad</a></li>
+              <li><a href="../courses/bootcamp.html">Bootcamp</a></li>
+              <li><a href="../courses/aptitude.html">Aptitude</a></li>
+              <li><a href="../blog.html">Blogs</a></li>
+              <li></li>
+            </ul>
+          </div>
+      
+          <div class="overlay"></div>
+      
+          <div class="hamburger-menu">
+            <div class="bar"></div>
+          </div>
+        </div>
+        </div>
+        <hr>
+      </header>
+      
+      <main>
+	<div class="container">
+        <div class="articles">
+            <div class = "article">
+              <h2>Comprehensive Guide to Object-Oriented Programming in Java</h2>
+              <img src="images/15_large.png" alt="Article 1" />
+              <p>Welcome to our comprehensive guide to Object-Oriented Programming (OOP) in Java. This blog aims to provide beginners with a detailed understanding of OOP concepts and their implementation in Java. By the end of this guide, you'll have a solid foundation in Java OOP, enabling you to build robust and maintainable software. So, let's dive right in!</p>  
+              <br>
+              <h4>Introduction to OOP</h4>
+              <p>Object-Oriented Programming (OOP) is a programming paradigm that organizes code into objects, which are instances of classes. It promotes code reusability, modularity, and easier maintenance. Let's explore each OOP concept in detail:</p>
+              <h4>Objects</h4>
+              <p>In OOP, objects are the fundamental building blocks. They represent real-world entities and encapsulate data (attributes) and behavior (methods). Here's an example of creating a simple object in Java:</p>
+              <div class="scrollable">
+                <pre><code class = "language-java">
+public class Car {
+  String color;
+  int year;
+  
+  public void startEngine() {
+      System.out.println("Engine started!");
+  }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Car myCar = new Car();
+        myCar.color = "Red";
+        myCar.year = 2021;
+        
+        System.out.println("Color: " + myCar.color);
+        System.out.println("Year: " + myCar.year);
+        myCar.startEngine();
+    }
+}
+                
+</code>
+Output:
+Color: red
+Year: 2021
+Engine started!
+                </pre>
+            </div>
+
+<p>In the above example, we define a Car class with color and year attributes, as well as a startEngine() method. We then create an instance of the Car class and access its attributes and methods.</p>
+<h4>Classes</h4>
+<p>Classes serve as blueprints for creating objects. They define the structure and behavior of objects. Let's explore the various components of a class:</p>
+<div class="scrollable">
+  <pre><code class = "language-java">
+public class Person {
+  // Attributes
+  String name;
+  int age;
+  
+  // Methods
+  public void sayHello() {
+      System.out.println("Hello, my name is " + name);
+  }
+  
+  public int getAgeInMonths() {
+      return age * 12;
+  }
+}
+</code>
+  </pre>
+</div>
+
+<p>In the above example, we define a Person class with name and age attributes, as well as two methods: sayHello() and getAgeInMonths().</p>
+<h4>Encapsulation</h4>
+<p>Encapsulation is the process of bundling data and methods within a class, hiding the internal details and protecting the integrity of objects. Access modifiers control the visibility of class members. Let's see how encapsulation works:</p>
+<div class="scrollable">
+  <pre><code class = "language-java">
+public class BankAccount {
+  private double balance;  // Private attribute
+  
+  public double getBalance() {
+      return balance;  // Getter method
+  }
+  
+  public void deposit(double amount) {
+      if (amount > 0) {
+          balance += amount;
+          System.out.println(amount + " deposited successfully.");
+      } else {
+          System.out.println("Invalid amount.");
+      }
+  }
+  
+  public void withdraw(double amount) {
+      if (amount > 0 && amount <= balance) {
+          balance -= amount;
+          System.out.println(amount + " withdrawn successfully.");
+      } else {
+          System.out.println("Insufficient balance or invalid amount.");
+      }
+  }
+}
+</code>
+  </pre>
+</div>
+<p>In the above example, the balance attribute is marked as private, which means it can only be accessed within the class. We provide public getter and setter methods (getBalance(), deposit(), withdraw()) to access and modify the balance attribute.</p>
+<h4>Inheritance</h4>
+<p>Inheritance allows you to create new classes (subclasses) based on existing classes (superclasses). This promotes code reuse and facilitates the creation of class hierarchies. Let's understand how inheritance works:</p>
+<div class="scrollable">
+  <pre><code class = "language-java">
+public class Vehicle {
+  protected String brand;  // Protected attribute
+  
+  public void honk() {
+      System.out.println("Honk honk!");
+  }
+}
+
+public class Car extends Vehicle {
+    private int maxSpeed;
+    
+    public void setMaxSpeed(int speed) {
+        maxSpeed = speed;
+    }
+    
+    public void displayInfo() {
+        System.out.println("Brand: " + brand);
+        System.out.println("Max Speed: " + maxSpeed);
+    }
+}
+  
+</code>
+  </pre>
+</div>
+<p>In the above example, the Car class extends the Vehicle class using the extends keyword. The brand attribute is marked as protected, which allows subclasses to access it. The Car class also introduces its own attribute maxSpeed and methods setMaxSpeed() and displayInfo().</p>
+<h4>Types of Inheritance</h4>
+<p>Java supports several types of inheritance. Let's explore them one by one:</p>
+<p>1. Hierarchical Inheritance</p>
+<p>Hierarchical inheritance involves multiple subclasses inheriting from a single superclass. Here's an example:</p>
+<div class="scrollable">
+  <pre><code class = "language-java">
+public class Animal {
+  public void eat() {
+      System.out.println("Eating...");
+  }
+}
+public class Dog extends Animal {
+    public void bark() {
+        System.out.println("Barking...");
+    }
+}
+
+public class Cat extends Animal {
+    public void meow() {
+        System.out.println("Meowing...");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Dog dog = new Dog();
+        dog.eat();
+        dog.bark();
+        
+        Cat cat = new Cat();
+        cat.eat();
+        cat.meow();
+    }
+}
+</code>
+  </pre>
+</div>
+<p>In the above example, both the Dog and Cat classes inherit from the Animal class. They inherit the eat() method from the Animal class and introduce their own unique methods.</p>
+<p>2. Multilevel Inheritance</p>
+<p>Multilevel inheritance involves chaining inheritance, where a subclass becomes the superclass for another subclass. Here's an example:</p>
+
+<div class="scrollable">
+  <pre><code class = "language-java">
+public class Vehicle {
+    public void start() {
+        System.out.println("Vehicle started.");
+    }
+}
+
+public class Car extends Vehicle {
+    public void drive() {
+        System.out.println("Car driving.");
+    }
+}
+
+public class SportsCar extends Car {
+    public void accelerate() {
+        System.out.println("Sports car accelerating.");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        SportsCar sportsCar = new SportsCar();
+        sportsCar.start();
+        sportsCar.drive();
+        sportsCar.accelerate();
+    }
+}
+
+</code>
+Vehicle started.
+Car driving.
+Sports car accelerating.
+  </pre>
+</div>
+
+<p>In the above example, the Car class inherits from the Vehicle class, and the SportsCar class inherits from the Car class. Each class inherits the methods from its superclass and can introduce its own methods.</p>
+
+<p>3. Multiple Inheritance using Interfaces</p>
+<p>Java doesn't support multiple inheritance of classes but allows multiple inheritance using interfaces. Interfaces define contracts that classes can implement. Let's see an example:</p>
+
+<div class="scrollable">
+  <pre><code class = "language-java">
+interface Shape {
+    double getArea();
+    double getPerimeter();
+}
+
+class Rectangle implements Shape {
+    private double width;
+    private double height;
+    
+    public Rectangle(double width, double height) {
+        this.width = width;
+        this.height = height;
+    }
+    
+    public double getArea() {
+        return width * height;
+    }
+    
+    public double getPerimeter() {
+        return 2 * (width + height);
+    }
+}
+
+class Circle implements Shape {
+    private double radius;
+    
+    public Circle(double radius) {
+        this.radius = radius;
+    }
+    
+    public double getArea() {
+        return Math.PI * radius * radius;
+    }
+    
+    public double getPerimeter() {
+        return 2 * Math.PI * radius;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Rectangle rectangle = new Rectangle(5, 3);
+        System.out.println("Rectangle Area: " + rectangle.getArea());
+        System.out.println("Rectangle Perimeter: " + rectangle.getPerimeter());
+        
+        Circle circle = new Circle(4);
+        System.out.println("Circle Area: " + circle.getArea());
+        System.out.println("Circle Perimeter: " + circle.getPerimeter());
+    }
+}
+
+
+</code>
+Rectangle Area: 15.0
+Rectangle Perimeter: 16.0
+Circle Area: 50.26548245743669
+Circle Perimeter: 25.132741228718345
+  </pre>
+</div>
+
+<p>In the above example, the Shape interface defines the getArea() and getPerimeter() methods. The Rectangle and Circle classes implement the Shape interface and provide their own implementations for these methods.</p>
+<h4>Order of Constructor Calling in Inheritance</h4>
+<p>Inheritance introduces a hierarchy between classes, and when creating objects, the constructors of each class are called in a specific order. Let's understand the order of constructor calling in inheritance with an example:</p>
+
+<div class="scrollable">
+  <pre><code class = "language-java">
+class Vehicle {
+    public Vehicle() {
+        System.out.println("Vehicle constructor");
+    }
+}
+
+class Car extends Vehicle {
+    public Car() {
+        System.out.println("Car constructor");
+    }
+}
+
+class SportsCar extends Car {
+    public SportsCar() {
+        System.out.println("SportsCar constructor");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        SportsCar sportsCar = new SportsCar();
+    }
+}
+</code>
+Vehicle constructor
+Car constructor
+SportsCar constructor
+  </pre>
+</div>
+<p>In the above example, we have a Vehicle class, a Car class that extends Vehicle, and a SportsCar class that extends Car. When we create an instance of SportsCar, the constructors are called in the order of the inheritance hierarchy.</p>
+<h4>Polymorphism</h4>
+<p>Polymorphism allows objects of different types to be treated as objects of a common type. It enhances flexibility and extensibility in our code. Let's explore different aspects of polymorphism:</p>
+<br>
+<p><b>Method Overriding</b></p>
+<br>
+
+<p>Method overriding occurs when a subclass provides its specific implementation of a method defined in its superclass. Let's see an example:
+<div class="scrollable">
+  <pre><code class = "language-java">
+class Animal {
+    public void makeSound() {
+        System.out.println("Animal is making a sound.");
+    }
+}
+
+class Dog extends Animal {
+    @Override
+    public void makeSound() {
+        System.out.println("Dog is barking.");
+    }
+}
+
+class Cat extends Animal {
+    @Override
+    public void makeSound() {
+        System.out.println("Cat is meowing.");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Animal animal1 = new Dog();
+        Animal animal2 = new Cat();
+        
+        animal1.makeSound();
+        animal2.makeSound();
+    }
+}
+</code>
+Dog is barking.
+Cat is meowing.
+  </pre>
+</div>
+<p>In the above example, both the Dog and Cat classes override the makeSound() method defined in the Animal class, providing their specific implementation. We create objects of the subclasses but assign them to variables of the superclass type. The appropriate overridden method is called based on the actual object type.</p>
+<br>
+<p><b>Dynamic Method Dispatch</b></p>
+<br>
+<p>Dynamic method dispatch is the mechanism by which the appropriate method implementation is determined at runtime based on the actual object type. Let's see an example:</p>
+
+<div class="scrollable">
+  <pre><code class = "language-java">
+class Animal {
+    public void makeSound() {
+        System.out.println("Animal is making a sound.");
+    }
+}
+
+class Dog extends Animal {
+    @Override
+    public void makeSound() {
+        System.out.println("Dog is barking.");
+    }
+}
+
+class Cat extends Animal {
+    @Override
+    public void makeSound() {
+        System.out.println("Cat is meowing.");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Animal animal = new Animal();
+        Dog dog = new Dog();
+        Cat cat = new Cat();
+        
+        animal.makeSound();
+        dog.makeSound();
+        cat.makeSound();
+    }
+}    
+</code>
+Dog is barking.
+Cat is meowing.
+  </pre>
+</div>
+<p>In the above example, both the Dog and Cat classes override the makeSound() method defined in the Animal class, providing their specific implementation. We create objects of the subclasses but assign them to variables of the superclass type. The appropriate overridden method is called based on the actual object type.</p>
+<br>
+<p><b>Method Overloading</b></p>
+<br>
+<p>Method overloading occurs when multiple methods share the same name but have different parameter lists. Let's see an example:</p>
+<div class="scrollable">
+    <pre><code class = "language-java">
+class MathUtils {
+    public int add(int a, int b) {
+        return a + b;
+    }
+    
+    public double add(double a, double b) {
+        return a + b;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        MathUtils math = new MathUtils();
+        
+        int sum1 = math.add(5, 3);
+        double sum2 = math.add(4.5, 2.7);
+        
+        System.out.println("Sum1: " + sum1);
+        System.out.println("Sum2: " + sum2);
+    }
+}    
+</code>
+Sum1: 8
+Sum2: 7.2
+</pre>
+  </div>
+<p>In the above example, the MathUtils class has two add() methods: one that takes two int parameters and another that takes two double parameters. We can invoke the appropriate method based on the argument types.</p>
+<br>
+<p><b>Polymorphism with Interfaces</b></p>
+<br>
+<p>Interfaces define contracts that classes can implement. They allow objects to be treated uniformly, enabling polymorphic behavior. Let's see an example:</p>
+<div class="scrollable">
+    <pre><code class = "language-java">
+interface Animal {
+    void makeSound();
+}
+
+class Dog implements Animal {
+    @Override
+    public void makeSound() {
+        System.out.println("Dog is barking.");
+    }
+}
+
+class Cat implements Animal {
+    @Override
+    public void makeSound() {
+        System.out.println("Cat is meowing.");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Animal animal1 = new Dog();
+        Animal animal2 = new Cat();
+        
+        animal1.makeSound();
+        animal2.makeSound();
+    }
+}
+</code>
+Dog is barking.
+Cat is meowing.
+</pre>
+  </div>
+<p>In the above example, the Animal interface defines the makeSound() method. The Dog and Cat classes implement the Animal interface and provide their own implementations. We can create objects of the classes and treat them as Animal objects, invoking the makeSound() method polymorphically.</p>
+
+<h4>Abstraction</h4>
+<p>Abstraction simplifies complex systems by providing essential functionality without exposing implementation details. Let's explore different aspects of abstraction:</p>
+<br>
+<p><b>Abstract Classes</b></p>
+<br>
+<p>Abstract classes are classes that cannot be instantiated and serve as blueprints for creating subclasses. They can contain both abstract and concrete methods. Let's see an example:</p>
+<div class="scrollable">
+    <pre><code class = "language-java">
+abstract class Shape {
+    protected String color;
+    
+    public Shape(String color) {
+        this.color = color;
+    }
+    
+    public abstract double getArea();
+    
+    public void displayColor() {
+        System.out.println("Color: " + color);
+    }
+}
+
+class Rectangle extends Shape {
+    private double width;
+    private double height;
+    
+    public Rectangle(String color, double width, double height) {
+        super(color);
+        this.width = width;
+        this.height = height;
+    }
+    
+    public double getArea() {
+        return width * height;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Rectangle rectangle = new Rectangle("Red", 5, 3);
+        
+        rectangle.displayColor();
+        System.out.println("Area: " + rectangle.getArea());
+    }
+}       
+</code>
+Color: Red
+Area: 15.0
+</pre>
+  </div>
+<p>In the above example, the Shape class is defined as an abstract class. It contains an abstract method getArea() and a concrete method displayColor(). The Rectangle class extends the Shape class and provides its specific implementation for the getArea() method.</p>
+<br>
+<p><b>Abstract Methods</b></p>
+<br>
+<p>Abstract methods are methods declared in abstract classes and must be implemented by concrete subclasses. Let's see an example:</p>
+<div class="scrollable">
+    <pre><code class = "language-java">
+abstract class Animal {
+    public abstract void makeSound();
+}
+
+class Dog extends Animal {
+    @Override
+    public void makeSound() {
+        System.out.println("Dog is barking.");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Dog dog = new Dog();
+        dog.makeSound();
+    }
+}
+</code>
+Dog is barking.
+</pre>
+  </div>
+<p>In the above example, the Animal class contains an abstract method makeSound(). The Dog class extends the Animal class and provides its implementation for the makeSound() method.</p>
+<br>
+<p><b>Interfaces</b></p>
+<br>
+<p>Interfaces define contracts that classes can implement. They can contain constant declarations and method signatures. Let's see an example:</p>
+<div class="scrollable">
+    <pre><code class = "language-java">
+interface Drawable {
+    void draw();
+}
+
+class Circle implements Drawable {
+    @Override
+    public void draw() {
+        System.out.println("Drawing a circle.");
+    }
+}
+
+class Rectangle implements Drawable {
+    @Override
+    public void draw() {
+        System.out.println("Drawing a rectangle.");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Circle circle = new Circle();
+        Rectangle rectangle = new Rectangle();
+        
+        circle.draw();
+        rectangle.draw();
+    }
+} 
+</code>
+Drawing a circle.
+Drawing a rectangle.
+</pre>
+  </div>
+<p>In the above example, the Drawable interface defines the draw() method. The Circle and Rectangle classes implement the Drawable interface and provide their specific implementations for the draw() method.</p>
+<h4>Advanced OOP Concepts</h4>
+<p>In addition to the core OOP principles, there are several advanced concepts that build upon them:</p>
+<br>
+<p><b>Inner Classes</b></p>
+<br>
+<p>Inner classes are classes defined within other classes. They can be nested classes, local classes, or anonymous classes. Let's see an example:</p>
+<div class="scrollable">
+    <pre><code class = "language-java">
+class Outer {
+    private int outerData;
+    
+    class Inner {
+        public void display() {
+            System.out.println("Outer Data: " + outerData);
+        }
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Outer outer = new Outer();
+        Outer.Inner inner = outer.new Inner();
+        inner.display();
+    }
+}
+</code>
+Outer Data: 10
+</pre>
+  </div>
+
+<p>In the above example, the Inner class is defined inside the Outer class. We create an instance of the Outer class and then create an instance of the Inner class using the new keyword.</p>
+
+<br>
+<p><b>Enumerations</b></p>
+<br>
+<p>Enumerations are special types that represent a fixed set of constants. They provide type safety and convenience. Let's see an example:</p>
+<div class="scrollable">
+    <pre><code class = "language-java">
+enum DayOfWeek {
+    MONDAY,
+    TUESDAY,
+    WEDNESDAY,
+    THURSDAY,
+    FRIDAY,
+    SATURDAY,
+    SUNDAY
+}
+
+public class Main {
+    public static void main(String[] args) {
+        DayOfWeek today = DayOfWeek.MONDAY;
+        
+        switch (today) {
+            case MONDAY:
+                System.out.println("Today is Monday.");
+                break;
+            case TUESDAY:
+                System.out.println("Today is Tuesday.");
+                break;
+            case WEDNESDAY:
+                System.out.println("Today is Wednesday.");
+                break;
+            case THURSDAY:
+                System.out.println("Today is Thursday.");
+                break;
+            case FRIDAY:
+                System.out.println("Today is Friday.");
+                break;
+            case SATURDAY:
+                System.out.println("Today is Saturday.");
+                break;
+            case SUNDAY:
+                System.out.println("Today is Sunday.");
+                break;
+        }
+    }
+}  
+</code>
+Today is Monday.
+</pre>
+  </div>
+<p>In the above example, we define a DayOfWeek enumeration with the days of the week as constants. We assign MONDAY to the today variable and use a switch statement to perform actions based on the day.</p>
+<br>
+<p><b>Packages</b></p>
+<br>
+<p>Packages are used to organize classes into logical groups. They help avoid naming conflicts and provide better code organization. Let's see an example:</p>    
+<div class="scrollable">
+    <pre><code class = "language-java">
+package com.example.myapp;
+
+public class MyClass {
+    public void doSomething() {
+        System.out.println("Doing something...");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        com.example.myapp.MyClass obj = new com.example.myapp.MyClass();
+        obj.doSomething();
+    }
+}
+</code>
+Doing something...
+</pre>
+  </div>
+<p>In the above example, we define a MyClass within the com.example.myapp package. In the Main class, we create an instance of MyClass by providing the fully qualified package name.</p>
+
+<br>
+<p><b>Type Casting</b></p>
+<br>
+<p>Type casting allows you to convert an object from one type to another. It can be useful for object manipulation and achieving polymorphic behavior. Let's see an example:</p>
+<div class="scrollable">
+    <pre><code class = "language-java">
+class Vehicle {
+    public void start() {
+        System.out.println("Vehicle started.");
+    }
+}
+
+class Car extends Vehicle {
+    public void drive() {
+        System.out.println("Car driving.");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Vehicle vehicle = new Car();  // Upcasting
+        
+        vehicle.start();
+        
+        if (vehicle instanceof Car) {
+            Car car = (Car) vehicle;  // Downcasting
+            car.drive();
+        }
+    }
+}   
+</code>
+Vehicle started.
+Car driving.
+</pre>
+  </div>
+<p>In the above example, we create a Car object and assign it to a variable of the Vehicle type (upcasting). We can access the start() method defined in the Vehicle class. However, by using type checking (instanceof) and type casting, we can access the drive() method specific to the Car class.</p>
+<br>
+<p><b>Object Class</b></p>
+<br>
+<p>The Object class is the root of the Java class hierarchy. All classes in Java are subclasses of the Object class. It provides methods that can be overridden by subclasses. Let's see an example:</p>
+<div class="scrollable">
+    <pre><code class = "language-java">
+class MyClass {
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        
+        MyClass myClass = (MyClass) obj;
+        // Compare attributes here
+        
+        return true;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        MyClass obj1 = new MyClass();
+        MyClass obj2 = new MyClass();
+        
+        System.out.println(obj1.equals(obj2));
+    }
+}
+</code>
+true
+</pre>
+  </div>
+<p>In the above example, we override the equals() method inherited from the Object class. We perform attribute comparison to determine equality between two objects of the MyClass type.</p>
+<h4>Best Practices</h4>
+<p>To write efficient and maintainable code, it's essential to follow established best practices. Here are some key practices to keep in mind:</p>
+<br>
+<p><b>Naming Conventions</b></p>
+<br>
+<p>Consistent and meaningful naming conventions help improve code readability. Here are some common naming conventions:</p>
+<ul>
+    <li>Class names should start with an uppercase letter and use camel case (e.g., MyClass).</li>
+    <li>Method names should start with a lowercase letter and use camel case (e.g., doSomething()).</li>
+    <li>Variable names should start with a lowercase letter and use camel case (e.g., myVariable).</li>
+</ul>
+<br>
+<p><b>Writing Clean Code</b></p>
+<br>
+<p>Writing clean code is important for code maintainability. Here are some guidelines:</p>
+<ul>
+    <li>Use proper indentation and formatting to enhance code readability.
+    </li>
+    <li>Add comments to explain complex logic or document important information.
+    </li>
+    <li>Organize your code into meaningful sections and separate concerns.
+    </li>
+</ul>
+<br>
+<p><b>Effective Use of Access Modifiers</b></p>
+<br>
+<p>Choose the appropriate access modifiers to encapsulate class members and provide proper encapsulation. Here are the access modifiers in Java:</p>
+<ul>
+    <li>public: Accessible from anywhere.</li>
+    <li>private: Accessible only within the same class.</li>
+    <li>protected: Accessible within the same class, subclasses, and same package.</li>
+    <li>Default (no modifier): Accessible within the same package.</li>
+</ul>
+<br>
+<p><b>SOLID Design Principles</b></p>
+<br>
+<p>The SOLID principles are guidelines for writing maintainable and extensible code. They include:</p>
+<ul>
+    <li>Single Responsibility Principle (SRP): A class should have only one reason to change.</li>
+    <li>Open-Closed Principle (OCP): Classes should be open for extension but closed for modification.</li>
+    <li>Liskov Substitution Principle (LSP): Subtypes should be substitutable for their base types.</li>
+    <li>Interface Segregation Principle (ISP): Clients should not be forced to depend on interfaces they do not use.</li>
+    <li>Dependency Inversion Principle (DIP): High-level modules should not depend on low-level modules; both should depend on abstractions.</li>
+</ul>
+<br>
+<p><b>Design Patterns</b></p>
+<br>
+<p>Design patterns provide proven solutions to common software design problems. Some popular design patterns include:</p>
+<ul>
+<li>Factory Pattern: Provides an interface for creating objects but allows subclasses to decide which class to instantiate.</li>
+<li>Observer Pattern: Defines a one-to-many dependency between objects, so that when one object changes state, all its dependents are notified.</li>
+<li>Singleton Pattern: Ensures a class has only one instance and provides a global point of access to it.</li>
+<li>Strategy Pattern: Defines a family of algorithms, encapsulates each one, and makes them interchangeable.</li>
+</ul>
+<h4>Conclusion</h4>
+<p>Congratulations on completing our comprehensive guide to Object-Oriented Programming in Java! You've gained a detailed understanding of key OOP concepts and their implementation in Java. With this knowledge, you are well-equipped to write efficient, modular, and maintainable Java code. Remember to practice regularly and apply these principles to real-world projects. Happy coding!</p>
+        </div>
+            <div class = "article">
+              <iframe sandbox="allow-popups allow-scripts allow-modals allow-forms allow-same-origin" style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-in.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=IN&source=ss&ref=as_ss_li_til&ad_type=product_link&tracking_id=victorypoint-21&language=en_IN&marketplace=amazon&region=IN&placement=B09X74RB6D&asins=B09X74RB6D&linkId=fb0147bd823d8537671f4b94aa9674d0&show_border=true&link_opens_in_new_window=true"></iframe>  
+            </div>
+            
+        </div>
+    </div>
+	</main>
+  <hr>
+  <footer>
+    <a href="https://www.linkedin.com/in/techpranjal/" target="_blank" class="fa fa-linkedin"></a>
+    <a href="https://www.youtube.com/channel/UCI8SrpFD9XD0v9oFMIiL97w" target="_blank" class="fa fa-youtube"></a>
+    <a href="https://www.instagram.com/victorypoint_official/" target="_blank" class="fa fa-instagram"></a>
+    <a href="" class="fa fa-facebook"></a>
+    <p><br><b>Call us at: +91 8700070274</b></p>
+  </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-java.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
