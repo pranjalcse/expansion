@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />	
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Recursion</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism.min.css" />
+	<link rel="stylesheet" href="blog_style.css">
+    <style>
+		
+		
+		@media screen and (max-width: 768px) {
+			.scrollable {
+				overflow-x: scroll;
+			}
+			
+		}
+	</style>
+</head>
+<body>
+
+    <div class="slider"></div>
+    <header>
+      <img src="../img/shape.png" alt="" class="shape2"/>
+        <div class = "big-wrapper light">
+        <div class="container_header">
+          <div class="logo">
+            <img src="../img/logo3.png" alt="Logo" />
+          </div>
+      
+          <div class="links">
+            <ul>
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../courses/launchpad.html">Launchpad</a></li>
+              <li><a href="../courses/bootcamp.html">Bootcamp</a></li>
+              <li><a href="../courses/aptitude.html">Aptitude</a></li>
+              <li><a href="../blog.html">Blogs</a></li>
+              <li></li>
+            </ul>
+          </div>
+      
+          <div class="overlay"></div>
+      
+          <div class="hamburger-menu">
+            <div class="bar"></div>
+          </div>
+        </div>
+        </div>
+        <hr>
+      </header>
+      
+      <main>
+	<div class="container">
+        <div class="articles">
+            <div class = "article">
+              <h2>A Closer Look at Recursion in Java</h2>
+              <img src="images/15_large.png" alt="Article 1" />
+              <p>Recursion - a term that can cause even seasoned programmers to pause. But fear not, for this concept, once mastered, can be a potent tool in your programming repertoire. Let's embark on a journey to explore recursion, particularly in Java, its workings, uses, and practical examples that can make it an easy-to-digest concept.</p>  
+              <h4>Recursion: What is it?</h4>
+              <p>In simple terms, recursion in programming is a process where a function calls itself. It's a method to break down complicated problems into simpler, more manageable problems of the same nature.</p>
+              <p>To understand recursion better, think of a Russian Matryoshka doll. You open the biggest doll, only to find a smaller one inside. You open the smaller one to find an even smaller one, and the process continues until you reach the smallest doll that cannot be opened. This is recursion in a nutshell!</p>
+              <p>But let's see how it's done in Java.</p>
+              <h4>Implementing Recursion in Java</h4>  
+              <p>In Java, a method has the ability to call itself to perform an action. But how does it work? What's the magic behind it? Let's break down the components of a recursive function:</p>
+              <ol>
+                <li><b>Base Case:</b> This is the stopping condition. Without a base case, the function would call itself endlessly, leading to an infinite loop and eventually a StackOverflowError.</li>
+                <li><b>Recursive Case:</b>This is the part where the function calls itself, usually with a different argument. The objective is to gradually progress towards the base case.</li>
+              </ol>
+                <p>Now, let's dive into some examples to observe recursion in action in Java.</p>
+                <h4>Example 1: Calculating Factorial</h4>
+                <p>Factorial of a number n (expressed as n!) is the product of all positive integers less than or equal to n. For example, the factorial of 5 is 5*4*3*2*1 = 120.</p>
+                <p>Here's a recursive method in Java that calculates the factorial of a number:</p>
+                <div class="scrollable">
+                  <pre><code class = "language-java">
+public class Main {
+  public static void main(String[] args) {
+      int number = 5;
+      long factorial = calculateFactorial(number);
+      System.out.println("The factorial of " + number + " is " + factorial);
+  }
+
+  public static long calculateFactorial(int n) {
+      if (n == 0) {  // Base case
+          return 1;
+      } else {  // Recursive case
+          return n * calculateFactorial(n - 1);
+      }
+  }
+}         
+</code>
+Output:
+The factorial of 5 is 120
+                  </pre>
+              </div>
+<p>In this example, the base case stops the recursion when n becomes 0, and the recursive case calls the same function with n reduced by 1.</p>
+<h4>Example 2: Fibonacci Series</h4>
+<p>The Fibonacci series is a sequence of numbers where each number is the sum of the two preceding ones. It starts with 0 and 1. Let's implement this in Java using recursion:</p>
+<div class="scrollable">
+  <pre><code class = "language-java">
+public class Main {
+  public static void main(String[] args) {
+      int n = 10;
+      System.out.println("The first " + n + " numbers in the Fibonacci series:");
+      for (int i = 0; i < n; i++) {
+          System.out.print(fibonacci(i) + " ");
+      }
+  }
+
+  public static int fibonacci(int n) {
+      if (n <= 1) {  // Base cases
+          return n;
+      } else {  // Recursive case
+          return fibonacci(n - 1) + fibonacci(n - 2);
+      }
+  }
+}
+</code>
+Output:
+The first 10 numbers in the Fibonacci series:
+0 1 1 2 3 5 8 13 21 38
+  </pre>
+</div>
+<p>Here, the base case checks if n is less than or equal to 1, and the recursive case adds the preceding two numbers in the sequence.</p>
+<h4>Example 3: Reversing a String</h4>
+<p>Let's use recursion to reverse a string. Here's how you could do it:</p>
+<div class="scrollable">
+  <pre><code class = "language-java">
+public class Main {
+  public static void main(String[] args) {
+      String str = "Hello World!";
+      String reversed = reverseString(str);
+      System.out.println("The reversed string is: " + reversed);
+  }
+
+  public static String reverseString(String s) {
+      if (s.isEmpty()) {  // Base case
+          return s;
+      } else {  // Recursive case
+          return reverseString(s.substring(1)) + s.charAt(0);
+      }
+  }
+}
+</code>
+Output:
+The reversed string is:
+!dlroW olleH
+  </pre>
+</div>
+<p>This function takes the first character of the string, moves it to the end, and then calls itself with the rest of the string.</p>
+
+<h4>Be Aware of the Potential Pitfalls</h4>
+<p>While recursion provides a clean and elegant way to solve problems, it can also lead to issues if not used correctly. Recursive functions can eat up a lot of memory as each call adds a layer to the call stack. If the input is too large, it could lead to a stack overflow.</p>
+<p>In addition, some recursive methods, like our Fibonacci example, can lead to redundant computations, affecting performance. Such problems could often be solved more efficiently using alternative methods, like dynamic programming.</p>
+
+<h4>Final Thoughts</h4>
+<p>Recursion, though initially intimidating, can turn into a trusted ally once you understand and get used to it. It's like learning a new language - at first, it may seem foreign, but with practice, you'll become more comfortable and proficient.</p>
+
+<p>So, take these examples and try to experiment with recursion in your own code. Remember, the key to understanding recursion is practice. Happy coding!</p>
+        </div>
+            <div class = "article">
+              <iframe sandbox="allow-popups allow-scripts allow-modals allow-forms allow-same-origin" style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-in.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=IN&source=ss&ref=as_ss_li_til&ad_type=product_link&tracking_id=victorypoint-21&language=en_IN&marketplace=amazon&region=IN&placement=B09X74RB6D&asins=B09X74RB6D&linkId=fb0147bd823d8537671f4b94aa9674d0&show_border=true&link_opens_in_new_window=true"></iframe>  
+            </div>
+            
+        </div>
+    </div>
+	</main>
+  <hr>
+  <footer>
+    <a href="https://www.linkedin.com/in/techpranjal/" target="_blank" class="fa fa-linkedin"></a>
+    <a href="https://www.youtube.com/channel/UCI8SrpFD9XD0v9oFMIiL97w" target="_blank" class="fa fa-youtube"></a>
+    <a href="https://www.instagram.com/victorypoint_official/" target="_blank" class="fa fa-instagram"></a>
+    <a href="" class="fa fa-facebook"></a>
+    <p><br><b>Call us at: +91 8700070274</b></p>
+  </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-java.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
