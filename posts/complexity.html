@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.js"></script>
+    <meta charset="UTF-8" />	
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Time and Space Complexity</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <link rel="stylesheet" href="blog_style.css">
+    <style>
+		@media screen and (max-width: 768px) {
+			.scrollable {
+				overflow-x: scroll;
+			}
+			
+		}
+	</style>
+</head>
+<body>
+  
+    <div class="slider"></div>
+    <header>
+        <div class = "big-wrapper light">
+        <div class="container_header">
+          <div class="logo">
+            <img src="../img/logo3.png" alt="Logo" />
+          </div>
+      
+          <div class="links">
+            <ul>
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../courses/launchpad.html">Launchpad</a></li>
+              <li><a href="../courses/bootcamp.html">Bootcamp</a></li>
+              <li><a href="../courses/aptitude.html">Aptitude</a></li>
+              <li><a href="../blog.html">Blogs</a></li>
+              <li></li>
+            </ul>
+          </div>
+      
+          <div class="overlay"></div>
+      
+          <div class="hamburger-menu">
+            <div class="bar"></div>
+          </div>
+        </div>
+        </div>
+        <hr>
+      </header>
+      <img src="../img/shape.png" alt="" class="shape2" />
+      <main>
+        <div class="container">
+            
+            <div class="articles">
+              <div class="article">
+                <h2>Order and Ranking</h2>
+                <img src="images/4_large.png" alt="Article 1" />
+                <p>
+                  <br>
+<p>In the world of computer science, there are often many ways to solve a problem using different algorithms. So, it's important to have a method to compare these solutions and figure out which one is the most efficient. The method we use should have the following qualities:</p>
+<br>
+<p><b>Works on any computer:</b> The method shouldn't depend on the specific computer or how it's set up. It should be fair and consistent, no matter what kind of machine we're using.</p>
+<br>
+<p><b>Relates to the input size:</b> A good method for comparing algorithms should show a clear connection to the amount of data we're working with. As the number of inputs gets bigger or smaller, the method should give us a sense of how well the algorithms will perform. This helps us understand which solution is better suited for different amounts of data.</p>
+
+<p><b>Gives a clear answer:</b> It's important to have a method that doesn't leave room for confusion. We need a way to compare algorithms that provides a straightforward and unmistakable answer. This helps us make confident decisions about which solution to use for our specific needs.</p>
+
+<p>By using a method that meets these criteria, computer scientists and developers can compare different algorithms objectively. Whether we're looking at the speed of sorting algorithms or how much memory a data structure uses, having a reliable and easy-to-understand method for comparing solutions is crucial. </p>
+
+<p>You're amazed by Google's lightning-fast search results. With just a few keystrokes, it retrieves millions of web pages and presents you with the desired information in the blink of an eye. Have you ever pondered how it achieves such incredible speed? Behind the scenes, Google harnesses the power of its enormous data centers, which act as vast repositories for storing and processing data.</p>
+
+<p>Similarly, when it comes to coding, have you ever wondered how efficiently your algorithms perform? How quickly do they solve problems, and how much memory do they consume? These questions can be answered by exploring the concepts of time and space complexity.</p>
+
+<h4>Understanding Time Complexity</h4>
+
+<p>Time complexity is a formal measure in computer science that quantifies the amount of time required by an algorithm to run as a function of the input size. It provides a theoretical estimation of the algorithm's efficiency and scalability.</p>
+
+<p>Time complexity provides a quantifiable measure of the time an algorithm takes to run, based on the length of the input. What makes time complexity particularly valuable is its independence from the machine or its configuration. Instead, it focuses solely on the inherent efficiency of the algorithm itself. In essence, time complexity tells us how quickly an algorithm solves a problem, regardless of the specific execution time on different machines.</p>
+
+<h4>Space Copmlexity</h4>
+
+<p>Space complexity is a formal measure in computer science that quantifies the amount of memory or storage required by an algorithm to solve a problem as a function of the input size. It provides a theoretical estimation of the algorithm's memory usage and storage requirements.</p>
+
+<p>Imagine you are packing for a thrilling adventure. You have a limited amount of space in your backpack, and you want to bring along all the necessary items without overloading it. This is similar to the concept of space complexity in computer science. Space complexity measures the amount of memory or storage an algorithm requires to solve a problem. It's like deciding how much space you need in your backpack to carry all the items you'll need for your adventure.</p>
+
+<h4>The space-time tradeoff</h4>
+
+<p>The space-time tradeoff is a fundamental concept in computer science that involves making strategic decisions regarding the allocation of resources between space and time. In algorithm design, optimizing one aspect often comes at the expense of the other. By utilizing additional memory or storage space, computational time can be significantly reduced, resulting in faster execution. Conversely, reducing space requirements may come with the cost of increased processing time. This tradeoff is particularly crucial in scenarios where memory or storage is limited, such as embedded systems or devices with constrained resources. Achieving the optimal balance between space and time is a key objective in algorithmic optimization, enabling developers to tailor solutions that strike an appropriate tradeoff based on the specific requirements and constraints of the problem at hand. </p>
+<br>
+<p>Let us now study the various notations used to study time and space complexity</p>
+<h4>Big O Notation (O)</h4>
+<p>Big O notation is commonly used to describe the upper bound or worst-case scenario of an algorithm's time or space complexity. It provides an asymptotic upper limit on how the algorithm's performance grows as the input size increases.</p>
+
+<p>The formal definition of Big O notation (O) is as follows:<br>
+For a given function g(n), we say that an algorithm has a time or space complexity of O(g(n)) if there exist positive constants c and n₀ such that, for all input sizes greater than n₀, the algorithm's performance is always less than or equal to c * g(n).</p>
+<div class="scrollable">
+  <pre>
+      <img id="inimage" src="images/BigOh.png" alt="BigOh time complexity graph"/>
+  </pre>
+</div>
+<p>In simpler terms, Big O notation represents an algorithm's efficiency in terms of an upper bound. It describes how the algorithm's time or space requirements scale with the input size, without going into the specifics of exact execution times or memory usage.</p>
+<p>Big O notation is widely used as it provides a concise way to categorize algorithms based on their scalability and helps in comparing different approaches to problem-solving.</p>
+<h4>Omega Notation (Ω)</h4>
+<p>The primary purpose of Omega Notation is to define a lower bound for an algorithm's efficiency, indicating the minimum time or space required for solving a problem. It establishes the best-case scenario, representing the optimal performance achievable by an algorithm.</p>
+<div class="scrollable">
+  <pre>
+      <img id="inimage" src="images/omega.png" alt="Omega time complexity graph"/>
+  </pre>
+</div>
+<p>The formal definition of Omega notation (Ω) is as follows:<br>
+For a given function g(n), we say that an algorithm has a time or space complexity of Ω(g(n)) if there exist positive constants c and n₀ such that, for all input sizes greater than n₀, the algorithm's performance is always greater than or equal to c * g(n).</p>
+<p>Omega Notation is particularly useful in scenarios where we want to analyze the lower limits of an algorithm's efficiency. It helps us understand the best-case behavior and assess the performance characteristics of algorithms in favorable circumstances.</p>
+<h4>Theta Notation (Θ) </h4>
+<p>Theta Notation defines a tight bound for an algorithm's efficiency, indicating both the upper and lower limits of its performance. It represents the average behavior of the algorithm and provides a comprehensive understanding of its time or space requirements.</p>
+<div class="scrollable">
+  <pre>
+      <img id="inimage" src="images/theta.png" alt="Theta time complexity graph"/>
+  </pre>
+</div>
+<p>The formal definition of Theta notation (Θ) is as follows:<br>
+For a given function g(n), we say that an algorithm has a time or space complexity of Θ(g(n)) if there exist positive constants c₁, c₂, and n₀ such that, for all input sizes greater than n₀, the algorithm's performance is always bounded by c₁ * g(n) and c₂ * g(n). In other words, the algorithm's efficiency is neither faster nor slower than the given function g(n) within the defined range.</p>
+<p>Theta Notation is particularly valuable when we want to analyze the average-case behavior of an algorithm. It helps us understand the typical performance characteristics and assess how the algorithm scales with increasing input sizes.</p>
+<p>By using Theta Notation, we can determine the tightest possible bound for an algorithm's time or space complexity. It allows us to identify the range within which the algorithm consistently performs and provides valuable insights into its overall efficiency.</p>
+<h4>Little O Notation (o)</h4>
+<p>Little O notation expresses the growth rate of an algorithm's efficiency in comparison to a given function. It signifies that the algorithm's time or space requirements have a growth rate that is significantly smaller than the specified function.</p>
+<p>The formal definition of Little O notation (o) is as follows:<br>
+For a given function g(n), we say that an algorithm has a time or space complexity of o(g(n)) if, for any positive constant c, there exists a positive constant n₀ such that, for all input sizes greater than n₀, the algorithm's performance is always bounded by c * g(n). In simpler terms, the algorithm's efficiency grows at a much slower rate than the specified function.</p>
+<p>By using Little O notation, we can analyze and compare the efficiency of algorithms relative to a specific function. It allows us to identify algorithms that exhibit exceptionally efficient behavior, indicating that their growth rates are significantly slower than the function they are compared to.</p>
+<h4>Little Omega Notation (ω)</h4>
+<p>Little Omega notation expresses the growth rate of an algorithm's efficiency in comparison to a given function. It signifies that the algorithm's time or space requirements have a growth rate that is at least as fast as the specified function.</p>
+<p>The formal definition of Little Omega notation (ω) is as follows:
+Formally, for a given function g(n), we say that an algorithm has a time or space complexity of ω(g(n)) if, for any positive constant c, there exists a positive constant n₀ such that, for all input sizes greater than n₀, the algorithm's performance is always bounded below by c * g(n). In simpler terms, the algorithm's efficiency grows at least as fast as the specified function.</p>
+<p>Little Omega notation is often used to emphasize that an algorithm's performance is at least as good as the function it is compared to. It provides a way to highlight the lower bounds and best-case behavior of an algorithm's time or space complexity.</p>
+<p>Let's try to understand the concepts with some examples</p>
+
+<p><b>Example 1</b></p>
+
+<div class="scrollable">
+  <pre><code class = "language-java">
+for(int i=0;i < n ; i++){
+  System.out.print("VictoryPoint");
+}
+</code>
+  </pre>
+</div>
+
+<p>The time complexity of this loop is O(n), also known as Linear Time Complexity.</p>
+<p>This is because each iteration of the loop takes a constant amount of time, and the loop itself will run n times. As such, the total time taken scales linearly with the size of the input n.</p>
+
+<p><b>Example 2</b></p>
+
+<div class="scrollable">
+  <pre><code class = "language-java">    
+int i=1;
+while(i < 2*n){
+  System.out.print("VictoryPoint");
+  i++;
+}
+</code>
+  </pre>
+</div>
+
+<p>The complexity of the given code is O(n) and not O(2*n) because, in Big O notation, constant factors are ignored.</p>
+<p>When analyzing the time complexity of an algorithm, we are concerned with how the runtime grows relative to the input size (denoted by 'n').</p>
+
+<p><b>Example 3</b></p>
+
+<div class="scrollable">
+  <pre><code class = "language-java">    
+for(int i=2n;i>1;i=i/2){
+  System.out.print("VictoryPoint");
+}      
+</code>
+  </pre>
+</div>
+
+<p>The given code runs a loop starting from 2*n and divides 'i' by 2 in each iteration until 'i' becomes 1 or less. The value of 'i' can be represented as n, n/2, n/4, n/8, and so on. The loop stops when 'i' becomes 1. Thus, the time complexity is O(log n) due to the logarithmic decrease in 'i' at each step.</p>
+
+<p><b>Example 4</b></p>
+
+<div class="scrollable">
+  <pre><code class = "language-java">    
+for(int i=0;i < n;i++){
+  for(int j=0;j < n;j++){
+  System.out.print("VictoryPoint");
+  }
+}
+</code>
+  </pre>
+</div>
+
+<p>The code consists of two nested loops, each iterating 'n' times. This results in a total of n * n = n^2 iterations. Consequently, the time complexity is O(n^2), signifying a quadratic growth rate concerning the input size 'n'.</p>
+
+<p><b>Example 5</b></p>
+
+<div class="scrollable">
+  <pre><code class = "language-java">    
+int i=0;
+int j=n;
+whlie(i < n){
+  i++;
+  while(j > 1){
+  j=j/2;
+  System.out.print("VictoryPoint");
+  }
+}
+</code>
+  </pre>
+</div>
+
+<p>The given code has two nested loops. The outer loop runs 'n' times, and for each iteration, the inner loop runs log2(n) times due to halving 'j' in each step. Consequently, the overall time complexity of the code is O(n * log n).</p>
+
+
+
+<p><b>Example 6</b></p>
+
+<div class="scrollable">
+  <pre><code class = "language-java">    
+for (int i = 0; i < n; i++) {
+  for (int j = i; j < n; j++) {
+      System.out.print("VictoryPoint");
+  }
+}
+</code>
+  </pre>
+</div>
+
+<p>In this code, the inner loop is dependent on the value of 'i', which is determined by the outer loop. The outer loop runs 'n' times, and for each iteration, the inner loop runs (n - i) times. To find the total number of iterations, we need to unroll the loops:</p>
+<ul>
+<li>1st iteration of outer loop: inner loop runs (n - 0) times</li>
+<li>2nd iteration of outer loop: inner loop runs (n - 1) times</li>
+<li>3rd iteration of outer loop: inner loop runs (n - 2) times</li>
+<li>nth iteration of outer loop: inner loop runs (n - (n-1)) = 1 time</li>
+</ul>
+
+<p>The total number of iterations can be represented as the sum of (n - i) for i = 0 to n-1:<br>(n - 0) + (n - 1) + (n - 2) + ... + 1</p>
+<p>This sum is an arithmetic series, and its sum can be calculated using the formula:<br>Sum = n * (n + 1) / 2.</p>
+
+<p><b>Example 7</b></p>
+
+<div class="scrollable">
+  <pre><code class = "language-java">    
+for (int i = 1; i <= n; i *= 2) {
+  for (int j = 0; j < n; j++) {
+      System.out.print("VictoryPoint");
+  }
+}
+</code>
+  </pre>
+</div>
+
+<p>In this code, the inner loop is independent of the outer loop variable 'i'. The outer loop starts with 'i' as 1 and doubles 'i' in each iteration until 'i' becomes greater than 'n'. The inner loop runs 'n' times for each iteration of the outer loop. To find the total number of iterations, we unroll the loops:</p>
+<ul>
+<li>1st iteration of outer loop: inner loop runs n times</li>
+<li>2nd iteration of outer loop: inner loop runs n times</li>
+<li>4th iteration of outer loop: inner loop runs n times</li>
+<li>8th iteration of outer loop: inner loop runs n times</li>
+<li>nth iteration of outer loop: inner loop runs n times</li>
+</ul>
+<p>The total number of iterations is n * log2(n) since 'i' doubles in each iteration until it exceeds 'n', which happens approximately log2(n) times.</p>
+<p>Therefore, the time complexity of the code is O(n * log n).</p>
+<p>Now practice some questions to test your understanding</p>
+
+<button class = "btn" onclick="Practice('complexity')">Practice Now!</button>
+                
+
+
+
+
+
+              </div>
+              <div class = "article">
+                <iframe sandbox="allow-popups allow-scripts allow-modals allow-forms allow-same-origin" style="width:150px;height:300px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-in.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=IN&source=ss&ref=as_ss_li_til&ad_type=product_link&tracking_id=victorypoint-21&language=en_IN&marketplace=amazon&region=IN&placement=B09X74RB6D&asins=B09X74RB6D&linkId=fb0147bd823d8537671f4b94aa9674d0&show_border=true&link_opens_in_new_window=true"></iframe>  
+              </div>
+              </div>
+              
+        </div>
+        </div>
+        <hr>
+        <footer>
+          <a href="https://www.linkedin.com/in/techpranjal/" target="_blank" class="fa fa-linkedin"></a>
+          <a href="https://www.youtube.com/channel/UCI8SrpFD9XD0v9oFMIiL97w" target="_blank" class="fa fa-youtube"></a>
+          <a href="https://www.instagram.com/victorypoint_official/" target="_blank" class="fa fa-instagram"></a>
+          <a href="" class="fa fa-facebook"></a>
+          <p><br><b>Call us at: +91 8700070274</b></p>
+        </footer>
+      </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/prism.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
