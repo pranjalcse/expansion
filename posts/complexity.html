@@ -157,7 +157,7 @@ for(int i=0;i < n ; i++){
   <pre><code class = "language-java">    
 int i=1;
 while(i < 2*n){
-  System.out.print("VictoryPoint");
+  System.out.println("VictoryPoint");
   i++;
 }
 </code>
@@ -167,11 +167,32 @@ while(i < 2*n){
 <p>The complexity of the given code is O(n) and not O(2*n) because, in Big O notation, constant factors are ignored.</p>
 <p>When analyzing the time complexity of an algorithm, we are concerned with how the runtime grows relative to the input size (denoted by 'n').</p>
 
+<h4>Adding time complexities</h4>
+<p>We add time complexities when separate parts of code run independently or sequentially. We sum up the complexities of these parts to find the overall time complexity. However, we only consider the dominant term for the final complexity. For example, if we have O(n) and O(n^2), the overall complexity is O(n^2).</p>
+
 <p><b>Example 3</b></p>
 
 <div class="scrollable">
   <pre><code class = "language-java">    
-for(int i=2n;i>1;i=i/2){
+int i=1;
+while(i < n){
+  System.out.println("VictoryPoint");
+  i++;
+}
+for(int i=0;i < n;i++){
+  System.out.println("VictoryPoint")
+}
+</code>
+  </pre>
+</div>
+
+<p>Since both code snippets have a time complexity of O(n), the total time complexity when executed sequentially is O(n + n), which simplifies to O(2n). However, in Big O notation, we drop the constant factor, so the overall time complexity is O(n). Therefore, adding the time complexities of the two snippets results in O(n).</p>
+
+<p><b>Example 4</b></p>
+
+<div class="scrollable">
+  <pre><code class = "language-java">    
+for(int i=2*n;i>1;i=i/2){
   System.out.print("VictoryPoint");
 }      
 </code>
@@ -180,7 +201,9 @@ for(int i=2n;i>1;i=i/2){
 
 <p>The given code runs a loop starting from 2*n and divides 'i' by 2 in each iteration until 'i' becomes 1 or less. The value of 'i' can be represented as n, n/2, n/4, n/8, and so on. The loop stops when 'i' becomes 1. Thus, the time complexity is O(log n) due to the logarithmic decrease in 'i' at each step.</p>
 
-<p><b>Example 4</b></p>
+<h4>Multiplying time complexities</h4>
+<p>We multiply the complexity of the inner loop by the outer loop when the inner loop is dependent on the outer loop and runs completely for each iteration of the outer loop. This allows us to calculate the overall time complexity of the nested loops, expressed as O(outer loop * inner loop).</p>
+<p><b>Example 5</b></p>
 
 <div class="scrollable">
   <pre><code class = "language-java">    
@@ -195,7 +218,7 @@ for(int i=0;i < n;i++){
 
 <p>The code consists of two nested loops, each iterating 'n' times. This results in a total of n * n = n^2 iterations. Consequently, the time complexity is O(n^2), signifying a quadratic growth rate concerning the input size 'n'.</p>
 
-<p><b>Example 5</b></p>
+<p><b>Example 6</b></p>
 
 <div class="scrollable">
   <pre><code class = "language-java">    
@@ -214,9 +237,9 @@ whlie(i < n){
 
 <p>The given code has two nested loops. The outer loop runs 'n' times, and for each iteration, the inner loop runs log2(n) times due to halving 'j' in each step. Consequently, the overall time complexity of the code is O(n * log n).</p>
 
-
-
-<p><b>Example 6</b></p>
+<h4>Unrolling the loop</h4>
+<p>Unrolling the loops is done to calculate the total number of iterations in nested loops when their time complexity is not immediately evident. It helps analyze complex conditions and dependencies between loop variables, providing a clearer understanding of the algorithm's growth rate.</p>
+<p><b>Example 7</b></p>
 
 <div class="scrollable">
   <pre><code class = "language-java">    
@@ -240,7 +263,7 @@ for (int i = 0; i < n; i++) {
 <p>The total number of iterations can be represented as the sum of (n - i) for i = 0 to n-1:<br>(n - 0) + (n - 1) + (n - 2) + ... + 1</p>
 <p>This sum is an arithmetic series, and its sum can be calculated using the formula:<br>Sum = n * (n + 1) / 2.</p>
 
-<p><b>Example 7</b></p>
+<p><b>Example 8</b></p>
 
 <div class="scrollable">
   <pre><code class = "language-java">    
