@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />	
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Searching</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism.min.css" />
+	<link rel="stylesheet" href="blog_style.css">
+    <style>
+		
+		
+		@media screen and (max-width: 768px) {
+			.scrollable {
+				overflow-x: scroll;
+			}
+			
+		}
+	</style>
+</head>
+<body>
+
+    <div class="slider"></div>
+    <header>
+      <img src="../img/shape.png" alt="" class="shape2"/>
+        <div class = "big-wrapper light">
+        <div class="container_header">
+          <div class="logo">
+            <img src="../img/logo3.png" alt="Logo" />
+          </div>
+      
+          <div class="links">
+            <ul>
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../courses/launchpad.html">Launchpad</a></li>
+              <li><a href="../courses/bootcamp.html">Bootcamp</a></li>
+              <li><a href="../courses/aptitude.html">Aptitude</a></li>
+              <li><a href="../blog.html">Blogs</a></li>
+              <li></li>
+            </ul>
+          </div>
+      
+          <div class="overlay"></div>
+      
+          <div class="hamburger-menu">
+            <div class="bar"></div>
+          </div>
+        </div>
+        </div>
+        <hr>
+      </header>
+      
+      <main>
+	<div class="container">
+        <div class="articles">
+            <div class = "article">
+              <h2>Discovering Search Algorithms: A Deep Dive into Linear and Binary Search</h2>
+              <img src="images/15_large.png" alt="Article 1" />
+              <p>Greetings, coding enthusiasts! If you've been navigating the fascinating terrain of computer science, you've likely encountered the critical concept of search algorithms. Today, we're demystifying two prominent search methods - Linear Search and Binary Search. Fear not, newcomers; we're breaking down these concepts to make them digestible for all!</p>  
+              <h4>Unraveling Linear Search</h4>
+              <p>Our journey begins with the simplest yet highly versatile algorithm - Linear Search. As the name suggests, it scans sequentially through your dataset, checking each element one by one until it stumbles upon the target or exhausts the list.</p>
+              <p>Here's an analogy to clarify: Imagine losing your phone at home. You'd search room by room, checking every possible spot until you locate it. This process mirrors the operation of a linear search algorithm.</p>
+              <p>To bring this concept to life, let's look at a Java implementation:</p>
+              <div class="scrollable">
+                <pre><code class = "language-java">
+public class LinearSearch {
+  static int linearSearch(int arr[], int x) {
+      for (int i = 0; i < arr.length; i++) {
+          // If the target is found
+          if (arr[i] == x)
+              return i; // Return the index
+      }
+      // If the target is not found
+      return -1;
+  }
+
+  public static void main(String args[]) {
+      int arr[] = {3, 5, 7, 9, 11, 13, 15, 17, 19};
+      int target = 13;
+      int result = linearSearch(arr, target);
+
+      if(result == -1)
+          System.out.println("Element not present in the array");
+      else
+          System.out.println("Element found at index: " + result);
+  }
+}         
+</code>
+Output:
+Element found at index: 5
+                </pre>
+            </div> 
+            <p>In this code, we're searching for the number 13 in our array. The linearSearch function traverses the array, and once it finds 13, it returns the index of the element, which in this case, is 5.</p>            
+              <h4>Decoding Binary Search</h4>
+            <p>Next up is Binary Search, a more sophisticated method that thrives on sorted lists or arrays. Your data must be ordered for binary search to work its magic!</p>
+            <p>Remember how you intuitively look for a word in a sorted dictionary? You wouldn't start from the first page and scan each word. Instead, you'd split the dictionary roughly in half, decide whether to look in the first or second half based on your target word, and continue this process until you find your word. Congratulations, you've just used binary search!</p>
+            <p>Let's manifest this with a Java code snippet:</p>
+            <div class="scrollable">
+              <pre><code class = "language-java">
+public class BinarySearch {
+  int binarySearch(int arr[], int x) {
+      int low = 0, high = arr.length - 1;
+      while (low <= high) {
+          int mid = low + (high - low) / 2;
+
+          // If the target is present at the mid index
+          if (arr[mid] == x)
+              return mid;
+
+          // If the target is greater, ignore the left half
+          if (arr[mid] < x)
+              low = mid + 1;
+
+          // If the target is smaller, ignore the right half
+          else
+              high = mid - 1;
+      }
+
+      // If the target is not present in the array
+      return -1;
+  }
+
+  public static void main(String args[]) {
+      BinarySearch bs = new BinarySearch();
+      int arr[] = {2, 3, 4, 10, 40};
+      int target = 10;
+      int result = bs.binarySearch(arr, target);
+
+      if (result == -1)
+          System.out.println("Element not present");
+      else
+          System.out.println("Element found at index: " + result);
+  }
+}             
+</code>
+Output:
+Element found at index: 3
+              </pre>
+          </div> 
+<p>Here, we have a sorted array, and we're hunting for the number 10. Our binarySearch function repeatedly splits the array in half until it locates the target, yielding its index, which is 3.</p>
+<h4>Contrasting Linear and Binary Search</h4>
+<p>Both Linear Search and Binary Search are potent tools in the realm of data manipulation, but they shine under different circumstances.</p>
+<p><b>Efficiency:</b> Binary Search has the upper hand in sorted, large datasets with its logarithmic time complexity (O(log n)), whereas Linear Search operates at a linear time complexity (O(n)).</p>
+<p><b>Prerequisites:</b> Linear Search is more flexible, requiring no prior arrangement of data. In contrast, Binary Search mandates a sorted list to function correctly.</p>
+<p><b>Application:</b> If dealing with smaller, unordered lists or uncertainty about the order, Linear Search comes to the rescue. However, for large, sorted lists where performance matters, Binary Search is your ally.</p>
+<p>Remember, each algorithm excels in specific scenarios, and your choice should depend on your data's nature and your task's requirements.</p>
+<p>Wrapping up, Linear and Binary Search, though seemingly basic, are essential tools in your algorithmic toolkit. Whether you're a programming novice or a seasoned veteran, understanding these search techniques can significantly enhance your problem-solving prowess.</p>
+        </div>
+            <div class = "article">
+              <iframe sandbox="allow-popups allow-scripts allow-modals allow-forms allow-same-origin" style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-in.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=IN&source=ss&ref=as_ss_li_til&ad_type=product_link&tracking_id=victorypoint-21&language=en_IN&marketplace=amazon&region=IN&placement=B09X74RB6D&asins=B09X74RB6D&linkId=fb0147bd823d8537671f4b94aa9674d0&show_border=true&link_opens_in_new_window=true"></iframe>  
+            </div>
+            
+        </div>
+    </div>
+	</main>
+  <hr>
+  <footer>
+    <a href="https://www.linkedin.com/in/techpranjal/" target="_blank" class="fa fa-linkedin"></a>
+    <a href="https://www.youtube.com/channel/UCI8SrpFD9XD0v9oFMIiL97w" target="_blank" class="fa fa-youtube"></a>
+    <a href="https://www.instagram.com/victorypoint_official/" target="_blank" class="fa fa-instagram"></a>
+    <a href="" class="fa fa-facebook"></a>
+    <p><br><b>Call us at: +91 8700070274</b></p>
+  </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-java.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
