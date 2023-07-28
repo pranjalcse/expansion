@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />	
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bit Manipulation</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism.min.css" />
+	<link rel="stylesheet" href="blog_style.css">
+    <style>
+		
+		
+		@media screen and (max-width: 768px) {
+			.scrollable {
+				overflow-x: scroll;
+			}
+			
+		}
+	</style>
+</head>
+<body>
+
+    <div class="slider"></div>
+    <header>
+      <img src="../img/shape.png" alt="" class="shape2"/>
+        <div class = "big-wrapper light">
+        <div class="container_header">
+          <div class="logo">
+            <img src="../img/logo3.png" alt="Logo" />
+          </div>
+      
+          <div class="links">
+            <ul>
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../courses/launchpad.html">Launchpad</a></li>
+              <li><a href="../courses/bootcamp.html">Bootcamp</a></li>
+              <li><a href="../courses/aptitude.html">Aptitude</a></li>
+              <li><a href="../blog.html">Blogs</a></li>
+              <li></li>
+            </ul>
+          </div>
+      
+          <div class="overlay"></div>
+      
+          <div class="hamburger-menu">
+            <div class="bar"></div>
+          </div>
+        </div>
+        </div>
+        <hr>
+      </header>
+      
+      <main>
+	<div class="container">
+        <div class="articles">
+            <div class = "article">
+              <h2>Diving Deep into the Bitworld: Mastering Bit Manipulation in Java</h2>
+              <img src="images/15_large.png" alt="Article 1" />
+              <p>Hello, fellow Java enthusiasts! Today, we're diving deep into the riveting world of bit manipulation, a secret corner that, although daunting at first, can transform your Java code into a highly efficient and performance-optimized masterpiece. So, fasten your seat belts and embark on this enlightening journey with us!</p>  
+              <h4>The Concept of Bit Manipulation:</h4>
+              <p>In computer science, the smallest unit of data is a bit, which can either be a 0 or a 1. Bit manipulation involves the use of bitwise operators to individually manipulate the state of these bits. This allows us to perform data manipulation at the most granular level, resulting in increased code efficiency and reduced memory usage. Bit manipulation is especially useful in systems programming, game development, and tasks requiring high performance.</p>
+              <p>The Java programming language, like many others, provides a set of bitwise operators that let you manipulate data at the bit level. Before we delve deeper, let's ensure we have a firm grasp of binary representation.</p>
+              <h4>Binary Representation:</h4>
+              <p>Binary numbers are base-2 numbers, using only two symbols - 0 and 1. Each digit in a binary number represents a power of 2. For example, the binary number 101 represents the decimal number 5, calculated as (1 x 2²) + (0 x 2¹) + (1 x 2⁰).<br>Now that we understand binary numbers let's unveil the magic of bitwise operators in Java.</p>
+              <h4>Bitwise Operators in Java</h4>  
+                <p><b>1. AND Operator (&):</b></p>
+                <p>The AND operator (&) compares each bit of the first operand (i.e., the number on the left) to the corresponding bit of the second operand. If both bits are 1, the corresponding result bit is set to 1. Otherwise, the result bit is set to 0.</p>
+              
+              <div class="scrollable">
+                    <pre><code class = "language-java">
+int a = 53;  // Binary: 110101
+int b = 35;  // Binary: 100011
+System.out.println(a & b);  // Output: 33 (Binary: 100001)                    
+</code>
+                    </pre>
+                </div>
+                <p>This example shows the AND operator comparing the bits of 'a' and 'b', resulting in 33.</p>
+                <p><b>2. OR Operator (|):</b></p>
+                <p>The OR operator (|) sets the result bit to 1 if at least one of the bits in the operands is 1. Otherwise, the result bit is set to 0.</p>
+                <div class="scrollable">
+                    <pre><code class = "language-java">
+int a = 53;  // Binary: 110101
+int b = 35;  // Binary: 100011
+System.out.println(a | b);  // Output: 55 (Binary: 110111)
+</code>
+                    </pre>
+                </div>
+                <p>In this case, the OR operator compares the bits of 'a' and 'b', yielding the number 55.</p>
+                
+                <p><b>3. XOR Operator (^):</b></p>
+                <p>The XOR operator (^), or 'exclusive or', sets the result bit to 1 if exactly one of the bits in the operands is 1. If both bits are the same, the result bit is set to 0.</p>
+                <div class="scrollable">
+                    <pre><code class = "language-java">
+int a = 53;  // Binary: 110101
+int b = 35;  // Binary: 100011
+System.out.println(a ^ b);  // Output: 22 (Binary: 10110)                    
+</code>
+                    </pre>
+                </div>
+                <p>In this example, the XOR operator compares 'a' and 'b', resulting in the number 22.</p>
+                <p><b>4. Complement Operator (~):</b></p>
+                <p>The Complement operator (~) flips the bits of the operand, turning 1s into 0s and 0s into 1s.</p>
+                <div class="scrollable">
+                    <pre><code class = "language-java">
+int a = 53;  // Binary: 110101
+System.out.println(~a);  // Output: -54 (Binary: 11010110)                    
+</code>
+                    </pre>
+                </div>
+                <p>Here, all the bits of 'a' are inverted using the Complement operator, resulting in -54.</p>
+                <p><b>5. Shift Operators (<<, >>):</b></p>
+                <p>Shift operators in Java include the Left Shift operator (<<) and the Right Shift operator (>>). The Left Shift operator shifts the bits of the operand to the left by a certain number of specified bits, and the Right Shift operator shifts the bits of the operand to the right.</p>
+                <div class="scrollable">
+                    <pre><code class = "language-java">
+int a = 53;  // Binary: 110101
+System.out.println(a << 2);  // Output: 212 (Binary: 11010100)
+System.out.println(a >> 2);  // Output: 13  (Binary: 1101)
+</code>
+                    </pre>
+                </div>
+                <p>In these examples, the bits of 'a' are shifted two places to the left and right, respectively.</p>
+                <h4>Bit Manipulation in Real-World Scenarios:</h4>
+                <p>Bit manipulation can help us elegantly solve a plethora of real-world problems. Let's explore a few instances.</p>
+                <p><b>Example 1: Multiply and Divide by Powers of Two:</b></p>
+                <p>The left shift operator can be used to multiply a number by a power of two, and the right shift operator can be used to divide a number by a power of two.</p>
+                <div class="scrollable">
+                    <pre><code class = "language-java">
+int a = 7;  // Binary: 111
+System.out.println(a << 1);  // Output: 14 (Binary: 1110) -> 7 * 2^1
+System.out.println(a >> 1);  // Output: 3  (Binary: 11) -> 7 / 2^1       
+</code>
+                    </pre>
+                </div>
+<p><b>Example 2:  Find a Missing Number in an Array:</b></p>
+<p>Suppose we have an array of n unique elements from 1 to n+1, meaning there's one number missing. How can we find the missing number? Here's a solution using bit manipulation:</p>
+<div class="scrollable">
+    <pre><code class = "language-java">
+public class MissingNumber {
+    public static int getMissingNumber(int[] arr) {
+        int xor = 0;
+
+        // XOR all the elements in the array
+        for (int num : arr) {
+            xor ^= num;
+        }
+
+        // XOR the result with all numbers from 1 to n+1
+        for (int i = 1; i <= arr.length + 1; i++) {
+            xor ^= i;
+        }
+
+        // The result is the missing number
+        return xor;
+    }
+
+    public static void main(String[] args) {
+        int[] arr = {1, 2, 4, 6, 3, 7, 8};
+        System.out.println("The missing number is " + getMissingNumber(arr));
+    }
+}        
+</code>
+    </pre>
+</div>
+<p>This way, you can find a missing number in an array in linear time and constant space, demonstrating the power and efficiency of bit manipulation!</p>
+<h4>Conclusion:</h4>
+<p>Bit manipulation in Java might appear complicated initially, but once you grasp the concepts, you'll open a world of efficient and creative solutions to problems that seemed insurmountable before. This journey through the world of bits should serve as a launching pad for your further exploration into this fascinating realm.</p>
+        </div>
+            <div class = "article">
+              <iframe sandbox="allow-popups allow-scripts allow-modals allow-forms allow-same-origin" style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-in.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=IN&source=ss&ref=as_ss_li_til&ad_type=product_link&tracking_id=victorypoint-21&language=en_IN&marketplace=amazon&region=IN&placement=B09X74RB6D&asins=B09X74RB6D&linkId=fb0147bd823d8537671f4b94aa9674d0&show_border=true&link_opens_in_new_window=true"></iframe>  
+            </div>
+            
+        </div>
+    </div>
+	</main>
+  <hr>
+  <footer>
+    <a href="https://www.linkedin.com/in/techpranjal/" target="_blank" class="fa fa-linkedin"></a>
+    <a href="https://www.youtube.com/channel/UCI8SrpFD9XD0v9oFMIiL97w" target="_blank" class="fa fa-youtube"></a>
+    <a href="https://www.instagram.com/victorypoint_official/" target="_blank" class="fa fa-instagram"></a>
+    <a href="" class="fa fa-facebook"></a>
+    <p><br><b>Call us at: +91 8700070274</b></p>
+  </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-java.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
