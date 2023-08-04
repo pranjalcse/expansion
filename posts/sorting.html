@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />	
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sorting</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism.min.css" />
+	<link rel="stylesheet" href="blog_style.css">
+    <style>
+		
+		
+		@media screen and (max-width: 768px) {
+			.scrollable {
+				overflow-x: scroll;
+			}
+			
+		}
+	</style>
+</head>
+<body>
+
+    <div class="slider"></div>
+    <header>
+      <img src="../img/shape.png" alt="" class="shape2"/>
+        <div class = "big-wrapper light">
+        <div class="container_header">
+          <div class="logo">
+            <img src="../img/logo3.png" alt="Logo" />
+          </div>
+      
+          <div class="links">
+            <ul>
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../courses/launchpad.html">Launchpad</a></li>
+              <li><a href="../courses/bootcamp.html">Bootcamp</a></li>
+              <li><a href="../courses/aptitude.html">Aptitude</a></li>
+              <li><a href="../blog.html">Blogs</a></li>
+              <li></li>
+            </ul>
+          </div>
+      
+          <div class="overlay"></div>
+      
+          <div class="hamburger-menu">
+            <div class="bar"></div>
+          </div>
+        </div>
+        </div>
+        <hr>
+      </header>
+      
+      <main>
+	<div class="container">
+        <div class="articles">
+            <div class = "article">
+              <h2>The Ins and Outs of Sorting Algorithms</h2>
+              <img src="images/15_large.png" alt="Article 1" />
+              <p>Sorting refers to arranging data in a specific order, like numerically, alphabetically, by date, etc. It organizes data for faster searching and access. Sorting algorithms are methods for automatically sorting a dataset. Let's explore some key sorting algorithms!</p>
+              <h4>Bubble Sort</h4>
+              <p>Bubble sort compares adjacent elements and swaps them if they are out of order. This process repeats until the list is fully sorted.</p>
+              <p>It's like bubble tea - the smaller bubbles (lighter elements) gradually float to the top until the whole cup is sorted!</p>
+              <div class="scrollable">
+                <pre><code class = "language-java">
+Pseudocode:
+
+repeat 
+  swapped = false
+  for i = 1 to indexOfLastUnsortedElement-1
+    if leftElement > rightElement
+      swap(leftElement, rightElement)   
+      swapped = true
+until not swapped                
+</code>
+                </pre>
+            </div>
+              
+<p><b>Explanation</b></p>
+<ul>
+  <li>The outer loop repeats until no swaps occur - meaning the list is fully sorted.</li>
+  <li>The inner loop iterates through the list, swapping any adjacent out of order elements.</li>
+  <li>After each full iteration, at least one item reaches its final sorted position.</li>
+</ul>
+
+<p><b>Time Complexity: O(n^2) </b></p>
+<p>Bubble sort requires nested iterations through the list, resulting in quadratic time complexity.</p>
+
+<p><b>Space Complexity: O(1)</b></p>
+<p>No additional storage is needed, so the space required is constant.</p>
+<p>Bubble sort is simple but inefficient for large datasets.</p>
+
+<h4>Insertion Sort</h4>
+<p>Insertion sort iterates through the input, inserting each element into the correct position in the sorted output list.</p>
+<p>It's like alphabetically sorting books on a shelf - you remove a book and insert it in the proper alphabetical spot.</p>
+              
+<div class="scrollable">
+  <pre><code class = "language-java">
+Pseudocode:
+
+for i = 1 to length(A)
+  j = i
+  while j > 0 and A[j-1] > A[j]
+    swap A[j] and A[j-1] 
+    j = j - 1               
+</code>
+  </pre>
+</div>
+              
+<p><b>Explanation</b></p>
+<ul>
+  <li> It iterates through the list, setting a marker j at each position.</li>
+  <li>The while loop swaps j backwards until it is ordered with elements before it.</li>
+  <li>After an iteration, the sorted list grows by one item.</li>
+</ul>
+              
+<p><b>Time Complexity: O(n^2) </b></p>
+<p>Insertion sort requires shifting elements over for each insertion, resulting in quadratic time.</p>
+
+<p><b>Space Complexity: O(1)</b></p>
+<p>No extra storage is needed.</p>
+<p>Efficient for small or mostly sorted data.</p>
+
+<h4>Selection Sort</h4>
+
+<p>Selection sort selects the smallest remaining element and appends it to the sorted list.</p>
+<p>It's like picking players for a sports team - you select the smallest kid first.</p>            
+      
+
+<div class="scrollable">
+  <pre><code class = "language-java">
+Pseudocode: 
+
+for i = 1 to length(A)
+  minIndex = i 
+  for j = i+1 to length(A)
+    if A[j] < A[minIndex]
+      minIndex = j
+  swap A[i] and A[minIndex]            
+</code>
+  </pre>
+</div>
+
+
+<p><b>Explanation</b></p>
+<ul>
+  <li>The outer loop iterates n times, where n is the list length.</li>
+  <li>The inner loop scans for the smallest value each iteration.</li>
+  <li>After scanning, the minimum is swapped to the front.</li>
+</ul>
+
+
+<p><b>Time Complexity: O(n^2) </b></p>
+<p>The nested loops result in quadratic time complexity.</p>
+
+<p><b>Space Complexity: O(1)</b></p>
+<p>No extra storage is required.</p>
+
+<p>Simple, but inefficient for large lists due to the number of scans/swaps.</p>
+
+
+
+<h4>Merge Sort</h4>
+<p>Merge sort uses a "divide and conquer" strategy: </p>
+<ul>
+  <li>Divide input into n/2 equal halves until atomic - i.e. 1 element.</li>
+  <li>Sort and merge sublists until the whole list is reassembled.</li>
+</ul>
+<p>It's like sorting Lego bricks by color/shape into separate bins, then combining the sorted bins.</p>
+              
+<div class="scrollable">
+  <pre><code class = "language-java">
+Pseudocode:
+
+mergeSort(arr)
+  if arr.length <= 1
+    return arr
+
+  mid = arr.length / 2
+  leftHalf = arr[0..mid]
+  rightHalf = arr[mid..-1]
+
+  merge(mergeSort(leftHalf), mergeSort(rightHalf))
+
+merge(left, right)
+  result = []
+  while left and right are not empty
+    if left.first <= right.first
+      append left.popFirst() to result
+    else 
+      append right.popFirst() to result
+
+  append left and right remains to result
+  return result             
+</code>
+  </pre>
+</div>
+              
+<p><b>Explanation</b></p>
+<ul>
+  <li>Recursively divide list until sublist size is 1.</li>
+  <li>Merge sublists by comparing elements sequentially, assembling sorted list.</li>
+</ul>
+              
+<p><b>Time Complexity: O(n log n) </b></p>
+<p>Dividing the list reduces operations to O(log n). Merging is O(n) per sublist. </p>
+
+<p><b>Space Complexity: O(n)</b></p>
+<p>Extra space of n is needed to store divided sublists.</p>
+
+
+<p>Efficient, requiring O(n log n) operations.</p>
+
+
+
+
+<h4>Quick Sort</h4>
+<p>Quicksort picks a pivot element and rearranges the list so all smaller elements come before the pivot and larger after. It recursively sorts the sublists on either side of the pivot.</p>
+<p>It's like pivoting in basketball - shuffling players around the pivot.</p>
+              
+<div class="scrollable">
+  <pre><code class = "language-java">
+Pseudocode:
+
+quicksort(arr)
+  if arr.length <= 1
+    return arr
+
+  pivot = arr[0]
+  left = []
+  right = []
+  for i from 1 to arr.length - 1
+    if arr[i] < pivot
+      left.append(arr[i]) 
+    else  
+      right.append(arr[i])
+  
+  return quicksort(left) + pivot + quicksort(right)           
+</code>
+  </pre>
+</div>
+              
+<p><b>Explanation</b></p>
+<ul>
+  <li>Choose final position of pivot element (the first element here). </li>
+  <li>Partition list by moving smaller elements before pivot, larger after.</li>
+  <li>Recursively quicksort sublists on either side of pivot.</li>
+</ul>
+              
+<p><b>Time Complexity: O(n log n) </b></p>
+<p>Quicksort reduces problem space logarithmically with partitioning.</p>
+
+<p><b>Space Complexity: O(n)</b></p>
+<p>Recursion depth is proportional to log n.</p>
+
+
+<p>Extremely efficient in most cases with O(n log n) performance.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </div>
+            <div class = "article">
+              <iframe sandbox="allow-popups allow-scripts allow-modals allow-forms allow-same-origin" style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-in.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=IN&source=ss&ref=as_ss_li_til&ad_type=product_link&tracking_id=victorypoint-21&language=en_IN&marketplace=amazon&region=IN&placement=B09X74RB6D&asins=B09X74RB6D&linkId=fb0147bd823d8537671f4b94aa9674d0&show_border=true&link_opens_in_new_window=true"></iframe>  
+            </div>
+            
+        </div>
+    </div>
+	</main>
+  <hr>
+  <footer>
+    <a href="https://www.linkedin.com/in/techpranjal/" target="_blank" class="fa fa-linkedin"></a>
+    <a href="https://www.youtube.com/channel/UCI8SrpFD9XD0v9oFMIiL97w" target="_blank" class="fa fa-youtube"></a>
+    <a href="https://www.instagram.com/victorypoint_official/" target="_blank" class="fa fa-instagram"></a>
+    <a href="" class="fa fa-facebook"></a>
+    <p><br><b>Call us at: +91 8700070274</b></p>
+  </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-java.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
